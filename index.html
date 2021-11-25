@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="hero-container">
+      <div class="navbar">
+        <!-- navigation bar -->
+        <div class="nav-container">
+          <div class="brand">
+            <div class="logo">
+              <img src="./assets/logo.png" alt="">
+            </div>
+
+            <nav>
+              <ul class="nav-links">
+                <li><a href="" class="link">New</a></li>
+                <li><a href="" class="link">Dresses</a></li>
+                <li><a href="" class="link">Accessories</a></li>
+                <li><a href="" class="link">Jeans</a></li>
+                <li><a href="" class="link">Shoes</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- wishlist, search, account, cart -->
+          <div class="us_actions">
+            <div class="icon">
+              <img src="./assets/icons/bi_heart.svg" alt="" />
+            </div>
+            <div class="searchBar">
+              <form action="">
+                <div class="form-control">
+                  <input type="text" placeholder="Search for items..." />
+                </div>
+              </form>
+            </div>
+            <div class="icon">
+              <img
+                src="./assets/icons/ic_baseline-shopping-basket.svg"
+                alt=""
+              />
+            </div>
+            <div class="icon">
+              <img src="./assets/icons/codicon_account.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- intro section -->
+      <section class="hero">
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Swiper Text -->
+            <div class="intro-text">
+                <p>Myz_pejay’s collections</p>
+                <h1>Top notch women’s <span>clothing</span></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida non facilisis est amet, venenatis vulputate odio tincidunt ut. Vitae ut nullam quis non.</p>
+                <button>Shop Now</button>
+            </div>
+          <!-- Additional required wrapper -->
+          <!-- hellow -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="./assets/backgrounds/seth-doyle-unxNhCRr8iU-unsplash.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/backgrounds/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/backgrounds/s-o-c-i-a-l-c-u-t-aXJdmnxauwY-unsplash.jpg" alt="">
+                
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <main>
+        <!-- value proposition section -->
+        <section class="vfb">
+            <div class="content">
+                <div class="brands">
+                    <p>NAME THE BRAND, WE GOT YOU!</p>
+
+                </div>
+
+                <div class="WYS">
+                    <div class="left">
+                        <h1>Why you should shop with us?</h1>
+                    </div>
+                    <div class="right">
+                        <div class="vf_plaq">
+                            <div class="icon">
+                                <img src="./assets/icons/carbon_delivery-parcel.svg" alt="">
+                            </div>
+                            <strong>Free Delivery</strong>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, distinctio.</p>
+                        </div>
+                        <div class="vf_plaq">
+                            <div class="icon">
+                                <img src="./assets/icons/bi_cloud-download-fill.svg" alt="">
+                            </div>
+                            <strong>24/7 Hour Support</strong>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, distinctio.</p>
+                        </div>
+                        <div class="vf_plaq">
+                            <div class="icon">
+                                <img src="./assets/icons/fluent_money-hand-20-filled.svg" alt="">
+                            </div>
+                            <strong>100% Money back</strong>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, distinctio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="./js/heroCarousel.js"></script>
+  </body>
+</html>

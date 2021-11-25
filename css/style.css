@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 8vh;
+  padding: 30px 0;
+  position: absolute;
+  z-index: 999;
+}
+
+.navbar .nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  height: 100%;
+}
+
+.navbar .nav-container .brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar .nav-container .brand .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 20px;
+  width: 10em;
+}
+
+.navbar .nav-container .brand .logo img {
+  width: 100%;
+}
+
+.navbar .nav-container .brand .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 25em;
+  list-style: none;
+}
+
+.navbar .nav-container .brand .nav-links .link {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-container .brand .nav-links .link:hover {
+  color: #FF4254;
+}
+
+.navbar .us_actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30em;
+}
+
+.navbar .us_actions .form-control input {
+  padding: 10px 40px;
+  border-radius: 5px;
+  border: none;
+  width: 20em;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  background-image: url("../assets/icons/heroicons-outline_search.svg");
+  background-repeat: no-repeat;
+  background-position: left 5px center;
+  background-size: 30px;
+  outline: none;
+}
+
+.hero-container {
+  border: 1px solid black;
+  height: 100vh;
+  position: relative;
+}
+
+.hero-container .hero .swiper {
+  height: 100vh;
+  position: relative;
+}
+
+.hero-container .hero .swiper .intro-text {
+  width: 90%;
+  margin: 5%;
+  position: absolute;
+  z-index: 200;
+  top: 15%;
+  color: white;
+}
+
+.hero-container .hero .swiper .intro-text h1 {
+  font-size: 5rem;
+  width: 8em;
+  margin: 20px 0;
+}
+
+.hero-container .hero .swiper .intro-text h1 span {
+  color: #FF4254;
+}
+
+.hero-container .hero .swiper .intro-text p {
+  width: 30em;
+  color: #EBE7E7;
+  line-height: 20px;
+}
+
+.hero-container .hero .swiper .intro-text button {
+  margin: 20px 0;
+  padding: 15px;
+  width: 15em;
+  background-color: #FF4254;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  color: white;
+}
+
+.hero-container .hero .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.vfb {
+  background-color: #000000;
+  height: 30em;
+  color: white;
+}
+
+.vfb .content {
+  width: 90%;
+  margin: auto;
+}
+
+.vfb .content .brands {
+  text-align: center;
+  padding: 2em 0 5em 0;
+}
+
+.vfb .content .WYS {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.vfb .content .WYS .left {
+  margin-right: 80px;
+}
+
+.vfb .content .WYS .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.vfb .content .WYS .right .vf_plaq {
+  margin: 20px;
+  height: 12em;
+}
+
+.vfb .content .WYS .right .vf_plaq .icon {
+  margin: 10px 0;
+  height: 90px;
+}
+
+.vfb .content .WYS .right .vf_plaq strong {
+  display: block;
+  margin: 10px 0;
+}
+/*# sourceMappingURL=style.css.map */

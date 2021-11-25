@@ -1,0 +1,208 @@
+// import statements
+@import './mixins';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+// navbar
+.navbar{
+    @include flexSB();
+    width: 100%;
+    height: 8vh;
+    padding: 30px 0;
+    // background: #0002;
+    position: absolute;
+    z-index: 999;
+
+
+    .nav-container{
+        @include flexSB();
+        width: 90%;
+        margin: auto;
+        height: 100%;
+
+        .brand{
+            @include flexSB();
+
+            .logo{
+                @include flexSB();
+                margin-right: 20px;
+                width: 10em;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+
+            .nav-links{
+                @include flexSB();
+                width: 25em;
+                list-style: none;
+
+                .link{
+                    text-decoration: none;
+                    color: white;
+                    transition: all 0.3s ease;
+
+                    &:hover{
+                        color: #FF4254;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .us_actions{
+        @include flexSB();
+        width: 30em;
+
+        .form-control{
+            input{
+                padding: 10px 40px;
+                border-radius: 5px;
+                border: none;
+                width: 20em;
+                // box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+                background-color: rgba($color: #FFFFFF, $alpha: 0.1);
+                // background: transparent;
+                color: white;
+                background-image: url('../assets/icons/heroicons-outline_search.svg');
+                background-repeat: no-repeat;
+                background-position: left 5px center;
+                background-size: 30px;
+                outline: none;
+            }
+        }
+    }
+
+
+}
+
+
+// hero
+.hero-container{
+    border: 1px solid black;
+    height: 100vh;
+    position: relative;
+
+    .hero{
+        .swiper{
+            height: 100vh;
+            position: relative;
+
+            .intro-text{
+                width: 90%;
+                // border: 1px solid white;
+                margin: 5%;
+                position: absolute;
+                z-index: 200;
+                top: 15%;
+                color: white;
+
+                h1{
+                    font-size: 5rem;
+                    // border: 1px solid white;
+                    width: 8em;
+                    margin: 20px 0;
+
+                    span{
+                        color: #FF4254;
+                    }
+                }
+
+                p{
+                    width: 30em;
+                    color: #EBE7E7;
+                    line-height: 20px;
+                }
+
+                button{
+                    margin: 20px 0;
+                    padding: 15px;
+                    width: 15em;
+                    background-color: #FF4254;
+                    border-radius: 5px;
+                    border: none;
+                    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+                    cursor: pointer;
+                    color: white;
+                    
+                }
+            }
+
+            .swiper-wrapper .swiper-slide{
+
+                img{
+                    width: 100%;
+                    filter: brightness(50%);
+                }
+            }
+        }
+    }
+}
+
+// value section
+.vfb{
+    background-color: #000000;
+    height: 30em;
+    color: white;
+
+    .content{
+        width: 90%;
+        margin: auto;
+
+        .brands{
+            text-align: center;
+            // margin: 5em auto;
+            padding: 2em 0 5em 0;
+        }
+
+        .WYS{
+            @include flexSB();
+
+            .left{
+                margin-right: 80px;
+            }
+
+            .right{
+                @include flexSB();
+
+                .vf_plaq{
+                    // border: 1px solid white;
+                    margin: 20px;
+                    height: 12em;
+
+                    .icon{
+                        margin: 10px 0;
+                        // border: 1px solid white;
+                        height: 90px;
+                    }
+
+                    strong{
+                        display: block;
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
