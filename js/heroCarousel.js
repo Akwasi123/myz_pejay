@@ -10,4 +10,10 @@ const swiper = new Swiper('.swiper', {
     },
     effect: 'fade',  
 });
+
+
+// testimonial swiper
+const tSwiper = new Swiper('t_swiper', {
+    
+});
   

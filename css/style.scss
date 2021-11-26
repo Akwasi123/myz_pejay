@@ -162,7 +162,7 @@ body{
 
 // value section
 .vfb{
-    background-color: #000000;
+    background-color: #000000e8;
     height: 30em;
     color: white;
 
@@ -244,7 +244,7 @@ body{
                 // border: 1px solid black;
                 width: 15.5em;
                 border-radius: 10px;
-                box-shadow: $shadow;
+                box-shadow: 0px 2px 20px #00000025;
                 position: relative;
 
                 .imgSpace{
@@ -317,5 +317,192 @@ body{
 
 // testimonials
 .testimonials{
-    
+    margin: 50px auto 0px auto;
+    background-color: #000000e8;
+    height: 40em;
+    background-image: url('../assets/backgrounds/Asset\ 3.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 150%;
+
+    .content{
+        @include content();
+        @include flexSB(column, center);
+        height: 100%;
+
+        .heading{
+            padding: 20px 0;
+            width: 96%;
+            color: white;
+            // border: 1px solid black;
+            @include flexSB(row, center);
+        }
+
+        .t_swiper{
+            // border: 1px solid white;
+            height: 30em;
+            width: 100%;
+
+            .swiper-wrapper{
+                // border: 1px solid red;
+                @include flexSB();
+
+                .swiper-slide{
+                    width: 25em;
+                    height: 22em;
+                    color: white;
+                    border-radius: 10px;
+                    background-color: #262626;
+                    padding: 20px;
+                    @include flexSB(column, center);
+                    align-items: flex-start;
+                    // border: 1px solid white;
+
+                    .name{
+                        @include flexSB(row, flex-start);
+                        .pp{
+                            width: 70px;
+                            height: 70px;
+                            border-radius: 50%;
+                            margin: 10px 20px 10px 0;
+                            box-shadow: $shadow;
+                            border: 1px solid white;
+                        }
+
+                        p{
+                            font-weight: 500;
+                        }
+                    }
+
+                    p{
+                        margin: 10px 0 10px 0;
+                    }
+
+                    .comment{
+                        line-height: 25px;
+                        // border: 1px solid white;
+                    }
+
+                    .ratings{
+                        margin-top: 10px;
+                    }
+                }
+
+            }
+        }
+    }
 }
+
+// footer
+footer{
+    background-color:#262626;
+    height: 40em;
+    color: white;
+
+    .content{
+        @include content();
+    }
+}
+
+.brandLogo img{
+    width: 50%;
+}
+
+footer .compInf{
+    display: flex;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.socials{
+    display: flex;
+    align-items: center;   
+}
+
+.mail{
+    margin: 10px auto;
+}
+
+.socials .sc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.6em;
+    height: 3.6em;
+    margin: 10px 10px 10px 0;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.socials .sc img{
+    width: 50%;
+}
+
+.f_links{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.link_item, .links{
+    display: flex;
+    flex-direction: column;
+}
+
+.link_item{
+    margin: 20px 0;
+}
+
+.head{
+    font-weight: 900;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+    margin: 10px 0;
+}
+
+.cp_container{
+    background-color: #262626;
+}
+
+.cp{
+    display: flex;
+    align-items: center;
+    font-size: var(--sm);
+    width: 90%;
+    margin: auto;
+    padding: 2em 0;
+    color: white;
+}
+
+.cp p{
+    margin-left: 20px;
+}
+
+.cp_container hr{
+    border-color: rgba(255, 255, 255, 0.322);
+}
+
+footer{
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.f_links{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100em;
+}
+
