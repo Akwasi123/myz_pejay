@@ -6,3 +6,15 @@
     justify-content: $jc;
 }
 
+@mixin content {
+    width: 90%;
+    margin: auto;
+}
+
+
+@mixin grid($num: 4, $gap: 30px){
+    display: grid;
+    grid-template-columns: repeat($num, 1fr);
+    column-gap: $gap;
+    row-gap: 30px;
+}
