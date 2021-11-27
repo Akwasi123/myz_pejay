@@ -6,15 +6,101 @@
     justify-content: $jc;
 }
 
+@mixin productCard(){
+    .product_card{
+        height: 35em;
+        // border: 1px solid black;
+        width: 18em;
+        // border-radius: 5px;
+        box-shadow: 0px 2px 3px #1403030c;
+        position: relative;
+
+        .imgSpace{
+            height: 25em;
+            width: 18em;
+            // padding: 20px;
+            // border-radius: 5px 5px 0px 0px;
+            background-color: #e5e5e573;
+            // border: 1px solid red;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .p_details{
+            padding: 30px 10px;
+            // border: 1px solid black;
+            @include flexSB();
+
+            .dets{
+                width: 100%;
+                .top{
+                    @include flexSB();
+                    width: 100%;
+                    // border: 1px solid black;
+                }
+
+                .cat{
+                    margin: 5px 0;
+                    color: #1403031f;
+                }
+
+                h3{
+                    margin: 12px 0;
+                    text-transform: uppercase;
+                }
+            }
+
+            .cartIcon{
+
+                display: none;
+                button{
+                    width: 40px;
+                    height: 40px;
+                    @include flexSB(row, center);
+                    border-radius: 50%;
+                    border: none;
+                    background-color: #000000;
+                    box-shadow: $shadow;
+                    cursor: pointer;
+    
+                    img{
+                        width: 60%;
+                    }
+                }
+            }
+        }
+
+        .wish{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            @include flexSB(row, center);
+        }
+    }
+}
+
 @mixin content {
     width: 90%;
     margin: auto;
 }
 
 
-@mixin grid($num: 4, $gap: 30px){
+@mixin grid($num: 3, $gap: 30px){
     display: grid;
     grid-template-columns: repeat($num, 1fr);
     column-gap: $gap;
     row-gap: 30px;
 }
+
+
+@mixin bCrumb($width:fit-content){
+    @include flexSB();
+    width: $width;
+}
+

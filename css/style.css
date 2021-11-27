@@ -13,6 +13,7 @@ html {
 body {
   height: 100%;
   font-family: 'Lato', sans-serif;
+  background-color: #f8f9fa;
 }
 
 .navbar {
@@ -285,10 +286,6 @@ body {
   margin: 10px 0;
 }
 
-.bestSellers {
-  height: 52em;
-}
-
 .bestSellers .content {
   width: 90%;
   margin: auto;
@@ -346,24 +343,23 @@ body {
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  -webkit-column-gap: 30px;
-          column-gap: 30px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
   row-gap: 30px;
 }
 
 .bestSellers .content .productGrid .product_card {
-  height: 22.5em;
-  width: 15.5em;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 2px 20px #00000025;
-          box-shadow: 0px 2px 20px #00000025;
+  height: 35em;
+  width: 18em;
+  -webkit-box-shadow: 0px 2px 3px #1403030c;
+          box-shadow: 0px 2px 3px #1403030c;
   position: relative;
 }
 
 .bestSellers .content .productGrid .product_card .imgSpace {
-  height: 15em;
-  padding: 20px;
-  border-radius: 10px 10px 0 0;
+  height: 25em;
+  width: 18em;
+  background-color: #e5e5e573;
 }
 
 .bestSellers .content .productGrid .product_card .imgSpace img {
@@ -372,7 +368,7 @@ body {
 }
 
 .bestSellers .content .productGrid .product_card .p_details {
-  padding: 5px 10px;
+  padding: 30px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -388,15 +384,42 @@ body {
           justify-content: space-between;
 }
 
-.bestSellers .content .productGrid .product_card .p_details .left .cat {
+.bestSellers .content .productGrid .product_card .p_details .dets {
+  width: 100%;
+}
+
+.bestSellers .content .productGrid .product_card .p_details .dets .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.bestSellers .content .productGrid .product_card .p_details .dets .cat {
   margin: 5px 0;
+  color: #1403031f;
 }
 
-.bestSellers .content .productGrid .product_card .p_details .left h3 {
+.bestSellers .content .productGrid .product_card .p_details .dets h3 {
   margin: 12px 0;
+  text-transform: uppercase;
 }
 
-.bestSellers .content .productGrid .product_card .p_details .right button {
+.bestSellers .content .productGrid .product_card .p_details .cartIcon {
+  display: none;
+}
+
+.bestSellers .content .productGrid .product_card .p_details .cartIcon button {
   width: 40px;
   height: 40px;
   display: -webkit-box;
@@ -420,7 +443,7 @@ body {
   cursor: pointer;
 }
 
-.bestSellers .content .productGrid .product_card .p_details .right button img {
+.bestSellers .content .productGrid .product_card .p_details .cartIcon button img {
   width: 60%;
 }
 
@@ -585,6 +608,386 @@ body {
 
 .testimonials .content .t_swiper .swiper-wrapper .swiper-slide .ratings {
   margin-top: 10px;
+}
+
+.hero-2 {
+  height: 70vh;
+}
+
+.bg-img {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bg-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.bg-img .hero-text {
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+}
+
+.bg-img .hero-text span {
+  color: #FF4254;
+}
+
+.shopDisplay {
+  margin-top: 50px;
+}
+
+.shopDisplay .content {
+  width: 90%;
+  margin: auto;
+}
+
+.shopDisplay .breadCrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 10em;
+}
+
+.shopDisplay .breadCrumb .menuItem a {
+  text-decoration: none;
+  color: gray;
+}
+
+.shopDisplay .productDisplay {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.shopDisplay .productDisplay .left {
+  width: 20em;
+}
+
+.shopDisplay .productDisplay .left .light {
+  color: #00000025;
+  text-transform: uppercase;
+}
+
+.shopDisplay .productDisplay .left .sliderContainer {
+  margin: 40px 0;
+}
+
+.shopDisplay .productDisplay .left .sliderContainer .labels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.shopDisplay .productDisplay .left .sliderContainer .labels p {
+  color: #00000025;
+}
+
+.shopDisplay .productDisplay .left .categories .acc {
+  margin: 50px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  /* Style the accordion panel. Note: hidden by default */
+}
+
+.shopDisplay .productDisplay .left .categories .acc .accordion {
+  background-color: transparent;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  margin: 0px 0 10px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.shopDisplay .productDisplay .left .categories .acc .accordion:after {
+  content: '\02795';
+  /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.shopDisplay .productDisplay .left .categories .acc .accordion.active:after {
+  content: "\2796";
+  /* Unicode character for "minus" sign (-) */
+  color: #FF4254;
+}
+
+.shopDisplay .productDisplay .left .categories .acc .active {
+  color: #FF4254;
+}
+
+.shopDisplay .productDisplay .left .categories .acc .panel {
+  padding: 0 18px;
+  margin: 0px 0 20px 10px;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+.shopDisplay .productDisplay .left .categories .priceEntry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.shopDisplay .productDisplay .left .categories .priceEntry .field {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.shopDisplay .productDisplay .left .categories .priceEntry .field label {
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.shopDisplay .productDisplay .left .categories .priceEntry .field input {
+  padding: 10px;
+  outline: none;
+  border-color: rgba(68, 68, 68, 0.062);
+}
+
+.shopDisplay .productDisplay .right {
+  margin-left: 5em;
+  width: 80em;
+}
+
+.shopDisplay .productDisplay .right .productGrid {
+  margin-top: 50px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  row-gap: 30px;
+  row-gap: 30px;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card {
+  height: 35em;
+  width: 18em;
+  -webkit-box-shadow: 0px 2px 3px #1403030c;
+          box-shadow: 0px 2px 3px #1403030c;
+  position: relative;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .imgSpace {
+  height: 25em;
+  width: 18em;
+  background-color: #e5e5e573;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .imgSpace img {
+  width: 100%;
+  height: 100%;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .p_details {
+  padding: 30px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .p_details .dets {
+  width: 100%;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .p_details .dets .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .p_details .dets .cat {
+  margin: 5px 0;
+  color: #1403031f;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .p_details .dets h3 {
+  margin: 12px 0;
+  text-transform: uppercase;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .p_details .cartIcon {
+  display: none;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .p_details .cartIcon button {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background-color: #000000;
+  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .p_details .cartIcon button img {
+  width: 60%;
+}
+
+.shopDisplay .productDisplay .right .productGrid .product_card .wish {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.shopDisplay .productDisplay .right .pagination {
+  margin: 30px auto;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  /* Style the active/current link */
+}
+
+.shopDisplay .productDisplay .right .pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  /* Add a grey background color on mouse-over */
+}
+
+.shopDisplay .productDisplay .right .pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.shopDisplay .productDisplay .right .pagination a.active {
+  background-color: #FF4254;
+  color: white;
+}
+
+.current {
+  color: red;
 }
 
 footer {

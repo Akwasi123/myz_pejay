@@ -17,6 +17,7 @@ html{
 body{
     height: 100%;
     font-family: 'Lato', sans-serif;
+    background-color: #f8f9fa;
 }
 
 
@@ -205,7 +206,7 @@ body{
 
 // best sellers
 .bestSellers{
-    height: 52em;
+    // height: 52em;
 
     .content{
         @include content();
@@ -237,74 +238,9 @@ body{
         .productGrid{
             // border: 1px solid black;
             width: 100%;
-            @include grid();
+            @include grid(4, 20px);
 
-            .product_card{
-                height: 22.5em;
-                // border: 1px solid black;
-                width: 15.5em;
-                border-radius: 10px;
-                box-shadow: 0px 2px 20px #00000025;
-                position: relative;
-
-                .imgSpace{
-                    height: 15em;
-                    padding: 20px;
-                    border-radius: 10px 10px 0 0;
-                    // background-color: #e5e5e573;
-                    // border: 1px solid red;
-
-                    img{
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-
-                .p_details{
-                    padding: 5px 10px;
-                    // border: 1px solid black;
-                    @include flexSB();
-
-                    .left{
-                        .cat{
-                            margin: 5px 0;
-                        }
-
-                        h3{
-                            margin: 12px 0;
-                        }
-                    }
-
-                    .right{
-                        button{
-                            width: 40px;
-                            height: 40px;
-                            @include flexSB(row, center);
-                            border-radius: 50%;
-                            border: none;
-                            background-color: #000000;
-                            box-shadow: $shadow;
-                            cursor: pointer;
-            
-                            img{
-                                width: 60%;
-                            }
-                        }
-                    }
-                }
-
-                .wish{
-                    position: absolute;
-                    top: 10px;
-                    right: 10px;
-                    width: 40px;
-                    height: 40px;
-                    cursor: pointer;
-                    @include flexSB(row, center);
-
-
-                }
-            }
+            @include productCard();
         }
 
     }
@@ -393,6 +329,232 @@ body{
         }
     }
 }
+
+// End of index Page
+
+
+// General Purpose Pages
+// Shop.html styling
+
+.hero-2{
+    height: 70vh;
+}
+
+.bg-img{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    @include flexSB(row, center);
+
+    img{
+        // display: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(50%);
+
+        // height: 100%;
+    }
+
+    .hero-text{
+        position: absolute;
+        color: white;
+        // margin-left: -50%;
+        font-size: 2rem;
+
+        span{
+            color: #FF4254;
+        }
+    }
+}
+
+// shop display
+.shopDisplay{
+    margin-top: 50px;
+
+    .content{
+        @include content();
+    }
+
+    .breadCrumb{
+        @include bCrumb(10em);
+
+        .menuItem{
+            a{
+                text-decoration: none;
+                color: rgb(128, 128, 128); 
+            }
+            
+        }
+        
+    }
+
+    .productDisplay{
+        // border: 1px solid black;
+        margin-top: 50px;
+        @include flexSB();
+        align-items: flex-start;
+        
+
+        .left{
+            width: 20em;
+
+            .light{
+                color: #00000025;
+                text-transform: uppercase;
+            }
+
+
+            .sliderContainer{
+                margin: 40px 0;
+
+
+                .labels{
+                    @include flexSB();
+
+                    p{
+                        color: #00000025;
+                    }
+                }
+            }
+
+            .categories{
+
+                .acc{
+                    margin: 50px 0;
+                    transition: 0.4s;
+
+                    .accordion {
+                        background-color: transparent;
+                        color: #444;
+                        cursor: pointer;
+                        padding: 10px;
+                        width: 100%;
+                        text-align: left;
+                        border: none;
+                        outline: none;
+                        margin: 0px 0 10px 0;
+                        transition: 0.4s;
+
+                        &:after {
+                            content: '\02795'; /* Unicode character for "plus" sign (+) */
+                            font-size: 13px;
+                            color: #777;
+                            float: right;
+                            margin-left: 5px;
+                          }
+                          
+                        &.active:after {
+                            content: "\2796"; /* Unicode character for "minus" sign (-) */
+                            color: #FF4254;
+                        }
+                    }
+                      
+                    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+                    .active{
+                        // background-color: #ccc;
+                        color: #FF4254;
+                    }
+                    
+                    /* Style the accordion panel. Note: hidden by default */
+                    .panel {
+                        padding: 0 18px;
+                        margin: 0px 0 20px 10px;
+                        // background-color: white;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.2s ease-out;
+                    }
+
+
+                }
+
+                .priceEntry{
+                    @include flexSB(column, flex-start);
+                    width: 100%;
+                    margin: 20px 0;
+
+
+                    .field{
+                        // border: 1px solid black;
+                        width: 100%;
+                        margin: 10px 0;
+
+                        label{
+                            width: 100%;
+                            display: block;
+                            margin-bottom: 5px;
+                        }
+
+                        input{
+                            padding: 10px;
+                            outline: none;
+                            border-color: rgba(68, 68, 68, 0.062);
+                        }
+                    }
+
+                }
+                
+            }
+        }
+
+        .right{
+            margin-left: 5em;
+            // position: relative;
+            // height: 120em;
+            width: 80em;
+
+            .productGrid{
+                // border: 1px solid black;
+                margin-top: 50px;
+                // height: 100vh;
+                width: 100%;
+                @include grid(3, 30px);
+                row-gap: 30px;
+                @include productCard();
+
+                
+            }
+
+            .pagination{
+                // border: 1px solid black;
+                margin: 30px auto;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+
+                a {
+                    color: black;
+                    // float: left;
+                    padding: 8px 16px;
+                    text-decoration: none;
+                    transition: background-color .3s;
+                    
+                    
+                    /* Add a grey background color on mouse-over */
+                    &:hover:not(.active) {background-color: #ddd;}
+                }
+                
+                /* Style the active/current link */
+                a.active {
+                  background-color: #FF4254;
+                  color: white;
+                }
+            }
+
+
+        }
+    }
+}
+
+.current{
+    // border: 1px solid black;
+    color: red;
+}
+
+
+
+
 
 // footer
 footer{
@@ -506,4 +668,3 @@ footer .content{
     align-items: center;
     width: 100em;
 }
-
