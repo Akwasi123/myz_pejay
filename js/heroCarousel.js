@@ -13,7 +13,13 @@ const swiper = new Swiper('.swiper', {
 
 
 // testimonial swiper
-const tSwiper = new Swiper('t_swiper', {
-    
+const tSwiper = new Swiper('.t_swiper', {
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    slidesPerView: 3,
+    spaceBetween: 20,
 });
   

@@ -324,6 +324,7 @@ body{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 150%;
+    overflow-x: hidden;
 
     .content{
         @include content();
