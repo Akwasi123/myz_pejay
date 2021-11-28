@@ -18,6 +18,7 @@ body{
     height: 100%;
     font-family: 'Lato', sans-serif;
     background-color: #f8f9fa;
+    font-size: 16px;
 }
 
 
@@ -576,11 +577,6 @@ body{
     }
 }
 
-.current{
-    // border: 1px solid black;
-    color: red;
-}
-
 
 // single product
 .singleP{
@@ -804,6 +800,175 @@ body{
     }
 }
 
+// cart page
+.cart{
+    // background-color: red;
+    .content{
+        @include content();
+        padding: 20px 0;
+
+        .heading{
+            margin: 20px 0;
+            border: 1px black;
+        }
+
+        .breadCrumb{
+            @include bCrumb(12em);
+
+            a{
+                text-decoration: none;
+                color: #777;
+            }
+
+            
+        }
+
+        .cartDetails{
+            @include flexSB();
+            // border: 1px solid green;
+            width: 100%;
+            height: 85vh;
+
+            .left{
+                // border: 1px solid red;
+                width: 65%;
+                height: 85vh;
+                @include flexSB(column, flex-start);
+                align-items: flex-start;
+
+
+                .cartItem{
+                    @include flexSB();
+                    margin: 30px 0;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    height: 8em;
+                    width: 70%;
+
+                    .cI-left{
+                        @include flexSB(row, flex-start);
+                        // border: 1px solid blue;
+                        height: 100%;
+                        width: 75%;
+
+                        .picture{
+                            // border: 1px solid orange;
+                            height: 100%;
+                            width: 8em;
+                            margin-right: 20px;
+
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                            }
+                        }
+
+                        .details{
+                            @include flexSB(column, center);
+                            align-items: flex-start;
+
+                            h3, p{
+                                margin: 10px 0;
+                            }
+                        }
+                    }
+
+                    .remove{
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 20px;
+                        cursor: pointer;
+                        @include flexSB(row, center);
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: fill;
+                        }
+                    }
+                }
+            }
+
+            .right{
+                width: 35%;
+                height: 100%;
+                // border: 1px solid red;
+
+                .amount{
+                    width: 100%;
+                    height: 35%;
+                    border-radius: 10px;
+                    // border: 1px solid blue;
+                    box-shadow: $shadow;
+                    padding: 15px 0;
+
+                    hr{
+                        border-color: #00000025
+                    }
+
+                    .amItem{
+                        @include flexSB();
+                        margin: 20px;
+
+                        h1{
+                            margin: 20px 0;
+                            font-size: 2rem;
+                        }
+
+                        .total{
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                .check{
+                    width: 100%;
+                    height: 30%;
+                    border-radius: 10px;
+                    // border: 1px solid blue;
+                    box-shadow: $shadow;
+                    padding: 20px;
+                    margin: 15px 0;
+
+                    .pMeth{
+                        @include flexSB();
+                        width: 10em;
+
+                        .m1{
+                            margin: 10px 20px 10px 0;
+                            width: 70px;
+                            height: 70px;
+                            // border: 1px solid black;
+
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+
+                    .btn{
+                        button{
+                            padding: 15px;
+                            background-color: #FF4254;
+                            width: 100%;
+                            border-radius: 5px;
+                            border: none;
+                            color: white;
+                            font-size: 1.1rem;
+                            cursor: pointer;
+                            box-shadow: 0px 3px 5px #00000025;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 
 // footer
 footer{
@@ -814,6 +979,7 @@ footer{
     .content{
         @include content();
     }
+
 }
 
 .brandLogo img{
