@@ -69,12 +69,28 @@ body{
                 }
             }
 
+            .nav-links.dark{
+                .link{
+                    color: black;
+                }
+            }
+
         }
     }
 
     .us_actions{
         @include flexSB();
         width: 30em;
+
+        .icon{
+            position: relative;
+            // border: 1px solid white;
+            @include flexSB(row, center);
+
+            img{
+                width: 100%;
+            }
+        }
 
         .form-control{
             input{
@@ -89,11 +105,23 @@ body{
                 background-image: url('../assets/icons/heroicons-outline_search.svg');
                 background-repeat: no-repeat;
                 background-position: left 5px center;
-                background-size: 30px;
+                background-size: 25px;
                 outline: none;
             }
         }
+
+        .form-control.dark{
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+        
+            input{
+                background-image: url('../assets/icons/heroicons-outline_search-1.svg');
+                color: black;
+            }
+
+        }
     }
+
+    
 
 
 }
@@ -538,6 +566,7 @@ body{
                 /* Style the active/current link */
                 a.active {
                   background-color: #FF4254;
+                  border-radius: 5px;
                   color: white;
                 }
             }
@@ -553,7 +582,227 @@ body{
 }
 
 
+// single product
+.singleP{
 
+    padding-top: 5em;
+
+    .content{
+        @include content();
+        @include flexSB();
+
+        .prodImages{
+            // border: 1px solid green;
+            height: 48em;
+            padding: 20px 0;
+            width: 50em;
+            // @include flexSB(row, flex-start);
+
+
+            .content{
+                @include content();
+                height: 100%;
+
+                @include flexSB(column, center);
+                .mainImg{
+                    @include flexSB(row, center);
+                    height: 80%;
+                    width: 80%;
+                    // border: 1px solid grey;
+
+                    img{
+                        object-fit: contain;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .sm-img{
+                    // border: 1px solid red;
+                    height: 20%;
+                    width: 80%;
+                    @include flexSB();
+
+                    
+                    .sim{
+                        width: 120px;
+                        height: 120px;
+                        margin: 20px 0;
+                        border-radius: 5px;
+                        border: 1px solid grey;
+
+                        img{
+                            object-fit: contain;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        .prodDetails{
+            // border: 1px solid red;
+            height: 48em;
+            width: 40em;
+            padding: 20px 0;
+
+            .content{
+                @include flexSB(column, flex-start);
+                align-items: flex-start;
+                // border: 1px solid indigo;
+
+                .breadCrumb{
+                    @include bCrumb(12em);
+                    margin: 10px 0;
+                    a{
+                        text-decoration: none;
+                        color: #777;
+                    }
+                }
+
+                .prodName{
+                    margin: 10px 0 20px 0;
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .randR{
+                    @include flexSB();
+                    width: 18em;
+                    margin: 0 0 0px 0;
+                }
+
+                .price{
+                    margin: 20px 0;
+
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .dandR{
+                    width: 100%;
+                     /* Style the tab */
+                    .tab {
+                        overflow: hidden;
+                        // border: 1px solid #ccc;
+                        // background-color: #f1f1f1;
+                        
+                        
+                        /* Style the buttons that are used to open the tab content */
+                        button {
+                            background-color: transparent;
+                            float: left;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                            padding: 14px 16px;
+                            transition: 0.3s;
+
+                            /* Change background color of buttons on hover */
+                            &:hover {
+                                // background-color: #ddd;
+                            }
+
+                        }
+                        
+                        /* Create an active/current tablink class */
+                        button.active {
+                            border-bottom: 5px solid #FF4254;
+                            border-radius: 3px;
+                        }
+                    }
+
+                    hr{
+                        border-color: rgba(206, 206, 206, 0.288);
+                    }
+                    /* Style the tab content */
+                    .tabcontent {
+                        display: none;
+                        padding: 20px 12px;
+                        border-top: none;
+                        animation: fadeEffect 1s; 
+                        transition: all 0.3s ease;
+
+                        h4{
+                            margin: 10px 0;
+                        }
+
+                        p{
+                            line-height: 25px;
+                        }
+
+                        
+                    } 
+                    /* Go from zero to full opacity */
+                    @keyframes fadeEffect {
+                      from {opacity: 0;}
+                      to {opacity: 1;}
+                    }
+                    
+                    
+                    
+                    .custom{
+                        @include flexSB(column, flex-start);
+                        width: 60%;
+                        .size{
+                            // border: 1px solid black;
+                            padding: 10px 0;
+                            width: 100%;
+                            
+                            p{
+                                margin: 5px 0;
+                                color: #777;
+                            }
+    
+                            .size_options{
+                                @include flexSB();
+                                width: 90%;
+                                .op1{
+                                    @include flexSB(row, center);
+                                    width: 40px;
+                                    height: 40px;
+                                    background-color: #777;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                    color: white;
+                                }
+                            }
+                        }
+    
+                    }
+
+                    .cta{
+                        margin: 50px 0;
+                        @include flexSB();
+                        width: 18em;
+
+                        .quantity{
+                            @include flexSB();
+                            width: 5em;
+                        }
+
+                        .btn{
+                            button{
+                                background-color: #FF4254;
+                                color: white;
+                                padding: 15px;
+                                width: 150px;
+                                border-radius: 5px;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
 
 
 // footer

@@ -123,6 +123,10 @@ body {
   color: #FF4254;
 }
 
+.navbar .nav-container .brand .nav-links.dark .link {
+  color: black;
+}
+
 .navbar .us_actions {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,6 +144,27 @@ body {
   width: 30em;
 }
 
+.navbar .us_actions .icon {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar .us_actions .icon img {
+  width: 100%;
+}
+
 .navbar .us_actions .form-control input {
   padding: 10px 40px;
   border-radius: 5px;
@@ -150,8 +175,18 @@ body {
   background-image: url("../assets/icons/heroicons-outline_search.svg");
   background-repeat: no-repeat;
   background-position: left 5px center;
-  background-size: 30px;
+  background-size: 25px;
   outline: none;
+}
+
+.navbar .us_actions .form-control.dark {
+  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.navbar .us_actions .form-control.dark input {
+  background-image: url("../assets/icons/heroicons-outline_search-1.svg");
+  color: black;
 }
 
 .hero-container {
@@ -983,11 +1018,379 @@ body {
 
 .shopDisplay .productDisplay .right .pagination a.active {
   background-color: #FF4254;
+  border-radius: 5px;
   color: white;
 }
 
 .current {
   color: red;
+}
+
+.singleP {
+  padding-top: 5em;
+}
+
+.singleP .content {
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.singleP .content .prodImages {
+  height: 48em;
+  padding: 20px 0;
+  width: 50em;
+}
+
+.singleP .content .prodImages .content {
+  width: 90%;
+  margin: auto;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.singleP .content .prodImages .content .mainImg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80%;
+  width: 80%;
+}
+
+.singleP .content .prodImages .content .mainImg img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.singleP .content .prodImages .content .sm-img {
+  height: 20%;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.singleP .content .prodImages .content .sm-img .sim {
+  width: 120px;
+  height: 120px;
+  margin: 20px 0;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.singleP .content .prodImages .content .sm-img .sim img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.singleP .content .prodDetails {
+  height: 48em;
+  width: 40em;
+  padding: 20px 0;
+}
+
+.singleP .content .prodDetails .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.singleP .content .prodDetails .content .breadCrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 12em;
+  margin: 10px 0;
+}
+
+.singleP .content .prodDetails .content .breadCrumb a {
+  text-decoration: none;
+  color: #777;
+}
+
+.singleP .content .prodDetails .content .prodName {
+  margin: 10px 0 20px 0;
+}
+
+.singleP .content .prodDetails .content .prodName p {
+  font-size: 1.5rem;
+}
+
+.singleP .content .prodDetails .content .randR {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 18em;
+  margin: 0 0 0px 0;
+}
+
+.singleP .content .prodDetails .content .price {
+  margin: 20px 0;
+}
+
+.singleP .content .prodDetails .content .price p {
+  font-size: 1.5rem;
+}
+
+.singleP .content .prodDetails .content .dandR {
+  width: 100%;
+  /* Style the tab */
+  /* Style the tab content */
+  /* Go from zero to full opacity */
+}
+
+.singleP .content .prodDetails .content .dandR .tab {
+  overflow: hidden;
+  /* Style the buttons that are used to open the tab content */
+  /* Create an active/current tablink class */
+}
+
+.singleP .content .prodDetails .content .dandR .tab button {
+  background-color: transparent;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  /* Change background color of buttons on hover */
+}
+
+.singleP .content .prodDetails .content .dandR .tab button.active {
+  border-bottom: 5px solid #FF4254;
+  border-radius: 3px;
+}
+
+.singleP .content .prodDetails .content .dandR hr {
+  border-color: rgba(206, 206, 206, 0.288);
+}
+
+.singleP .content .prodDetails .content .dandR .tabcontent {
+  display: none;
+  padding: 20px 12px;
+  border-top: none;
+  -webkit-animation: fadeEffect 1s;
+          animation: fadeEffect 1s;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.singleP .content .prodDetails .content .dandR .tabcontent h4 {
+  margin: 10px 0;
+}
+
+.singleP .content .prodDetails .content .dandR .tabcontent p {
+  line-height: 25px;
+}
+
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.singleP .content .prodDetails .content .dandR .custom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 60%;
+}
+
+.singleP .content .prodDetails .content .dandR .custom .size {
+  padding: 10px 0;
+  width: 100%;
+}
+
+.singleP .content .prodDetails .content .dandR .custom .size p {
+  margin: 5px 0;
+  color: #777;
+}
+
+.singleP .content .prodDetails .content .dandR .custom .size .size_options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+}
+
+.singleP .content .prodDetails .content .dandR .custom .size .size_options .op1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #777;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+
+.singleP .content .prodDetails .content .dandR .cta {
+  margin: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 18em;
+}
+
+.singleP .content .prodDetails .content .dandR .cta .quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 5em;
+}
+
+.singleP .content .prodDetails .content .dandR .cta .btn button {
+  background-color: #FF4254;
+  color: white;
+  padding: 15px;
+  width: 150px;
+  border-radius: 5px;
+  border: none;
 }
 
 footer {
