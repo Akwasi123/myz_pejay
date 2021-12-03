@@ -17,6 +17,10 @@ body {
   font-size: 16px;
 }
 
+.linkactive {
+  border-color: #FF4254;
+}
+
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1477,7 +1481,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 30px 0;
-  border: 1px solid black;
+  border: 1px solid #0000000a;
   border-radius: 5px;
   height: 8em;
   width: 70%;
@@ -1659,6 +1663,531 @@ body {
   cursor: pointer;
   -webkit-box-shadow: 0px 3px 5px #00000025;
           box-shadow: 0px 3px 5px #00000025;
+}
+
+.checkout {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkout .content {
+  padding: 20px 0;
+  width: 90%;
+  margin: auto;
+}
+
+.checkout .content .heading {
+  margin: 20px 0;
+  border: 1px black;
+}
+
+.checkout .content .breadCrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 15em;
+}
+
+.checkout .content .breadCrumb a {
+  text-decoration: none;
+  color: #777;
+}
+
+.checkout .checkoutInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.checkout .checkoutInfo .left {
+  width: 50%;
+  height: 100vh;
+}
+
+.checkout .checkoutInfo .left .infoHead {
+  margin: 50px 0 10px 0;
+}
+
+.checkout .checkoutInfo .left form {
+  display: block;
+  margin-bottom: 50px;
+}
+
+.checkout .checkoutInfo .left .fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkout .checkoutInfo .left .fields .form-control {
+  margin: 20px;
+}
+
+.checkout .checkoutInfo .left .fields .form-control label {
+  font-size: 0.8rem;
+  display: block;
+  margin: 5px 0;
+}
+
+.checkout .checkoutInfo .left .fields .form-control input {
+  padding: 10px;
+  width: 300px;
+  outline: none;
+  border-radius: 3px;
+  border: thin solid #ddd;
+}
+
+.checkout .checkoutInfo .left .fields .form-control button {
+  padding: 15px;
+  width: 300px;
+  border: none;
+  background-color: #FF4254;
+  color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 3px 5px rgba(119, 119, 119, 0.479);
+          box-shadow: 0px 3px 5px rgba(119, 119, 119, 0.479);
+  cursor: pointer;
+}
+
+.checkout .checkoutInfo .left .delivery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 25em;
+  padding: 0 20px;
+}
+
+.checkout .checkoutInfo .left .delivery .delPlq {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 20px 0;
+  width: 10em;
+  height: 4em;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.checkout .checkoutInfo .left .delivery .delPlq .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 50px;
+}
+
+.checkout .checkoutInfo .left .delivery .delPlq .icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.checkout .checkoutInfo .left .delivery .delPlq p {
+  margin-left: 20px;
+}
+
+.checkout .checkoutInfo .right {
+  width: 30%;
+  height: 85vh;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+
+.checkout .checkoutInfo .right .content .orderItems {
+  overflow: scroll;
+  height: 15em;
+  margin-bottom: 20px;
+}
+
+.checkout .checkoutInfo .right .content .orderItems .orItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.397);
+  height: 4em;
+  border-radius: 5px;
+  width: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  margin: 20px 0;
+}
+
+.checkout .checkoutInfo .right .content .orderItems .orItem .image {
+  height: 100%;
+  width: 5em;
+  margin-right: 0;
+}
+
+.checkout .checkoutInfo .right .content .orderItems .orItem .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.checkout .checkoutInfo .right .content .orderItems .orItem .details {
+  width: 20em;
+}
+
+.checkout .checkoutInfo .right .content .orderItems .orItem .details p {
+  margin: 10px;
+}
+
+.checkout .checkoutInfo .right .content .orderItems .orItem .details p:last-child {
+  font-size: 0.8rem;
+}
+
+.checkout .checkoutInfo .right .content .orderItems .orItem p {
+  margin: 0 10px 0 0;
+}
+
+.checkout .checkoutInfo .right .content hr {
+  border-color: rgba(255, 255, 255, 0.466);
+}
+
+.checkout .checkoutInfo .right .content .saleInfo .amount {
+  width: 100%;
+  height: 35%;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.checkout .checkoutInfo .right .content .saleInfo .amount hr {
+  border-color: #00000025;
+}
+
+.checkout .checkoutInfo .right .content .saleInfo .amount .amItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px;
+}
+
+.checkout .checkoutInfo .right .content .saleInfo .amount .amItem h1 {
+  margin: 20px 0;
+  font-size: 2rem;
+}
+
+.checkout .checkoutInfo .right .content .saleInfo .amount .amItem .total {
+  font-size: 1.5rem;
+}
+
+.checkout .checkoutInfo .right .content button {
+  cursor: pointer;
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px #0000005b;
+          box-shadow: 0 0 10px #0000005b;
+  background-color: #FF4254;
+}
+
+.checkout .chkBG-img {
+  position: absolute;
+  top: 70%;
+  overflow: hidden;
+}
+
+.login {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow: hidden;
+}
+
+.login .left {
+  width: 30%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login .left .text-content {
+  width: 90%;
+  margin: auto;
+  position: absolute;
+  z-index: 999;
+  color: white;
+  width: 90%;
+  height: 100%;
+  padding: 40px;
+}
+
+.login .left .text-content h1 {
+  font-size: 3rem;
+  width: 100%;
+  margin: 5em auto 20px auto;
+}
+
+.login .left .text-content p {
+  margin: 20px auto;
+  color: #f8f9fa;
+}
+
+.login .left .text-content span {
+  color: #FF4254;
+}
+
+.login .left .text-content .sc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: absolute;
+  bottom: 50px;
+}
+
+.login .left .text-content .sc a {
+  text-decoration: none;
+  color: #FF4254;
+  margin-left: 20px;
+}
+
+.login .left .lg_swiper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.login .left .lg_swiper .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.login .left .lg_swiper .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.login .left .lg_swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
+}
+
+.login .right {
+  height: 100%;
+  width: 70%;
+}
+
+.login .right .content {
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.login .right .content .heading {
+  margin: 50px 20px 4em 20px;
+  font-size: 1.5rem;
+  color: #FF4254;
+}
+
+.login .right .content .heading.reg {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.login .right .content h3 {
+  margin: 0 20px;
+}
+
+.login .right .content p, .login .right .content span {
+  margin: 10px 20px;
+  width: 50%;
+  color: rgba(0, 0, 0, 0.623);
+}
+
+.login .right .content .forgot {
+  font-size: 0.8rem;
+}
+
+.login .right .content form .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login .right .content form .form-control {
+  margin: 30px 20px;
+}
+
+.login .right .content form .form-control label {
+  font-size: 0.8rem;
+  display: block;
+  margin: 5px 0;
+}
+
+.login .right .content form .form-control input {
+  padding: 10px;
+  width: 300px;
+  outline: none;
+  border-radius: 3px;
+  border: thin solid #ddd;
+}
+
+.login .right .content form .form-control button {
+  padding: 15px;
+  width: 150px;
+  border: none;
+  background-color: #FF4254;
+  color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 3px 5px rgba(119, 119, 119, 0.479);
+          box-shadow: 0px 3px 5px rgba(119, 119, 119, 0.479);
+  cursor: pointer;
 }
 
 footer {

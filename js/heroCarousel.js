@@ -23,3 +23,15 @@ const tSwiper = new Swiper('.t_swiper', {
     spaceBetween: 20,
 });
   
+
+// login swiper
+const loginSwiper = new Swiper('.lg_swiper', {
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    effect: 'fade',
+    
+});
