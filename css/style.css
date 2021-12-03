@@ -1236,7 +1236,6 @@ body {
   padding: 14px 16px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  /* Change background color of buttons on hover */
 }
 
 .singleP .content .prodDetails .content .dandR .tab button.active {
@@ -2111,9 +2110,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: fle;
-      -ms-flex-pack: fle;
-          justify-content: fle;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;

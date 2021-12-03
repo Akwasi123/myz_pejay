@@ -700,10 +700,10 @@ body{
                             padding: 14px 16px;
                             transition: 0.3s;
 
-                            /* Change background color of buttons on hover */
-                            &:hover {
-                                // background-color: #ddd;
-                            }
+                            // /* Change background color of buttons on hover */
+                            // &:hover {
+                            //     // background-color: #ddd;
+                            // }
 
                         }
                         
@@ -1300,7 +1300,7 @@ body{
             height: 100%;
             // border: 1px solid black;
             @include content();
-            @include flexSB(column, flex-start;
+            @include flexSB(column, flex-start);
             align-items: flex-start;
 
             .heading{
