@@ -47,8 +47,8 @@ body{
 
                 .pp{
                     // border: 1px solid green;
-                    width: 3em;
-                    height: 3em;
+                    width: 3.5em;
+                    height: 3.5em;
                     border-radius: 50%;
                     box-shadow: 0px 0px 5px #000;
 
@@ -99,19 +99,27 @@ body{
 
             .menuItems{
                 margin: 20px 0;
+                // border: 1px solid white;
+                height: 80%;
+                position: relative;
+
                 .menuItem{
                     width: 100%;
                     height: 3em;
+                    margin: 20px 0;
                     padding: 20px 0;
                     border-radius: 5px;
-                    border: 1px solid black;
+                    color: #9c9b9bea;
+                    cursor: pointer;
+                    text-decoration: none;
+                    // border: 1px solid black;
                     @include flexSB(row, flex-start);
 
                     .icon{
 
-                        border: 1px solid white;
-                        height: 2em;
-                        width: 2em;
+                        // border: 1px solid white;
+                        height: 1.5em;
+                        width: 1.5em;
                         margin: 0 15px;
 
                         img{
@@ -119,6 +127,23 @@ body{
                             height: 100%;
                             object-fit: cover;
                         }
+                    }
+
+                    &.active{
+                        .icon{
+                            // border: 1px solid white;
+                            height: 2em;
+                            width: 2em;
+                            margin: 0 15px;
+                        }
+                        color: #fff;
+                        background-color: #f8f9fa23;
+                        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.315);    
+                    }
+
+                    &.bottom{
+                        position: absolute;
+                        bottom: 0;
                     }
                 }
             }
@@ -129,5 +154,107 @@ body{
         width: 82%;
         height: 100%;
         // border: 1px solid blue;
+
+
+        .content{
+            @include content();
+            padding: 20px 0;
+            height: 100%;
+            // border: 1px solid black;
+
+            .heading{
+                p{
+                    color: #26262648;
+                }
+                .greeting{
+                    margin: 20px 0;
+                }
+            }
+
+            .stats_plaque{
+                width: 100%;
+                height: 90%;
+                border-radius: 10px;
+                border: none;
+                padding: 40px 0;
+                
+            
+                .stat_items{
+                    // @include content();
+                    @include flexSB();
+                    // border: 1px solid black;
+                    height: 10em;
+                    border-radius: 5px;
+                    // margin-bottom: 30px;
+                    
+                    .stat_item{
+                        width: 100%;
+                        height: 100%;
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
+                        border-radius: 5px;
+                        padding: 20px;
+                        @include flexSB(row, flex-start);
+                        align-items: flex-start;
+                        &:not(:last-child){
+                            margin-right: 20px;
+                        }
+
+                        .icon{
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 3px;
+                            // border: 1px solid #000;
+                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
+
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 3px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+
+                }
+
+                .other_plaques{
+                    @include flexSB();
+                    margin-top: 35px;
+                    height: 25em;
+                    // border: 1px solid red;
+
+                    .top_rated{
+                        height: 100%;
+                        width: 65%;
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
+                        
+                    }
+
+                    .new_orders{
+                        height: 100%;
+                        width: 33%;
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
+                    }
+                }
+            }
+        }
+
+        .table{
+            margin: 50px 0;
+
+            table, td, th {  
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+              }
+              
+              th, td {
+                padding: 15px;
+              }
+        }
     }
 }
