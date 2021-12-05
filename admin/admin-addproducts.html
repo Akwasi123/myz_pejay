@@ -46,6 +46,12 @@
                             </div>
                             <p class="m_name">AddProduct</p>
                         </a>
+                        <a href="./admin-variations.html" class="menuItem">
+                            <div class="icon">
+                                <img src="../assets/icons/gis_difference.svg" alt="">
+                            </div>
+                            <p class="m_name">Variations</p>
+                        </a>
                         <a href="./admin-brands.html" class="menuItem">
                             <div class="icon">
                                 <img src="../assets/icons/ic_baseline-review-white.svg" alt="">
@@ -91,37 +97,62 @@
             <div class="content">
                 <div class="heading">
                     <p>Add Product</p>
-                    
                 </div>
 
-                <div class="table">
-                    <table>
-                        <tr>
-                          <th>Firstname</th>
-                          <th>Lastname</th>
-                          <th>Savings</th>
-                        </tr>
-                        <tr>
-                          <td>Peter</td>
-                          <td>Griffin</td>
-                          <td>$100</td>
-                        </tr>
-                        <tr>
-                          <td>Lois</td>
-                          <td>Griffin</td>
-                          <td>$150</td>
-                        </tr>
-                        <tr>
-                          <td>Joe</td>
-                          <td>Swanson</td>
-                          <td>$300</td>
-                        </tr>
-                        <tr>
-                          <td>Cleveland</td>
-                          <td>Brown</td>
-                          <td>$250</td>
-                        </tr>
-                    </table>
+                <!-- add-product form -->
+                <div class="addProduct">
+                    <form action="" method="post">
+                        <div class="flex">
+                            <div class="form-control">
+                                <label for="">Select Brand</label>
+                                <select name="" id="">
+                                    <option value="" selected>--Brand--</option>
+
+                                </select>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label for="">Select Category</label>
+                                <select name="" id="">
+                                    <option value="" selected>--Category--</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div class="flex">
+                            <div class="form-control">
+                                <label for="">Name</label>
+                                <input type="text">
+                            </div>
+                            <div class="form-control">
+                                <label for="">Price</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label for="">Image</label>
+                            <input type="file" name="" id="">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Description</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="flex">
+                            <div class="form-control">
+                                <label for="">Stock</label>
+                                <input type="text">
+                            </div>
+                            <div class="form-control">
+                                <label for="">Keywords</label>
+                                <input type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <button>Add Product</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>

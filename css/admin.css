@@ -39,6 +39,7 @@ body {
   width: 18%;
   height: 100%;
   position: fixed;
+  overflow: scroll;
   background-color: #262626;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -276,6 +277,10 @@ body {
   overflow: hidden;
   -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
+}
+
+.us_container .sidebar .content .panel.p-active {
+  max-height: 200px;
 }
 
 .us_container .side-content {
@@ -561,6 +566,82 @@ body {
   cursor: pointer;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+}
+
+.us_container .side-content .content .addProduct {
+  width: 60%;
+}
+
+.us_container .side-content .content .addProduct form .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.us_container .side-content .content .addProduct form .form-control {
+  margin: 20px 50px 20px 0;
+}
+
+.us_container .side-content .content .addProduct form .form-control label {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin: 5px 0;
+}
+
+.us_container .side-content .content .addProduct form .form-control input, .us_container .side-content .content .addProduct form .form-control select, .us_container .side-content .content .addProduct form .form-control textarea {
+  padding: 10px;
+  width: 20em;
+  outline: none;
+  border: thin solid rgba(0, 0, 0, 0.281);
+  border-radius: 3px;
+}
+
+.us_container .side-content .content .addProduct form .form-control select {
+  background-color: #fff;
+}
+
+.us_container .side-content .content .addProduct form .form-control textarea {
+  width: 100%;
+  resize: none;
+}
+
+.us_container .side-content .content .addProduct form .form-control button {
+  padding: 15px;
+  background-color: #262626;
+  width: 100%;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+}
+
+.us_container .side-content .content .addProduct form .form-control button.variation {
+  width: 20em;
+}
+
+.us_container .side-content .content .addProduct form .form-control button.brand {
+  width: 10em;
+  padding: 12px;
+}
+
+.us_container .side-content .content .addProduct form .form-control .tandE {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #f8f9fa;
 }
 
 .us_container .side-content .table {

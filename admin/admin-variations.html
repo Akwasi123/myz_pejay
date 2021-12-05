@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../../css/admin.css">
-    <title>Admin | Orders</title>
+    <title>Admin | Add Products</title>
 </head>
 <body>
     <!-- user profile -->
@@ -25,7 +25,7 @@
                         </div>
                         <p class="m_name">Dashboard</p>
                     </a>
-                    <a href="./admin-orders.html" class="menuItem active">
+                    <a href="./admin-orders.html" class="menuItem">
                         <div class="icon">
                             <img src="../assets/icons/mdi_package-white.svg" alt="">
                         </div>
@@ -46,7 +46,7 @@
                             </div>
                             <p class="m_name">AddProduct</p>
                         </a>
-                        <a href="./admin-variations.html" class="menuItem">
+                        <a href="./admin-variations.html" class="menuItem active">
                             <div class="icon">
                                 <img src="../assets/icons/gis_difference.svg" alt="">
                             </div>
@@ -96,61 +96,50 @@
         <div class="side-content">
             <div class="content">
                 <div class="heading">
-                    <p>Orders</p>
-                   
+                    <p>Add Product Variation</p>
                 </div>
 
-                
-
-                    <!-- other items -->
-                    <div class="other_plaques">
-                        <div class="top_rated">
-                            
-                            <div class="table">
-                                <table>
-                                    <tr>
-                                      <th>Order ID</th>
-                                      <th>Customer</th>
-                                      <th>Invoice No</th>
-                                      <th>Product</th>
-                                      <th>Quantity</th>
-                                      <th>Order Date</th>
-                                      <th>Order Status</th>
-                                      <th>Actions</th>
-                                    </tr>
-                                    <tr>
-                                      <td>Peter</td>
-                                      <td>Griffin</td>
-                                      <td>$100</td>
-                                      <td>$100</td>
-                                      <td>$100</td>
-                                      <td>$100</td>
-                                      <td>$100</td>
-                                      <td>$100</td>
-                                    </tr>
-                                    
-                                </table>
-                            </div>
+                <!-- add-product variation form -->
+                <div class="addProduct">
+                    <form action="" method="post">
+                        <div class="form-control">
+                            <label for="">Select Product</label>
+                            <select name="" id="">
+                                <option value="" selected>--Select product--</option>
+                               
+                            </select>
+                        </div>
+                        <div class="form-control">
+                            <label for="">Select Size</label>
+                            <select name="" id="">
+                                <option value="" selected>--Size--</option>
+                                <option value="" >S</option>
+                                <option value="" >M</option>
+                                <option value="" >L</option>
+                                <option value="" >XL</option>
+                            </select>
+                        </div>
+                        <div class="form-control">
+                            <label for="">Color</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Image</label>
+                            <input type="file" name="" id="">
                         </div>
 
-                        <div class="right_plqs">
-                            <div class="new_orders">
-
-                            </div>
-
-                            <div class="review_plaque">
-
-                            </div>
+                        <div class="form-control">
+                            <button class="variation">Add Variation</button>
                         </div>
-                    </div>
+                        
+
+
+                    </form>
                 </div>
-
-                
-
-
             </div>
         </div>
     </div>
+
     <script src="../js/accordion.js"></script>
 
 </body>
