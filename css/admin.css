@@ -62,86 +62,20 @@ body {
   height: 100%;
 }
 
-.us_container .sidebar .content .p_plaque {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 95%;
-  color: white;
-  margin: 0 0 50px 0;
+.us_container .sidebar .content .logo {
+  width: 50%;
+  height: 5em;
 }
 
-.us_container .sidebar .content .p_plaque .pp {
-  width: 3.5em;
-  height: 3.5em;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 5px #000;
-          box-shadow: 0px 0px 5px #000;
-}
-
-.us_container .sidebar .content .p_plaque .pp img {
+.us_container .sidebar .content .logo img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.us_container .sidebar .content .p_plaque .details h4 {
-  margin: 5px 0 5px 0;
-}
-
-.us_container .sidebar .content .p_plaque .details .email {
-  font-size: 0.8rem;
-  margin: 5px 0;
-  color: rgba(255, 255, 255, 0.753);
-}
-
-.us_container .sidebar .content .p_plaque .details .status {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.us_container .sidebar .content .p_plaque .details .status span {
-  display: block;
-  width: 5px;
-  height: 5px;
-  border-radius: 20px;
-  background-color: #08d64d;
-}
-
-.us_container .sidebar .content .p_plaque .details .status p {
-  margin: 0 5px;
-  font-size: 0.8rem;
-  opacity: 0.5;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .us_container .sidebar .content .sm {
-  display: none;
+  padding: 20px 0;
   color: #494949ea;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -149,7 +83,6 @@ body {
 
 .us_container .sidebar .content .menuItems {
   margin: 0px 0;
-  height: 95%;
   position: relative;
 }
 
