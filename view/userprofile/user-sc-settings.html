@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./user-css/user.css">
-    <title>User Profile | Security Settings</title>
+    <link rel="stylesheet" href="../../css/user.css">
+    <title>User Profile | Account Settings</title>
 </head>
 <body>
     <!-- user profile -->
@@ -31,12 +31,12 @@
                 <p class="sm">Menu</p>
 
                 <div class="menuItems">
-                    <a href="./user-main.html" class="menuItem">
+                    <!-- <a href="./user-main.html" class="menuItem">
                         <div class="icon">
                             <img src="../../assets/icons/bx_bxs-dashboard-white.svg" alt="">
                         </div>
                         <p class="m_name">Dashboard</p>
-                    </a>
+                    </a> -->
                     <a href="./user-orders.html" class="menuItem">
                         <div class="icon">
                             <img src="../../assets/icons/mdi_package-white.svg" alt="">
@@ -79,39 +79,37 @@
         <div class="side-content">
             <div class="content">
                 <div class="heading">
-                    <p>Security Settings</p>
-                    
+                    <p>Account Settings</p>
                 </div>
-                
-                <div class="table">
-                    <table>
-                        <tr>
-                          <th>Firstname</th>
-                          <th>Lastname</th>
-                          <th>Savings</th>
-                        </tr>
-                        <tr>
-                          <td>Peter</td>
-                          <td>Griffin</td>
-                          <td>$100</td>
-                        </tr>
-                        <tr>
-                          <td>Lois</td>
-                          <td>Griffin</td>
-                          <td>$150</td>
-                        </tr>
-                        <tr>
-                          <td>Joe</td>
-                          <td>Swanson</td>
-                          <td>$300</td>
-                        </tr>
-                        <tr>
-                          <td>Cleveland</td>
-                          <td>Brown</td>
-                          <td>$250</td>
-                        </tr>
-                    </table>
-                </div>
+
+                <section class="pInfo">
+                    <h2>Security Information</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem exercitationem illo repudiandae iure doloribus quidem veniam aperiam magni, neque fuga.</p>
+
+                    <div class="form">
+                        <form action="">
+                            <div class="flex">
+                                <div class="form-control">
+                                    <label for="">New Password</label>
+                                    <div class="tandE">
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="form-control">
+                                    <label for="">Confirm new password</label>
+                                    <div class="tandE">
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-control">
+                                <button>Update Password</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
 
             </div>
         </div>

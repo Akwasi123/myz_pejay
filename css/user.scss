@@ -1,6 +1,6 @@
 // user profile css
 // import statements
-@import '../../../css/mixins';
+@import '../css/mixins';
 
 *{
     margin: 0;
@@ -183,7 +183,7 @@ body{
                     // @include content();
                     @include flexSB();
                     // border: 1px solid black;
-                    height: 10em;
+                    height: 5em;
                     border-radius: 5px;
                     // margin-bottom: 30px;
                     
@@ -200,47 +200,194 @@ body{
                         }
 
                         .icon{
-                            width: 60px;
-                            height: 60px;
-                            border-radius: 3px;
+                            width: 50px;
+                            height: 50px;
+                            padding: 10px;
+                            margin-right: 10px;
+                            @include flexSB(row, center);
+                            border-radius: 50%;
                             // border: 1px solid #000;
                             box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
 
                             img{
                                 width: 100%;
                                 height: 100%;
-                                border-radius: 3px;
-                                object-fit: cover;
+                                object-fit: fill;
                             }
+
+                            &.ic1{
+                                background-color: #c20f21;
+                            }
+                            &.ic2{
+                                background-color: #262626;
+                            }
+                            &.ic3{
+                                background-color: #d4c819;
+
+                            }
+                            &.ic4{
+                                background-color: #c20f9b;
+
+                            }
+                            
+                        }
+
+                        p{
+                            font-size: 0.8rem;
+                            opacity: 0.5;
                         }
                     }
+
+                    
 
                 }
 
                 .other_plaques{
                     @include flexSB();
                     margin-top: 35px;
-                    height: 25em;
+                    height: 35em;
                     // border: 1px solid red;
 
                     .top_rated{
+                        padding: 20px;
                         height: 100%;
                         width: 65%;
                         box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
                         
                     }
 
-                    .new_orders{
+                    .right_plqs{
+                        @include flexSB(column, space-between);
+                        align-items: flex-start;
                         height: 100%;
-                        width: 33%;
-                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
+                        .new_orders{
+                            height: 21em;
+                            width: 22em;
+                            // background-color: red;
+                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
+                        }
+
+                        .review_plaque{
+                            height: 12em;
+                            width: 22em;
+                            // background-color: green;
+                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
+                        }
                     }
+                }
+            }
+
+            .pInfo{
+                margin: 20px 0;
+                // border: 1px solid black;
+                width: 50%;
+
+                h2{ 
+                    margin-bottom: 20px;
+                }
+
+                p{
+                    // width: 50em;
+                    font-size: 0.9rem;
+                    opacity: 0.6;
+                }
+
+                .chP{
+                    // position: relative;
+                    .title{
+                        margin: 10px 0;
+                    }
+                    margin: 3em 0 1em 0;
+                    .prof_img{
+                        position: relative;
+                        width: 6em;
+                        height: 6em;
+                        border-radius: 50%;
+                        box-shadow: 0 0 3px #9c9b9bea;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+
+                        .chngImg{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            width: 30px;
+                            height: 30px;
+                            padding: 5px;
+                            border-radius: 50%;
+                            background-color: #f8f9fa;
+
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                // border-radius: 50%;
+                                object-fit: contain;
+                            }
+    
+                        }
+
+                    }
+                }
+                .form{
+                    .flex{
+                        // @include flexSB(row, flex-start);
+                        .form-control{
+                            margin: 40px 50px 20px 0;
+                            label{
+                                display: block;
+                                font-size: 0.8rem;
+                                opacity: 0.5;
+                                margin: 5px 0;
+                            }
+    
+                            input{
+                                padding: 10px;
+                                width: 20em;
+                                outline: none;
+                                border: none;
+                                border-radius: 5px 0 0 5px;
+                                border-color: #26262617;
+                            }
+                            button{
+                                padding: 10px;
+                                background-color: #262626;
+                                width: 5em;
+                                color: white;
+                                border: none;
+                                // border-radius: 0 5px 5px 0;
+                                // box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+                            }
+
+                            .tandE{
+                                // border: 1px solid red;
+                                width: fit-content;
+                                background-color: #f8f9fa;
+                            }
+                
+
+                        }
+                    }
+                    button{
+                        padding: 15px;
+                        background-color: #FF4254;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+                    }
+                    
                 }
             }
         }
 
         .table{
-            margin: 50px 0;
+            margin: 20px 0;
 
             table, td, th {  
                 border: 1px solid #ddd;
@@ -257,4 +404,40 @@ body{
               }
         }
     }
+}
+
+
+.accordion {
+    background-color: transparent;
+    color: #444;
+    cursor: pointer;
+    padding: 0px 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    margin: 0px 0 10px 0;
+    transition: 0.4s;
+
+    &:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+      }
+      
+    &.active:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
+        color: #FF4254;
+    }
+}
+
+.panel {
+    padding: 0 18px;
+    margin: 0px 0 20px 10px;
+    // background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
