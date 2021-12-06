@@ -20,6 +20,20 @@ class product_class extends Connection
 		return $this->fetch("select brand_name from brands where brand_name='$bname'");
 	}
 
+	//check duplicate category name
+	function check_size($size)
+	{
+		return $this->fetch("select value from size where value='$size'");
+	}
+	function check_color($color)
+	{
+		return $this->fetch("select color_val from color where color_val='$color'");
+	}
+	function check_image($image)
+	{
+		return $this->fetch("select image_val from image where image_val='$image'");
+	}
+
 	//delete a brand 
 	function delete_one_brand($id)
 	{
@@ -110,6 +124,25 @@ class product_class extends Connection
 		product_title = '$prod_title', product_price = '$prod_price',product_desc = '$prod_desc', product_image = '$prod_img',
 		product_keywords= '$prod_key', stock = '$stock' where product_id = '$id'");
 	}
+
+	function add_varied_product($product_id, $product_size, $prod_color, $prod_image)
+	{
+		return $this->query("insert into product_attributes values ('$product_id', '$product_size', '$prod_color', '$prod_image',)");
+	}
+
+	function add_varied_size($size)
+	{
+		return $this->query("insert into size(value) values ('$size')");
+	}
+	function add_varied_color($color)
+	{
+		return $this->query("insert into color(color_val) values ('$color')");
+	}
+	function add_varied_image($image)
+	{
+		return $this->query("insert into images(image_val) values ('$image')");
+	}
+
 	//select all products in the database
 	function select_all_products()
 	{

@@ -136,7 +136,7 @@ if (isset($_SESSION['user_role']) == '1') {
                                 <div class="form-control">
                                     <label for="">Select Brand</label>
                                     <select name="brand" id="brand">
-                                        <option disabled hidden>Select Product Brand</option>
+                                        <option selected disabled hidden>Select Product Brand</option>
                                         <?php
                                         if (isset($_GET['editPID'])) {
                                             echo "<option value='$select_one_product[brand_id]' selected>$select_one_product[brand_name]</option>";

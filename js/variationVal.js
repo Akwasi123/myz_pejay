@@ -1,8 +1,5 @@
 const Button = document.getElementById('addVar');
-const product = document.getElementById('product');
-const size = document.getElementById('size');
-const color = document.getElementById('color');
-const image = document.getElementById('image');
+
 
 
 Button.addEventListener('click', (e)=> {	
@@ -10,6 +7,12 @@ Button.addEventListener('click', (e)=> {
 });
 
 const addProduct = (e) =>{
+	const product = document.getElementById('product');
+	const size = document.getElementById('size');
+	const color = document.getElementById('color');
+	const image = document.getElementById('image');
+
+
     const catValue = product.value
     const sizeValue = size.value
     const colorValue = color.value.trim();
@@ -29,19 +32,15 @@ const addProduct = (e) =>{
 		setNotEmptyFor(size);
 	}
 
-	if(colorValue === ''){
+	if(colorValue === '--Select color--'){
 		setEmptyFor(color, 'Title cannot be blank');
 		e.preventDefault();
 	}
-    else if(!isFormat(colorValue)){
-        setEmptyFor(color, 'Input must be a number');
-        e.preventDefault();
-    }
     else{
 		setNotEmptyFor(color);
 	}
 
-	if(imageValue === ''){
+	if(imageValue === '--Select image--'){
 		setEmptyFor(image, 'Select Product Image');
 		e.preventDefault();
 	} else{
@@ -49,7 +48,7 @@ const addProduct = (e) =>{
 	}
 
 
-	if(catValue !== '' && sizeValue !== '' && colorValue !== '' && imageValue !== '' && descValue !== '' && imageValue !== '' && keyValue !== '' && stockValue !== ''){
+	if(catValue !== '' && sizeValue !== '' && colorValue !== '' && imageValue !== ''){
 		Loader();
 		Loader.show();
 		alert("Products Have Been Added");
@@ -76,3 +75,52 @@ function isFormat(text){
 	return /^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$/.test(text);
 }
 
+
+
+const valSize = () =>{
+
+	const sizee = document.getElementById('sizee');
+
+	const sizeeValue = sizee.value.trim();
+
+	if(sizeeValue === ''){
+		setEmptyFor(sizee, 'size cannot be blank');
+		return false;
+	} else{
+		setNotEmptyFor(sizee);
+	}
+
+
+}
+
+const valColor = () =>{
+
+	const colorr = document.getElementById('colorr');
+
+	const colorrValue = colorr.value.trim();
+
+	if(colorrValue === ''){
+		setEmptyFor(colorr, 'color cannot be blank');
+		return false;
+	} else{
+		setNotEmptyFor(colorr);
+	}
+
+
+}
+
+const valImage = () =>{
+
+	const imagee = document.getElementById('imagee');
+
+	const imageeValue = sizee.value.trim();
+
+	if(imageeValue === ''){
+		setEmptyFor(imagee, 'Select Product Image');
+		return false;
+	} else{
+		setNotEmptyFor(imagee);
+	}
+
+
+}

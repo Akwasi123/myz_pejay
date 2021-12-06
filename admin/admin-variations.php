@@ -1,5 +1,7 @@
 <?php
 include_once (dirname(__FILE__)) . '/../settings/core.php';
+include_once (dirname(__FILE__)) . '/../controllers/product_controller.php';
+$all_products = select_all_products_controller();
 
 // page if admin logs in
 if (isset($_SESSION['user_role']) == '1') {
@@ -113,12 +115,53 @@ if (isset($_SESSION['user_role']) == '1') {
                     </div>
 
                     <!-- add-product variation form -->
-                    <div class="addProduct">
-                        <form action="" method="post">
+                    <div class="addProduct extend">
+
+                        <div class="flex ">
+                            <form action="../actions/processProducts.php" method="POST">
+                                <div class="form-control spec">
+                                    <label for="">Size</label>
+                                    <input type="text" name="size" id="sizee">
+                                    <small></small>
+                                    <button type="submit" name="addSize" onclick="return valSize()" class="brand">Add Size</button>
+                                </div>
+                            </form>
+
+                            <form action="../actions/processProducts.php" method="POST">
+                                <div class="form-control spec">
+                                    <label for="">Color</label>
+                                    <input type="text" name="color" id="colorr">
+                                    <small></small>
+                                    <button type="submit" name="addColor" onclick="return valColor()" class="brand">Add Color</button>
+                                </div>
+                            </form>
+
+                            <form action="../actions/processProducts.php" method="POST" enctype="multipart/form-data">
+                                <div class="form-control spec">
+                                    <label for="">Image</label>
+                                    <input type="file" name="image" id="imagee" accept="image/*">
+                                    <button type="submit" name="addImage" onclick="return valImage()" class="brand">Upload Image</button>
+                                    <small></small>
+                                </div>
+                            </form>
+                        </div>
+                                
+                                
+
+                        <!-- add varied product -->
+                        <form action="../actions/processProducts.php" method="POST" enctype="multipart/form-data">
                             <div class="form-control">
                                 <label for="">Select Product</label>
                                 <select name="product" id="product">
                                     <option value="--Select product--" selected>--Select product--</option>
+                                    <?php
+                                        foreach($all_products as $product){
+                                            echo '<option value="'.$product['product_id'].'">'.$product['product_title'].'</option>';
+                                            echo '<input type="hidden" name="p_id" value="'.$product['product_id'].'">';
+
+                                        }
+
+                                    ?>
 
                                 </select>
                                 <small></small>
@@ -126,25 +169,53 @@ if (isset($_SESSION['user_role']) == '1') {
                             <div class="form-control">
                                 <label for="">Select Size</label>
                                 <select name="size" id="size">
-                                    <option value="--Select size--" selected>--Size--</option>
-                                    <option value="">S</option>
-                                    <option value="">M</option>
-                                    <option value="">L</option>
-                                    <option value="">XL</option>
+                                    <option value="--Select size--" selected>--Select size--</option>
+                                    <?php
+                                        foreach($all_products as $product){
+                                            echo '<option value="'.$product['product_id'].'">'.$product['product_title'].'</option>';
+                                            echo '<input type="hidden" name="p_id" value="'.$product['product_id'].'">';
+
+                                        }
+
+                                    ?>
+
                                 </select>
                                 <small></small>
                             </div>
                             <div class="form-control">
                                 <label for="">Color</label>
-                                <input type="text" name="color" id="color">
+                                <select name="color" id="color">
+                                    <option value="--Select color--" selected>--Select color--</option>
+                                    <?php
+                                        foreach($all_products as $product){
+                                            echo '<option value="'.$product['product_id'].'">'.$product['product_title'].'</option>';
+                                            echo '<input type="hidden" name="p_id" value="'.$product['product_id'].'">';
+
+                                        }
+
+                                    ?>
+
+                                </select>
                                 <small></small>
                             </div>
                             <div class="form-control">
                                 <label for="">Image</label>
-                                <input type="file" name="image" id="image">
+                                <select name="image" id="image">
+                                    <option value="--Select image--" selected>--Select image--</option>
+                                    <?php
+                                        foreach($all_products as $product){
+                                            echo '<option value="'.$product['product_id'].'">'.$product['product_title'].'</option>';
+                                            echo '<input type="hidden" name="p_id" value="'.$product['product_id'].'">';
+
+                                        }
+
+                                    ?>
+
+                                </select>
+                                <!-- <input type="file" name="image" id="image" accept="image/*"> -->
                                 <small></small>
                             </div>
-
+                            
                             <div class="form-control">
                                 <button type="submit" name="addVar" id="addVar" class="variation">Add Variation</button>
                             </div>

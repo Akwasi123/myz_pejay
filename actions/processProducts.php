@@ -251,3 +251,130 @@ if (isset($_POST["updateProduct"])) {
 }
 // --------------------------------------------PRODUCT ENDS------------------------------------------------------
 
+
+
+
+
+// --------------------------------------------PRODUCT VARIATIONS------------------------------------------------------
+
+
+// addsize
+if(isset($_POST['addSize'])){
+    $product_size = $_POST['size'];
+
+    $check_dup = check_size_duplicates($product_size);
+    if($check_dup){
+        echo "<script>alert('Size already exists'); 
+                document.location.href='../admin/admin-variations.php';
+            </script>";
+    }else{
+        $result = add_varied_size_controller($product_size);
+    
+        if($result){
+            echo "<script type='text/javascript'>alert('Size added.');
+            window.location.href = '../admin/admin-variations.php';
+            </script>";
+        }
+        else{
+            echo "<script type='text/javascript'> alert('Failed to add');
+                window.location.href = '../admin/admin-variations.php';
+                </script>";
+        }
+    }
+
+            
+}
+
+
+// addcolor
+if(isset($_POST['addColor'])){
+    
+    $product_color = $_POST['color'];
+
+    $check_dup = check_size_duplicates($product_color);
+    if($check_dup){
+        echo "<script>alert('Size already exists'); 
+                document.location.href='../admin/admin-variations.php';
+            </script>";
+    }else{
+        $result = add_varied_color_controller($product_color);;
+    
+        if($result){
+            echo "<script type='text/javascript'>alert('Size added.');
+            window.location.href = '../admin/admin-variations.php';
+            </script>";
+        }
+        else{
+            echo "<script type='text/javascript'> alert('Failed to add');
+                window.location.href = '../admin/admin-variations.php';
+                </script>";
+        }
+    }
+
+}
+
+
+// addimage
+if(isset($_POST['addImage'])){
+
+}
+
+
+// add product attributes
+if (isset($_POST["addVar"])) {
+    $product_id = $_POST["p_id"];
+    $product_size = $_POST['size'];
+    $product_color = $_POST['color'];
+    // $product_image = $_POST['image'];
+    
+
+    $target_dir = "../assets/images/products/varied/";
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    if (empty($_FILES["image"]["name"])) {
+        echo "Must insert an Image";
+    } else {
+        $img_size = getimagesize($_FILES["image"]["tmp_name"]);
+        if ($img_size == false) {
+            echo "The file is not a valid image";
+        }
+        if ($_FILES["image"]["size"] > 5000000000) {
+            echo "Image file is too large";
+        }
+        if ($imgFileType != "jpg" && $imgFileType != "png" && $imgFileType != "jpeg" && $imgFileType != "gif") {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        }
+
+        $image_upload = move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+
+        if ($image_upload) {
+
+            
+
+            if ($result1 && $result2 && $result3) {
+                $result4 = add_varied_product_controller($product_id, $product_size, $product_color, $product_image);
+                if($result4){
+                    echo "<script type='text/javascript'> alert('Successfully added attributes');
+                        window.location.href = '../admin/admin-variations.php';
+                        </script>";
+                }else{
+                    echo "<script type='text/javascript'> alert('Failed to add attributes');
+                        window.location.href = '../admin/admin-variations.php';
+                        </script>";
+                }
+            } else {
+                echo "
+                            <script type='text/javascript'>
+                                alert('Failed to add respective attributes');
+                                window.history.back();
+                            </script>
+                        ";
+            }
+        } else {
+            echo "<script type='text/javascript'> alert('Upload Failed');              
+                window.history.back();
+                </script>";
+        }
+    }
+}

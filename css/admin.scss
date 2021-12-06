@@ -403,16 +403,33 @@ body{
             .addProduct{
                 // border: 1px solid black;
                 width: 60%;
+                &.extend{
+                    width: 100%;
+                    // border: 1px solid black;
+
+                    .flex{
+                        @include flexSB();
+                        
+                        .form-control{
+                            input{
+                                width: 12em;
+                            }
+                        }
+                    }
+                }
                 form{
 
                     .flex{
                         @include flexSB();
                         // border: 1px solid black;
+
+                        
                     }
 
                     .form-control{
                         position: relative;
                         margin: 10px 50px 30px 0;
+
 
                         label{
                             display: block;
@@ -491,7 +508,6 @@ body{
     
                         &.success{
                             color: green;
-        
                             input, select{
                                 border: 1px solid #2ecc71;
                             }
