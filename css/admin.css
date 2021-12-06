@@ -456,7 +456,7 @@ body {
 }
 
 .us_container .side-content .content .pInfo .form .flex .form-control {
-  margin: 40px 50px 20px 0;
+  margin: 10px 50px 20px 0;
 }
 
 .us_container .side-content .content .pInfo .form .flex .form-control label {
@@ -522,11 +522,13 @@ body {
 }
 
 .us_container .side-content .content .addProduct form .form-control {
-  margin: 20px 50px 20px 0;
+  position: relative;
+  margin: 10px 50px 30px 0;
 }
 
 .us_container .side-content .content .addProduct form .form-control label {
   display: block;
+  color: black;
   font-size: 0.8rem;
   opacity: 0.5;
   margin: 5px 0;
@@ -540,7 +542,13 @@ body {
   border-radius: 3px;
 }
 
+.us_container .side-content .content .addProduct form .form-control .updateImg {
+  display: block;
+  margin: 5px 0;
+}
+
 .us_container .side-content .content .addProduct form .form-control select {
+  display: block;
   background-color: #fff;
 }
 
@@ -570,6 +578,34 @@ body {
   padding: 12px;
 }
 
+.us_container .side-content .content .addProduct form .form-control small {
+  display: block;
+  position: fixed;
+  color: #e74c3c;
+  visibility: hidden;
+}
+
+.us_container .side-content .content .addProduct form .form-control.error {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.us_container .side-content .content .addProduct form .form-control.error small {
+  visibility: visible;
+}
+
+.us_container .side-content .content .addProduct form .form-control.error input, .us_container .side-content .content .addProduct form .form-control.error select {
+  border: 1px solid #e74c3c;
+}
+
+.us_container .side-content .content .addProduct form .form-control.success {
+  color: green;
+}
+
+.us_container .side-content .content .addProduct form .form-control.success input, .us_container .side-content .content .addProduct form .form-control.success select {
+  border: 1px solid #2ecc71;
+}
+
 .us_container .side-content .content .addProduct form .form-control .tandE {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -593,5 +629,18 @@ body {
 
 .us_container .side-content .table th, .us_container .side-content .table td {
   padding: 15px;
+}
+
+.us_container .side-content .table tr .prod_img {
+  width: 10em;
+  height: 10em;
+  margin: auto;
+}
+
+.us_container .side-content .table tr .prod_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 /*# sourceMappingURL=admin.css.map */
