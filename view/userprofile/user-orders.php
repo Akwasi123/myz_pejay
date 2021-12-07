@@ -104,56 +104,65 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                             </div>
                         </div>
 
-                        
 
-                            <!-- other items -->
-                            <div class="other_plaques">
-                                <div class="top_rated">
 
-                                    <div class="table">
-                                        <table>
+                        <!-- other items -->
+                        <div class="other_plaques">
+                            <div class="top_rated">
+
+                                <div class="table">
+                                    <table>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Product</th>
+                                            <th>Image</th>
+                                            <th>Price</th>
+                                            <th>Invoice No.</th>
+                                            <th>Date</th>
+                                            <th>Quantity</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        <?php
+                                        foreach ($customerOrders as $order) {
+                                        ?>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Product</th>
-                                                <th>Image</th>
-                                                <th>Price</th>
-                                                <th>Invoice No.</th>
-                                                <th>Date</th>
-                                                <th>Quantity</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
+                                                <td><?php echo $order['order_id']; ?></td>
+                                                <td><?php echo $order['product_title']; ?></td>
+                                                <td class="or_img"><img src="<?php echo $img . basename($order['product_image']); ?>" alt=""></td>
+                                                <td><?php echo $order['product_price']; ?></td>
+                                                <td><?php echo $order['invoice_no']; ?></td>
+                                                <td><?php echo $order['order_date']; ?></td>
+                                                <td><?php echo $order['quantity']; ?></td>
+                                                <td><?php echo $order['order_status']; ?></td>
+                                                <td>
+                                                    <?php
+                                                    if ($order['order_status'] == 'pending') {
+                                                        echo "<span><em>Waiting order approval</em></span>";
+                                                    } else {
+                                                    ?>
+                                                        <a href="./writeReview.php?product_id=<?php echo $order['product_id']; ?>">Write review</a>
+                                                    <?php
+                                                    }
+                                                    ?>
+
+                                                </td>
                                             </tr>
-                                            <?php
-                                            foreach ($customerOrders as $order) {
-                                            ?>
-                                                <tr>
-                                                    <td><?php echo $order['order_id'] ;?></td>
-                                                    <td><?php echo $order['product_title'] ;?></td>
-                                                    <td class="or_img"><img src="<?php echo $img . basename($order['product_image']) ;?>" alt=""></td>
-                                                    <td><?php echo $order['product_price'] ;?></td>
-                                                    <td><?php echo $order['invoice_no'] ;?></td>
-                                                    <td><?php echo $order['order_date'] ;?></td>
-                                                    <td><?php echo $order['quantity'] ;?></td>
-                                                    <td><?php echo $order['order_status'] ;?></td>
-                                                    <td>
-                                                        <a href="">Write review</a>
-                                                    </td>
-                                                </tr>
-                                            <?php
-                                            }
-                                            ?>
-                                        </table>
-                                    </div>
+                                        <?php
+                                        }
+                                        ?>
+                                    </table>
                                 </div>
-
                             </div>
+
                         </div>
-
-
-
-
                     </div>
+
+
+
+
                 </div>
+            </div>
             </div>
         </body>
 

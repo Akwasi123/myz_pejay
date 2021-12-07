@@ -156,7 +156,7 @@ class Cart extends Connection
     //Get Order Details for User
     function select_orderDetails($user_id)
     {
-        return $this->fetch("select products.product_title,products.product_image, products.product_price,  orders.order_id, orders.invoice_no, orders.order_date, orders.order_status, orderdetails.quantity from orderdetails join products on (orderdetails.product_id = products.product_id) join orders on (orderdetails.order_id = orders.order_id) where orders.user_id = '$user_id'");
+        return $this->fetch("select products.product_id, products.product_title, products.product_image, products.product_price,  orders.order_id, orders.invoice_no, orders.order_date, orders.order_status, orderdetails.quantity from orderdetails join products on (orderdetails.product_id = products.product_id) join orders on (orderdetails.order_id = orders.order_id) where orders.user_id = '$user_id'");
     }
 
     //Get Customer Orders for Admin

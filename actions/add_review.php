@@ -11,8 +11,8 @@ if (isset($_GET['submitReview'])) {
     $addReview = add_order_reviews_controller($user_id, $product_id, $review, $post_date);
 
     if ($addReview) {
-        echo "<script>alert('Review added successfully'); document.location.href='../View/review.php';</script>";
+        echo "<script>alert('Review added successfully'); window.history.back();</script>";
     } else {
-        echo "<script>alert('Review not added'); document.location.href='../View/review.php';</script>";
+        echo "<script>alert('Review not added'); window.history.back();</script>";
     }
 }
