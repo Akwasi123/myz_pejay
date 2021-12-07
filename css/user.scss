@@ -21,6 +21,34 @@ body{
 }
 
 
+// breadCrumb menu
+.breadCrumb{
+    @include bCrumb();
+
+    .menuItem{
+        @include flexSB(row, center);
+        .icon{
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            @include flexSB(row, center);
+
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        a{
+            color: #FF4254;
+            text-decoration: underline;
+        }
+    }
+}
+
+
 .us_container{
     // border: 2px solid red;
     height: 100%;
@@ -162,7 +190,85 @@ body{
             height: 100%;
             // border: 1px solid black;
 
+
+            // wishlist items
+            .cartItem{
+                @include flexSB();
+                margin: 10px 0;
+                border: 1px solid #0000000a;
+                border-radius: 5px;
+                height: 8em;
+                width: 70%;
+
+                .cI-left{
+                    @include flexSB(row, flex-start);
+                    // border: 1px solid blue;
+                    height: 100%;
+                    width: 75%;
+
+                    .picture{
+                        // border: 1px solid orange;
+                        height: 100%;
+                        width: 8em;
+                        margin-right: 20px;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+
+                    .details{
+                        @include flexSB(column, center);
+                        align-items: flex-start;
+
+                        h3, p{
+                            margin: 10px 0;
+                        }
+
+                        
+                    }
+                }
+                .quantity{
+                    @include flexSB();
+                    margin-right: 40px;
+
+                    a{
+                        // border: 1px solid black;
+                        width: 20px;
+                        height: 20px;
+                        
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    p{
+                        margin: 0 20px;
+                    }
+                }
+
+                .remove{
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 20px;
+                    cursor: pointer;
+                    @include flexSB(row, center);
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: fill;
+                    }
+                }
+            }
+
             .heading{
+                @include flexSB();
                 p{
                     color: #26262648;
                 }
@@ -251,7 +357,7 @@ body{
                     .top_rated{
                         padding: 20px;
                         height: 100%;
-                        width: 65%;
+                        width: 100%;
                         box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
                         
                     }
@@ -402,9 +508,24 @@ body{
               th, td {
                 padding: 15px;
               }
+
+              tr{
+                .or_img{
+                    width: 70px;
+                    height: 70px;
+  
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+              }
         }
     }
 }
+
+
 
 
 .accordion {

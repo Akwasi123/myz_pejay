@@ -76,32 +76,7 @@ function check_category_controller($cname)
     return $category_instance->check_category($cname);
 }
 
-//check duplicate category function 
-function check_size_duplicates($size)
-{
-    // create an instance of the product class
-    $category_instance = new product_class();
-    // call the method from the class
-    return $category_instance->check_size($size);
-}
 
-//check duplicate category function 
-function check_color_duplicates($color)
-{
-    // create an instance of the product class
-    $category_instance = new product_class();
-    // call the method from the class
-    return $category_instance->check_color($color);
-}
-
-//check duplicate category function 
-function check_image_duplicates($image)
-{
-    // create an instance of the product class
-    $category_instance = new product_class();
-    // call the method from the class
-    return $category_instance->check_image($image);
-}
 
 //edit a category function 
 function update_category_controller($id, $cname)
@@ -150,6 +125,7 @@ function add_product_controller($prod_cat, $prod_brand, $prod_title, $prod_price
 }
 
 
+
 function add_varied_product_controller($prod_id, $prod_size, $prod_color, $prod_image)
 {
     // create an instance of the product class
@@ -180,6 +156,71 @@ function add_varied_image_controller($prod_image)
     $product_instance = new product_class();
     // call the method from the class
     return $product_instance->add_varied_image($prod_image);
+}
+
+
+//check duplicate size
+function check_size_duplicates($size)
+{
+    // create an instance of the product class
+    $product_instance = new product_class();
+    // call the method from the class
+    return $product_instance->check_size($size);
+}
+
+//check duplicate color
+function check_color_duplicates($color)
+{
+    // create an instance of the product class
+    $product_instance = new product_class();
+    // call the method from the class
+    return $product_instance->check_color($color);
+}
+
+//check duplicate image 
+function check_image_duplicates($image)
+{
+    // create an instance of the product class
+    $product_instance = new product_class();
+    // call the method from the class
+    return $product_instance->check_image($image);
+}
+
+
+// select all sizes controller
+function select_all_sizes_controller()
+{
+    // create an instance of the product class
+    $product_instance = new product_class();
+    // call the method from the class
+    return $product_instance->select_all_sizes();
+}
+
+
+// select all colors controller
+function select_all_colors_controller()
+{
+    // create an instance of the product class
+    $product_instance = new product_class();
+    // call the method from the class
+    return $product_instance->select_all_colors();
+}
+
+// select all images controller
+function select_all_images_controller()
+{
+    // create an instance of the product class
+    $product_instance = new product_class();
+    // call the method from the class
+    return $product_instance->select_all_images();
+}
+
+
+function select_varied_products_controller($prod_id){
+    // create an instance of the product class
+    $product_instance = new product_class();
+    // call the method from the class
+    return $product_instance->select_varied_products($prod_id);
 }
 
 

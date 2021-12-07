@@ -1,21 +1,31 @@
 <?php
 
 include_once (dirname(__FILE__)) . '/./settings/core.php';
+include_once (dirname(__FILE__)) . '/./controllers/product_controller.php';
+include_once (dirname(__FILE__)) . '/./controllers/cart_controller.php';
+include_once (dirname(__FILE__)) . '/./controllers/wishlist_controller.php';
+
+$best_sellers = get_best_controller();
+$featured_products = featured_products_controller();
+$img = "./assets/images/products/";
 
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
-    
+
     // page if admin logs in
     if ($_SESSION['user_role'] == '1') {
         header('location: ./admin/admin-main.php');
-    } 
-    
+    }
+
     // if normal user logs in
-    
+
     else if ($_SESSION['user_role'] == '2') {
 
-        ?>
+        $cart_items = count_cart_lg_controller($_SESSION['user_id']);
+        $saved_items = count_wishlist_lg_controller($_SESSION['user_id']);
+?>
         <!DOCTYPE html>
         <html lang="en">
+
         <head>
             <meta charset="UTF-8" />
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -56,6 +66,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                         <div class="us_actions">
                             <a href="" class="icon">
                                 <img src="./assets/icons/bi_heart.svg" alt="" />
+                                <div class="notif"><?php echo $saved_items['total']; ?></div>
                             </a>
                             <div class="searchBar">
                                 <form action="">
@@ -63,17 +74,18 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                         <input type="text" placeholder="Search for items..." />
                                     </div>
                                 </form>
+                                <a href="./view/cart.php" class="icon">
+                                    <img src="./assets/icons/ic_baseline-shopping-basket.svg" alt="" />
+                                    <div class="notif"><?php echo $cart_items['total']; ?></div>
+                                </a>
                             </div>
-                            <a href="./view/cart.php" class="icon">
-                                <img src="./assets/icons/ic_baseline-shopping-basket.svg" alt="" />
-                            </a>
                             <!-- dropdown -->
                             <div class="dropdown">
                                 <div class="icon">
                                     <img src="./assets/icons/codicon_account.svg" class="dropbtn" alt="" />
                                 </div>
                                 <div class="dropdown-content">
-                                    <a href="./view/userprofile/user-main.php">Profile</a>
+                                    <a href="./view/userprofile/user-orders.php">Profile</a>
                                     <a href="./login/logout.php">Logout</a>
                                 </div>
                             </div>
@@ -159,206 +171,47 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
                         <!-- product cards -->
                         <div class="productGrid">
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
+                            <?php
 
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
+                            foreach ($best_sellers as $product) {
+                            ?>
+                                <div class="product_card">
+                                    <a href="./view/singleproduct.php?PID=<?php echo $product['product_id']; ?>" class="imgSpace">
+                                        <div class="img">
+                                            <img src="<?php echo $img . basename($product['product_image']); ?>" alt="">
                                         </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
 
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                        <!-- background circle -->
+                                        <div class="bg-circle">
+
                                         </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                    </a>
+                                    <div class="p_details">
+                                        <div class="dets">
+                                            <div class="top">
+                                                <p class="cat"><?php echo $product['cat_name'] ?></p>
+                                                <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                            </div>
+                                            <h3><?php echo $product['product_title'] ?></h3>
+                                            <p class="price">GHS<?php echo $product['product_price'] ?>.00</p>
                                         </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
+                                        <a href="./actions/add_cart.php?p_id=<?php echo $product['product_id'] ?>" class="cartIcon">
+                                            <button>
+                                                <img src="./assets/icons/ps_shopping-cart.svg" alt="">
+                                            </button>
+                                        </a>
                                     </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
 
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
+                                    <!-- favorites -->
+                                    <a href="./actions/add_wishlist.php?p_id=<?php echo $product['product_id'] ?>" class="wish">
+                                        <img src="./assets/icons/bi_heart-1.svg" alt="">
+                                    </a>
 
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
                                 </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
+                            <?php
+                            }
 
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
+                            ?>
 
                         </div>
                     </div>
@@ -377,207 +230,46 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
                         <!-- product cards -->
                         <div class="productGrid">
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                        </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
+                            <?php
+                            foreach ($featured_products as $featured) {
+                            ?>
+                                <div class="product_card">
+                                    <a href="./view/singleproduct.php?PID=<?php echo $featured['product_id']; ?>" class="imgSpace">
+                                        <div class="img">
+                                            <img src="<?php echo $img . basename($featured['product_image']); ?>" alt="">
                                         </div>
 
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
+                                        <!-- background circle -->
+                                        <div class="bg-circle">
 
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
                                         </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
-                                    </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="imgSpace">
-                                    <!-- <img src="" alt=""> -->
-                                </div>
-                                <div class="p_details">
-                                    <div class="dets">
-                                        <div class="top">
-                                            <p class="cat">CATEGORY</p>
-                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                    </a>
+                                    <div class="p_details">
+                                        <div class="dets">
+                                            <div class="top">
+                                                <p class="cat"><?php echo $featured['cat_name'] ?></p>
+                                                <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                            </div>
+                                            <h3><?php echo $featured['product_title'] ?></h3>
+                                            <p class="price">GHS<?php echo $featured['product_price'] ?>.00</p>
                                         </div>
-                                        <h3>Lorem ipsum dolor </h3>
-                                        <p class="price">$65.00</p>
+                                        <div class="cartIcon">
+                                            <button>
+                                                <img src="./assets/icons/ps_shopping-cart.svg" alt="">
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="cartIcon">
-                                        <button>
-                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                        </button>
-                                    </div>
-                                </div>
 
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
+                                    <!-- favorites -->
+                                    <div class="wish">
+                                        <img src="./assets/icons/bi_heart-1.svg" alt="">
+                                    </div>
+
+
                                 </div>
-                            </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </section>
@@ -721,11 +413,14 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
         </body>
 
         </html>
-        <?php
+    <?php
     }
 
     // if user is not logged in
 } else {
+    $ip_add = check_ip();
+    $cart_items_gst = count_cart_gst_controller($ip_add);
+
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -768,19 +463,18 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
                     <!-- wishlist, search, account, cart -->
                     <div class="us_actions">
-                        <a href="" class="icon">
-                            <img src="./assets/icons/bi_heart.svg" alt="" />
-                        </a>
+
                         <div class="searchBar">
                             <form action="">
                                 <div class="form-control">
                                     <input type="text" placeholder="Search for items..." />
                                 </div>
                             </form>
+                            <a href="./view/cart.php" class="icon">
+                                <img src="./assets/icons/ic_baseline-shopping-basket.svg" alt="" />
+                                <div class="notif"><?php echo $cart_items_gst['total']; ?></div>
+                            </a>
                         </div>
-                        <a href="./view/cart.php" class="icon">
-                            <img src="./assets/icons/ic_baseline-shopping-basket.svg" alt="" />
-                        </a>
                         <!-- dropdown -->
                         <div class="dropdown">
                             <div class="icon">
@@ -788,7 +482,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                             </div>
                             <div class="dropdown-content">
                                 <a href="./login/login.php">Login</a>
-                                <a href="./login/register.php">Sign up</a>
+                                <a href="./login/register.php">Sign Up</a>
                             </div>
                         </div>
                     </div>
@@ -873,206 +567,48 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
                     <!-- product cards -->
                     <div class="productGrid">
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
+                        <?php
 
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
+                        foreach ($best_sellers as $product) {
+                        ?>
+                            <div class="product_card">
+                                <a href="./view/singleproduct.php?PID=<?php echo $product['product_id']; ?>" class="imgSpace">
+                                    <div class="img">
+                                        <img src="<?php echo $img . basename($product['product_image']); ?>" alt="">
                                     </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
 
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                    <!-- background circle -->
+                                    <div class="bg-circle">
+
                                     </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                </a>
+                                <div class="p_details">
+                                    <div class="dets">
+                                        <div class="top">
+                                            <p class="cat"><?php echo $product['cat_name'] ?></p>
+                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                        </div>
+                                        <h3><?php echo $product['product_title'] ?></h3>
+                                        <p class="price">GHS<?php echo $product['product_price'] ?>.00</p>
                                     </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
+                                    <a href="./actions/add_cart.php?p_id=<?php echo $product['product_id'] ?>" class="cartIcon">
+                                        <button>
+                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
+                                        </button>
+                                    </a>
                                 </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
 
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
+                                <!-- favorites -->
+                                <div class="wish">
+                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
                                 </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
 
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
 
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
                             </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
+                        <?php
+                        }
 
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
+                        ?>
 
                     </div>
                 </div>
@@ -1091,207 +627,46 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
                     <!-- product cards -->
                     <div class="productGrid">
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
-                                    </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
+                        <?php
+                        foreach ($featured_products as $featured) {
+                        ?>
+                            <div class="product_card">
+                                <a href="./view/singleproduct.php?PID=<?php echo $featured['product_id']; ?>" class="imgSpace">
+                                    <div class="img">
+                                        <img src="<?php echo $img . basename($featured['product_image']); ?>" alt="">
                                     </div>
 
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
+                                    <!-- background circle -->
+                                    <div class="bg-circle">
 
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
                                     </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
-                                </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="product_card">
-                            <div class="imgSpace">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div class="p_details">
-                                <div class="dets">
-                                    <div class="top">
-                                        <p class="cat">CATEGORY</p>
-                                        <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                </a>
+                                <div class="p_details">
+                                    <div class="dets">
+                                        <div class="top">
+                                            <p class="cat"><?php echo $featured['cat_name'] ?></p>
+                                            <img src="./assets/icons/ratings.svg" width="100" alt="">
+                                        </div>
+                                        <h3><?php echo $featured['product_title'] ?></h3>
+                                        <p class="price">GHS<?php echo $featured['product_price'] ?>.00</p>
                                     </div>
-                                    <h3>Lorem ipsum dolor </h3>
-                                    <p class="price">$65.00</p>
+                                    <div class="cartIcon">
+                                        <button>
+                                            <img src="./assets/icons/ps_shopping-cart.svg" alt="">
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="cartIcon">
-                                    <button>
-                                        <img src="./assets/icons/ps_shopping-cart.svg" alt="">
-                                    </button>
-                                </div>
-                            </div>
 
-                            <!-- favorites -->
-                            <div class="wish">
-                                <img src="./assets/icons/bi_heart-1.svg" alt="">
+                                <!-- favorites -->
+                                <div class="wish">
+                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
+                                </div>
+
+
                             </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </section>
@@ -1435,5 +810,5 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
     </body>
 
     </html>
-    <?php    
+<?php
 }

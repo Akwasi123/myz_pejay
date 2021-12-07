@@ -168,7 +168,7 @@ if (isset($_SESSION['user_role']) == '1') {
                                         } else {
                                             echo "<option disabled hidden>Select Product Brand</option>";
                                             foreach ($Allcategories as $category) {
-                                                echo "<option value='$category[brand_id]'>$category[brand_name]</option>";
+                                                echo "<option value='$category[cat_id]'>$category[cat_name]</option>";
                                             }
                                         }
 

@@ -20,19 +20,7 @@ class product_class extends Connection
 		return $this->fetch("select brand_name from brands where brand_name='$bname'");
 	}
 
-	//check duplicate category name
-	function check_size($size)
-	{
-		return $this->fetch("select value from size where value='$size'");
-	}
-	function check_color($color)
-	{
-		return $this->fetch("select color_val from color where color_val='$color'");
-	}
-	function check_image($image)
-	{
-		return $this->fetch("select image_val from image where image_val='$image'");
-	}
+
 
 	//delete a brand 
 	function delete_one_brand($id)
@@ -125,22 +113,72 @@ class product_class extends Connection
 		product_keywords= '$prod_key', stock = '$stock' where product_id = '$id'");
 	}
 
+	// add a varied product
 	function add_varied_product($product_id, $product_size, $prod_color, $prod_image)
 	{
-		return $this->query("insert into product_attributes values ('$product_id', '$product_size', '$prod_color', '$prod_image',)");
+		return $this->query("insert into product_attributes values ('$product_id', '$product_size', '$prod_color', '$prod_image')");
 	}
 
+	// add a size
 	function add_varied_size($size)
 	{
 		return $this->query("insert into size(value) values ('$size')");
 	}
+
+	// add a varied color
 	function add_varied_color($color)
 	{
 		return $this->query("insert into color(color_val) values ('$color')");
 	}
+
+	// add a varied image
 	function add_varied_image($image)
 	{
 		return $this->query("insert into images(image_val) values ('$image')");
+	}
+
+	// select all sizes
+	function select_all_sizes()
+	{
+		return $this->fetch("select * from size");
+	}
+
+	// select all images
+	function select_all_images()
+	{
+		return $this->fetch("select * from images");
+	}
+
+	// select all colors
+	function select_all_colors()
+	{
+		return $this->fetch("select * from color");
+	}
+
+	//check duplicate attributes
+	function check_size($size)
+	{
+		return $this->fetch("select value from size where value='$size'");
+	}
+	function check_color($color)
+	{
+		return $this->fetch("select color_val from color where color_val='$color'");
+	}
+	function check_image($image)
+	{
+		return $this->fetch("select image_val from images where image_val='$image'");
+	}
+
+	// select varied products
+	function select_varied_products($product_id)
+	{
+		return $this->fetch("
+			select images.image_val, size.value, color.color_val from product_attributes
+			JOIN images ON(product_attributes.image_id = images.image_id)
+			JOIN size ON(product_attributes.size_id = size.size_id)
+			JOIN color ON(product_attributes.color_id = color.color_id)
+			where product_attributes.product_id = '$product_id'
+		");
 	}
 
 	//select all products in the database
@@ -182,7 +220,7 @@ class product_class extends Connection
 		return $this->fetch("select brands.brand_name, brands.brand_id, categories.cat_name, categories.cat_id, 
 		products.product_id, products.product_cat, products.product_brand, products.product_title, products.product_price, 
 		products.product_desc, products.product_image, products.product_keywords, products.stock from products join brands on 
-		(products.product_brand = brands.brand_id) join categories on (products.product_cat = categories.cat_id) where brands.brand_name = 'Apple'");
+		(products.product_brand = brands.brand_id) join categories on (products.product_cat = categories.cat_id) where brands.brand_name = 'Samsung'");
 	}
 
 	//Select hottest products

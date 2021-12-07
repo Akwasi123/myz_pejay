@@ -1,5 +1,9 @@
 <?php
 include_once (dirname(__FILE__)) . '/../settings/core.php';
+include_once (dirname(__FILE__)) . '/../controllers/cart_controller.php';
+include_once (dirname(__FILE__)) . '/../controllers/user_controller.php';
+
+$ordersAdmin = select_orderDetails_admin_controller();
 
 
 if (isset($_SESSION['user_role']) == '1') {
@@ -125,27 +129,32 @@ if (isset($_SESSION['user_role']) == '1') {
                                 <table>
                                     <tr>
                                         <th>Order ID</th>
-                                        <th>Customer</th>
+                                        <th>Image</th>
                                         <th>Invoice No</th>
-                                        <th>Product</th>
-                                        <th>Quantity</th>
                                         <th>Order Date</th>
                                         <th>Order Status</th>
                                         <th>Actions</th>
                                     </tr>
-                                    <tr>
-                                        <td>Peter</td>
-                                        <td>Griffin</td>
-                                        <td>$100</td>
-                                        <td>$100</td>
-                                        <td>$100</td>
-                                        <td>$100</td>
-                                        <td>$100</td>
-                                        <td>$100</td>
-                                    </tr>
-
+                                    <?php
+                                    foreach ($ordersAdmin as $order) {
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $order['order_id']; ?></td>
+                                            <td class="prod_img"><img src="<?php echo $order['product_image'] ;?>" alt=""></td>
+                                            <td><?php echo $order['invoice_no']; ?></td>
+                                            <td><?php echo $order['order_date']; ?></td>
+                                            <td><?php echo $order['order_status']; ?></td>
+                                            <td>
+                                                <a href="">Approve</a>
+                                                <a href="">Cancel</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
                                 </table>
                             </div>
+
                         </div>
 
                         <div class="right_plqs">

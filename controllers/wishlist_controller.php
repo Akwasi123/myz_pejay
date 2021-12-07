@@ -5,12 +5,12 @@ include_once (dirname(__FILE__)) . '/../models/wishlist_class.php';
 
 
 //Customer logged in: Add to wishlist controller
-function add_wishlist_lg_controller($p_id, $c_id, $qty)
+function add_wishlist_lg_controller($p_id, $c_id)
 {
     //create instance of the wishlist class
     $wishlist_instance = new wishlist();
     //calls method from wishlist class
-    return $wishlist_instance->add_wishlist_lg($p_id, $c_id, $qty);
+    return $wishlist_instance->add_wishlist_lg($p_id, $c_id);
 }
 
 //Customer logged in: Check duplicates in wishlist controller

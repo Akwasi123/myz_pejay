@@ -5,21 +5,21 @@ include_once (dirname(__FILE__)) . '/../models/cart_class.php';
 
 
 //Customer logged in: Add to cart controller
-function add_cart_lg_controller($p_id, $c_id, $qty)
+function add_cart_lg_controller($p_id, $c_id)
 {
     //create instance of the cart class
     $cart_instance = new Cart();
     //calls method from Cart class
-    return $cart_instance->add_cart_lg($p_id, $c_id, $qty);
+    return $cart_instance->add_cart_lg($p_id, $c_id);
 }
 
 //Guest: Add to cart controller
-function add_cart_gst_controller($p_id, $ip_add, $qty)
+function add_cart_gst_controller($p_id, $ip_add)
 {
     //create instance of the cart class
     $cart_instance = new Cart();
     //calls method from Cart class
-    return $cart_instance->add_cart_gst($p_id, $ip_add, $qty);
+    return $cart_instance->add_cart_gst($p_id, $ip_add);
 }
 
 //Customer logged in: Check duplicates in cart controller

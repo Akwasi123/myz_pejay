@@ -266,7 +266,7 @@ body{
                     .top_rated{
                         padding: 20px;
                         height: 100%;
-                        width: 65%;
+                        width: 100%;
                         border-radius: 5px;
                         box-shadow: 0 0 20px rgba(0, 0, 0, 0.082);
                         
@@ -430,6 +430,18 @@ body{
                         position: relative;
                         margin: 10px 50px 30px 0;
 
+                        .mini-img{
+                            // border: 1px solid red;
+                            border: none;
+                            width: 10em;
+                            height: 10em;
+
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                            }
+                        }
 
                         label{
                             display: block;
@@ -529,6 +541,7 @@ body{
 
         .table{
             margin: 20px 0;
+            width: 100%;
 
             table, td, th {  
                 border: 1px solid #ddd;
@@ -546,8 +559,8 @@ body{
 
             tr{
                 .prod_img{
-                    width: 10em;
-                    height: 10em;
+                    width: 5em;
+                    height: 5em;
                     margin: auto;
 
                     img{

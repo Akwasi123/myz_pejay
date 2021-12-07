@@ -1,15 +1,26 @@
+<?php
+include_once (dirname(__FILE__)) . '/../../settings/core.php';
+
+$get_user = $_SESSION['user_id'];
+$get_product = $_GET['product_id'];
+$p_date = date("Y/m/d");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/user.css">
     <title>User Profile | Ratings and Reviews</title>
 </head>
+
 <body>
     <!-- user profile -->
     <div class="us_container">
@@ -23,7 +34,8 @@
                         <h4>Lorem ipsum dolor sit.</h4>
                         <p class="email">lorem@ipsum.com</p>
                         <div class="status">
-                            <span></span><p>Active</p>
+                            <span></span>
+                            <p>Active</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +79,7 @@
                         </div>
                         <p class="m_name">Security Settings</p>
                     </a>
-                    <a href="" class="menuItem bottom">
+                    <a href="../../login/logout.php" class="menuItem bottom">
                         <div class="icon">
                             <img src="../../assets/icons/ri_logout-circle-fill.svg" alt="">
                         </div>
@@ -80,40 +92,40 @@
             <div class="content">
                 <div class="heading">
                     <p>Reviews</p>
-                    
+
+                    <!-- usernav -->
+                    <div class="breadCrumb">
+                        <div class="menuItem">
+                            <div class="icon">
+                                <img src="../../assets/icons/bx_bxs-shopping-bag-alt.svg" alt="">
+                            </div>
+                            <a href="../../index.php">Back to shopping</a>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="table">
-                    <table>
-                        <tr>
-                          <th>Firstname</th>
-                          <th>Lastname</th>
-                          <th>Savings</th>
-                        </tr>
-                        <tr>
-                          <td>Peter</td>
-                          <td>Griffin</td>
-                          <td>$100</td>
-                        </tr>
-                        <tr>
-                          <td>Lois</td>
-                          <td>Griffin</td>
-                          <td>$150</td>
-                        </tr>
-                        <tr>
-                          <td>Joe</td>
-                          <td>Swanson</td>
-                          <td>$300</td>
-                        </tr>
-                        <tr>
-                          <td>Cleveland</td>
-                          <td>Brown</td>
-                          <td>$250</td>
-                        </tr>
-                    </table>
-                </div>
+                <form action="../../actions/add_review.php" method="GET" id="form">
+
+                    <div class="form-element">
+                        <input type="hidden" name="user_id" value="<?php echo $get_user ?>">
+                        <input type="hidden" name="product_id" value="<?php echo $get_product ?>">
+                        <input type="hidden" name="post_date" value="<?php echo $p_date ?>">
+                        <label for="">Review</label>
+                        <textarea id="desc" name="desc" cols="50" placeholder="Review Message" rows="10" style="resize: none"></textarea>
+                        <br>
+                    </div>
+
+                    <div>
+                        <button type="submit" id="add" name="submitReview">Submit Review</button>
+                    </div>
+                    <br>
+
+                    <a href=""></a>
+                </form>
             </div>
         </div>
     </div>
 </body>
+
 </html>

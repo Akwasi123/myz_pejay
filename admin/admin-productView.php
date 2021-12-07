@@ -135,6 +135,7 @@ if (isset($_SESSION['user_role']) == '1') {
                             <?php
                                 foreach($all_products as $product){
                                     ?>
+                                    <tr>
                                         <td><?php echo $product['product_id'];?></td>
                                         <td><?php echo $product['product_title'];?></td>
                                         <td class="prod_img"><img src="<?php echo $product['product_image'];?>" alt=""></td>
@@ -146,6 +147,7 @@ if (isset($_SESSION['user_role']) == '1') {
                                             <a href="<?php echo "../admin/admin-addproducts.php?editPID=" . $product['product_id']; ?>"><img src="../assets/icons/ci_edit.svg" alt=""></a>
                                             <a href="<?php echo "../actions/processProducts.php?deletePID=" . $product['product_id']; ?>"><img src="../assets/icons/fluent_delete-20-filled-black.svg" alt=""></a>
                                         </td>
+                                    </tr>
                                     <?php
                                 }
 

@@ -6,9 +6,9 @@ class Wishlist extends Connection
 {
 
     //Customer logged in: Add to wishlist
-    function add_wishlist_lg($p_id, $c_id, $quantity)
+    function add_wishlist_lg($p_id, $c_id)
     {
-        return $this->query("insert into wishlist(p_id, ip_add, c_id, quantity) values ('$p_id', ' ', '$c_id','$quantity')");
+        return $this->query("insert into wishlist(p_id, ip_add, c_id) values ('$p_id', ' ', '$c_id')");
     }
 
     //Customer logged in: Check duplicates in wishlist
@@ -27,14 +27,14 @@ class Wishlist extends Connection
     //Customer logged in: Delete from wishlist
     function delete_wishlist_lg($p_id, $c_id)
     {
-        return $this->query("delete from wishlist where c_id = '$c_id'and p_id = '$p_id'");
+        return $this->query("delete from wishlist where c_id = '$c_id' and p_id = '$p_id'");
     }
 
 
     //Customer logged in: Count items in wishlist
     function count_wishlist_lg($c_id)
     {
-        return $this->fetchOne("select count(c_id) as count from wishlist where c_id = '$c_id'");
+        return $this->fetchOne("select count(c_id) as total from wishlist where c_id = '$c_id'");
     }
 
 

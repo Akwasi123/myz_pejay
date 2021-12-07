@@ -15,52 +15,52 @@ function add_user_controller($fname, $lname, $email, $password, $contact)
     return $user_instance->add_user($fname, $lname, $email, $password, $contact);
 }
 
-// /**
-//  *edit a user function 
-//  *takes the id, first name, last name,email, password, and contact
-//  */
-// function update_user_controller($id, $fname, $lname, $email,  $contact)
-// {
-//     // create an instance of the user class
-//     $user_instance = new User();
-//     // call the method from the class
-//     return $user_instance->update_one_user($id, $fname, $lname, $email,  $contact);
-// }
+/**
+ *edit a user function 
+ *takes the id, first name, last name,email, password, and contact
+ */
+function update_user_controller($id, $fname, $lname, $email,  $contact)
+{
+    // create an instance of the user class
+    $user_instance = new User();
+    // call the method from the class
+    return $user_instance->update_one_user($id, $fname, $lname, $email,  $contact);
+}
 
-// /**
-//  *delete a user function 
-//  *takes the id
-//  */
-// function delete_user_controller($id)
-// {
-//     // create an instance of the user class
-//     $user_instance = new User();
-//     // call the method from the class
-//     return $user_instance->delete_one_user($id);
-// }
+/**
+ *delete a user function 
+ *takes the id
+ */
+function delete_user_controller($id)
+{
+    // create an instance of the user class
+    $user_instance = new User();
+    // call the method from the class
+    return $user_instance->delete_one_user($id);
+}
 
-// /**
-//  *select all users function 
-//  *
-//  */
-// function select_all_users_controller()
-// {
-//     // create an instance of the user class
-//     $user_instance = new User();
-//     // call the method from the class
-//     return $user_instance->select_all_users();
-// }
-// /**
-//  *select a user function 
-//  *takes the id
-//  */
-// function select_one_user_controller($id)
-// {
-//     // create an instance of the user class
-//     $user_instance = new User();
-//     // call the method from the class
-//     return $user_instance->select_one_user($id);
-// }
+/**
+ *select all users function 
+ *
+ */
+function select_all_users_controller()
+{
+    // create an instance of the user class
+    $user_instance = new User();
+    // call the method from the class
+    return $user_instance->select_all_users();
+}
+/**
+ *select a user function 
+ *takes the id
+ */
+function select_one_user_controller($id)
+{
+    // create an instance of the user class
+    $user_instance = new User();
+    // call the method from the class
+    return $user_instance->select_one_user($id);
+}
 
 /**
  *check if mail exists function 
@@ -83,8 +83,8 @@ function get_login_func($email)
     return $user_instance->verify_login($email);
 }
 
-// function count_users_func()
-// {
-//     $user_instance = new User();
-//     return $user_instance->count_users();
-// }
+function count_users_func()
+{
+    $user_instance = new User();
+    return $user_instance->count_users();
+}

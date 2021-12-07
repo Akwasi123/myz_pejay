@@ -67,7 +67,7 @@
                         </div>
                         <p class="m_name">Security Settings</p>
                     </a>
-                    <a href="" class="menuItem bottom">
+                    <a href="../../login/logout.php" class="menuItem bottom">
                         <div class="icon">
                             <img src="../../assets/icons/ri_logout-circle-fill.svg" alt="">
                         </div>

@@ -2,6 +2,9 @@
 include_once (dirname(__FILE__)) . '/../settings/core.php';
 include_once (dirname(__FILE__)) . '/../controllers/product_controller.php';
 $all_products = select_all_products_controller();
+$all_sizes = select_all_sizes_controller();
+$all_images = select_all_images_controller();
+$all_colors = select_all_colors_controller();
 
 // page if admin logs in
 if (isset($_SESSION['user_role']) == '1') {
@@ -149,7 +152,7 @@ if (isset($_SESSION['user_role']) == '1') {
                                 
 
                         <!-- add varied product -->
-                        <form action="../actions/processProducts.php" method="POST" enctype="multipart/form-data">
+                        <form action="../actions/processProducts.php" method="POST" enctype="multipart/form-data" id="myForm">
                             <div class="form-control">
                                 <label for="">Select Product</label>
                                 <select name="product" id="product">
@@ -157,8 +160,6 @@ if (isset($_SESSION['user_role']) == '1') {
                                     <?php
                                         foreach($all_products as $product){
                                             echo '<option value="'.$product['product_id'].'">'.$product['product_title'].'</option>';
-                                            echo '<input type="hidden" name="p_id" value="'.$product['product_id'].'">';
-
                                         }
 
                                     ?>
@@ -171,10 +172,8 @@ if (isset($_SESSION['user_role']) == '1') {
                                 <select name="size" id="size">
                                     <option value="--Select size--" selected>--Select size--</option>
                                     <?php
-                                        foreach($all_products as $product){
-                                            echo '<option value="'.$product['product_id'].'">'.$product['product_title'].'</option>';
-                                            echo '<input type="hidden" name="p_id" value="'.$product['product_id'].'">';
-
+                                        foreach($all_sizes as $size){
+                                            echo '<option value="'.$size['size_id'].'">'.$size['value'].'</option>';
                                         }
 
                                     ?>
@@ -187,9 +186,8 @@ if (isset($_SESSION['user_role']) == '1') {
                                 <select name="color" id="color">
                                     <option value="--Select color--" selected>--Select color--</option>
                                     <?php
-                                        foreach($all_products as $product){
-                                            echo '<option value="'.$product['product_id'].'">'.$product['product_title'].'</option>';
-                                            echo '<input type="hidden" name="p_id" value="'.$product['product_id'].'">';
+                                        foreach($all_colors as $color){
+                                            echo '<option value="'.$color['color_id'].'">'.$color['color_val'].'</option>';
 
                                         }
 
@@ -201,19 +199,36 @@ if (isset($_SESSION['user_role']) == '1') {
                             <div class="form-control">
                                 <label for="">Image</label>
                                 <select name="image" id="image">
-                                    <option value="--Select image--" selected>--Select image--</option>
+                                    <option value="--Select image--" disabled selected>--Select image--</option>
+                                    <!-- <input type="file" name="image" id="image" accept="image/*"> -->
                                     <?php
-                                        foreach($all_products as $product){
-                                            echo '<option value="'.$product['product_id'].'">'.$product['product_title'].'</option>';
-                                            echo '<input type="hidden" name="p_id" value="'.$product['product_id'].'">';
-
+                                        foreach($all_images as $image){
+                                            echo '<option value="'.$image['image_id'].'" id="option-image">'.$image['image_val'].'</option>';
+            
                                         }
 
                                     ?>
-
+                                    
                                 </select>
-                                <!-- <input type="file" name="image" id="image" accept="image/*"> -->
+                                <div class="mini-img">
+                                    <img src="" alt="" name='varImg' id="img">
+                                </div>
+                                <script type="text/javascript">
+                                    window.onload = () =>{
+                                        // document.getElementById("myForm").reset();
+                                    }
+                                    const select = document.querySelector('#image');
+                                    const imgVal = document.getElementById('img');
+                                    // const imgVal = document.createElement('img');
+                                    imgVal.style.display = 'none';
+                                    select.addEventListener('change', (e)=>{
+                                        imgVal.src = select.options[select.selectedIndex].text;
+                                        imgVal.style.display = 'block';
+
+                                    })
+                                </script>
                                 <small></small>
+                                
                             </div>
                             
                             <div class="form-control">
@@ -230,6 +245,7 @@ if (isset($_SESSION['user_role']) == '1') {
 
         <script src="../js/accordion.js"></script>
         <script src="../js/variationVal.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     </body>
 

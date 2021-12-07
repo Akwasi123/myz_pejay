@@ -1,6 +1,9 @@
 <?php
 include_once (dirname(__FILE__)) . '/../settings/core.php';
+include_once (dirname(__FILE__)) . '/../controllers/user_controller.php';
 
+// select all users
+$select_all_users = select_all_users_controller();
 
 
 // page if admin logs in
@@ -123,16 +126,21 @@ if (isset($_SESSION['user_role']) == '1') {
                                 <th>Lastname</th>
                                 <th>Email</th>
                                 <th>Contact</th>
-                                <th>Actions</th>
                             </tr>
-                            <tr>
-                                <td>Peter</td>
-                                <td>Griffin</td>
-                                <td>$100</td>
-                                <td>$100</td>
-                                <td>$100</td>
-                                <td>$100</td>
-                            </tr>
+                            <?php 
+                                foreach($select_all_users as $user){
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $user['user_id']; ?></td>
+                                            <td><?php echo $user['user_fname']; ?></td>
+                                            <td><?php echo $user['user_lname']; ?></td>
+                                            <td><?php echo $user['user_email']; ?></td>
+                                            <td><?php echo $user['user_contact']; ?></td>
+                                            
+                                        </tr>
+                                    <?php
+                                }
+                            ?>
 
                         </table>
                     </div>

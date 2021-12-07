@@ -1,6 +1,15 @@
 <?php
 include_once (dirname(__FILE__)) . '/../settings/core.php';
+include_once (dirname(__FILE__)) . '/../controllers/cart_controller.php';
+include_once (dirname(__FILE__)) . '/../controllers/user_controller.php';
 
+$userCount = count_users_func();
+$orderCount = count_orders_controller();
+$productCount = count_products_controller();
+$sumRevenue = sum_revenue_controller();
+
+
+$ordersAdmin = select_order_admin_controller();
 
 if (isset($_SESSION['user_role']) == '1') {
 
@@ -173,82 +182,28 @@ if (isset($_SESSION['user_role']) == '1') {
                                             <th>Order Status</th>
                                             <th>Actions</th>
                                         </tr>
-                                        <tr>
-                                            <td>Peter</td>
-                                            <td>Griffin</td>
-                                            <td>$100</td>
-                                            <td>$100</td>
-                                            <td>$100</td>
-                                            <td>$100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Lois</td>
-                                            <td>Griffin</td>
-                                            <td>$150</td>
-                                            <td>$150</td>
-                                            <td>$150</td>
-                                            <td>$150</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Joe</td>
-                                            <td>Swanson</td>
-                                            <td>$300</td>
-                                            <td>$300</td>
-                                            <td>$300</td>
-                                            <td>$300</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cleveland</td>
-                                            <td>Brown</td>
-                                            <td>$250</td>
-                                            <td>$250</td>
-                                            <td>$250</td>
-                                            <td>$250</td>
-                                        </tr>
+                                        <?php
+                                            foreach ($ordersAdmin as $order) {
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $order['order_id'] ;?></td>
+                                                    <td><?php echo $order['user_fname']." ". $order['user_lname'] ;?></td>
+                                                    <td><?php echo $order['invoice_no'] ;?></td>
+                                                    <td><?php echo $order['order_date'] ;?></td>
+                                                    <td><?php echo $order['order_status'] ;?></td>
+                                                    <td>
+                                                        <a href="">Approve</a>
+                                                        <a href="">Cancel</a>
+                                                    </td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
                                     </table>
                                 </div>
                             </div>
 
-                            <div class="right_plqs">
-                                <div class="new_orders">
-                                    <div class="content">
-                                        <div class="heading">
-                                            <h3>Product Stock</h3>
-                                        </div>
-
-                                        <div class="table">
-                                            <table>
-                                                <tr>
-                                                    <th>Order ID</th>
-                                                    <th>Customer</th>
-                                                    <th>Stock</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Peter</td>
-                                                    <td>Griffin</td>
-                                                    <td>$100</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Lois</td>
-                                                    <td>Griffin</td>
-                                                    <td>$150</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Joe</td>
-                                                    <td>Swanson</td>
-                                                    <td>$300</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Cleveland</td>
-                                                    <td>Brown</td>
-                                                    <td>$250</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
 

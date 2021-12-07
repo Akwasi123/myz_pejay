@@ -30,12 +30,11 @@ if (isset($_POST['updateBrand'])) {
 
     $result = update_brand_controller($brand_id, $brand_name);
 
-    if($result){
+    if ($result) {
         echo "<script>alert('Brand has been updated'); document.location.href='../admin/admin-brands.php';</script>";
     } else {
         echo "<script>alert('Failed to update brand'); document.location.href='../admin/admin-brands.php';</script>";
-    }    
-    
+    }
 }
 
 // delete brand
@@ -98,15 +97,11 @@ if (isset($_POST['updateCategory'])) {
 
     $result = update_category_controller($cat_id, $cat_name);
 
-    if($result){
+    if ($result) {
         echo "<script>alert('Category updated successfully'); document.location.href='../admin/admin-categories.php';</script>";
-
-    }
-    else{
+    } else {
         echo "<script>alert('Failed to update category'); document.location.href='../admin/admin-categories.php';</script>";
-
     }
-
 }
 
 // --------------------------------------------CATEGORY ENDS------------------------------------------------------
@@ -130,7 +125,7 @@ if (isset($_POST['addProduct'])) {
     if ($check_product) {
         echo "<script>alert('This Product already exists'); window.history.back();</script>";
     } else {
-        $target_dir = "../assets/images/products";
+        $target_dir = "../assets/images/products/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
@@ -259,122 +254,123 @@ if (isset($_POST["updateProduct"])) {
 
 
 // addsize
-if(isset($_POST['addSize'])){
+if (isset($_POST['addSize'])) {
     $product_size = $_POST['size'];
 
     $check_dup = check_size_duplicates($product_size);
-    if($check_dup){
+    if ($check_dup) {
         echo "<script>alert('Size already exists'); 
                 document.location.href='../admin/admin-variations.php';
             </script>";
-    }else{
+    } else {
         $result = add_varied_size_controller($product_size);
-    
-        if($result){
+
+        if ($result) {
             echo "<script type='text/javascript'>alert('Size added.');
             window.location.href = '../admin/admin-variations.php';
             </script>";
-        }
-        else{
+        } else {
             echo "<script type='text/javascript'> alert('Failed to add');
                 window.location.href = '../admin/admin-variations.php';
                 </script>";
         }
     }
-
-            
 }
 
 
 // addcolor
-if(isset($_POST['addColor'])){
-    
+if (isset($_POST['addColor'])) {
+
     $product_color = $_POST['color'];
 
-    $check_dup = check_size_duplicates($product_color);
-    if($check_dup){
-        echo "<script>alert('Size already exists'); 
+    $check_dup = check_color_duplicates($product_color);
+    if ($check_dup) {
+        echo "<script>alert('Color already exists'); 
                 document.location.href='../admin/admin-variations.php';
             </script>";
-    }else{
+    } else {
         $result = add_varied_color_controller($product_color);;
-    
-        if($result){
-            echo "<script type='text/javascript'>alert('Size added.');
+        if ($result) {
+            echo "<script type='text/javascript'>alert('Color added.');
             window.location.href = '../admin/admin-variations.php';
             </script>";
-        }
-        else{
-            echo "<script type='text/javascript'> alert('Failed to add');
+        } else {
+            echo "<script type='text/javascript'> alert('Failed to add.');
                 window.location.href = '../admin/admin-variations.php';
                 </script>";
         }
     }
-
 }
 
 
 // addimage
-if(isset($_POST['addImage'])){
+if (isset($_POST['addImage'])) {
+    // $product_image = $_POST['image'];
+    $target_dir = "../assets/images/products/varied/";
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+
+    $check_dup = check_image_duplicates($target_file);
+
+    if ($check_dup) {
+        echo "<script>alert('Image already exists'); 
+                document.location.href='../admin/admin-variations.php';
+            </script>";
+    } else {
+
+        if (empty($_FILES["image"]["name"])) {
+            echo "Must insert an Image";
+        } else {
+            $img_size = getimagesize($_FILES["image"]["tmp_name"]);
+            if ($img_size == false) {
+                echo "The file is not a valid image";
+            }
+            if ($_FILES["image"]["size"] > 5000000000) {
+                echo "Image file is too large";
+            }
+            if ($imgFileType != "jpg" && $imgFileType != "png" && $imgFileType != "jpeg" && $imgFileType != "gif") {
+                echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            }
+
+            $image_upload = move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+            if ($image_upload) {
+                $result = add_varied_image_controller($target_file);
+                if ($result) {
+                    echo "<script type='text/javascript'>alert('Image added.');
+                    window.location.href = '../admin/admin-variations.php';
+                    </script>";
+                } else {
+                    echo "<script type='text/javascript'> alert('Failed to add.');
+                        window.location.href = '../admin/admin-variations.php';
+                        </script>";
+                }
+            } else {
+                echo "<script type='text/javascript'> alert('Upload Failed');              
+                    window.history.back();
+                    </script>";
+            }
+        }
+    }
 }
 
 
 // add product attributes
 if (isset($_POST["addVar"])) {
-    $product_id = $_POST["p_id"];
+    $product_id = $_POST["product"];
     $product_size = $_POST['size'];
     $product_color = $_POST['color'];
-    // $product_image = $_POST['image'];
-    
+    $product_image = $_POST['image'];
 
-    $target_dir = "../assets/images/products/varied/";
-    $target_file = $target_dir . basename($_FILES["image"]["name"]);
-    $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-    if (empty($_FILES["image"]["name"])) {
-        echo "Must insert an Image";
+    // echo $product_id." ".$product_size." ". $product_color ." ".$product_image;
+    $result4 = add_varied_product_controller($product_id, $product_size, $product_color, $product_image);
+    if ($result4) {
+        echo "<script type='text/javascript'> alert('Successfully added attributes');
+            window.location.href = '../admin/admin-variations.php';
+            </script>";
     } else {
-        $img_size = getimagesize($_FILES["image"]["tmp_name"]);
-        if ($img_size == false) {
-            echo "The file is not a valid image";
-        }
-        if ($_FILES["image"]["size"] > 5000000000) {
-            echo "Image file is too large";
-        }
-        if ($imgFileType != "jpg" && $imgFileType != "png" && $imgFileType != "jpeg" && $imgFileType != "gif") {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-        }
-
-        $image_upload = move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-
-        if ($image_upload) {
-
-            
-
-            if ($result1 && $result2 && $result3) {
-                $result4 = add_varied_product_controller($product_id, $product_size, $product_color, $product_image);
-                if($result4){
-                    echo "<script type='text/javascript'> alert('Successfully added attributes');
-                        window.location.href = '../admin/admin-variations.php';
-                        </script>";
-                }else{
-                    echo "<script type='text/javascript'> alert('Failed to add attributes');
-                        window.location.href = '../admin/admin-variations.php';
-                        </script>";
-                }
-            } else {
-                echo "
-                            <script type='text/javascript'>
-                                alert('Failed to add respective attributes');
-                                window.history.back();
-                            </script>
-                        ";
-            }
-        } else {
-            echo "<script type='text/javascript'> alert('Upload Failed');              
-                window.history.back();
-                </script>";
-        }
+        echo "<script type='text/javascript'> alert('Failed to add attributes');
+            window.location.href = '../admin/admin-variations.php';
+            </script>";
     }
 }

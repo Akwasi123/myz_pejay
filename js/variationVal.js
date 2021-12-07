@@ -113,7 +113,7 @@ const valImage = () =>{
 
 	const imagee = document.getElementById('imagee');
 
-	const imageeValue = sizee.value.trim();
+	const imageeValue = imagee.value.trim();
 
 	if(imageeValue === ''){
 		setEmptyFor(imagee, 'Select Product Image');
