@@ -598,12 +598,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                     </a>
                                 </div>
 
-                                <!-- favorites -->
-                                <a href="./actions/add_wishlist.php?p_id=<?php echo $product['product_id'] ?>" class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </a>
-
-
                             </div>
                         <?php
                         }

@@ -307,3 +307,10 @@ function select_order_reviews_controller($product_id)
     $product_instance = new product_class();
     return $product_instance->select_order_reviews($product_id);
 }
+
+//coint Product Reviews
+function count_order_reviews_controller($product_id)
+{
+    $product_instance = new product_class();
+    return $product_instance->count_reviews($product_id);
+}

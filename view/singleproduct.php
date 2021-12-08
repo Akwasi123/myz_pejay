@@ -5,6 +5,10 @@ include_once (dirname(__FILE__)) . '/../controllers/product_controller.php';
 $selected_product = select_a_product_controller($_GET['PID']);
 $Allproducts = select_all_products_controller();
 $varied_products = select_varied_products_controller($_GET['PID']);
+$select_reviews = select_order_reviews_controller($_GET['PID']);
+$count_reviews = count_order_reviews_controller($_GET['PID']);
+// print_r($count_reviews);
+// print_r($select_reviews);
 
 // print_r($selected_product);
 // $showReviews = select_order_reviews_controller($_GET['productID']);
@@ -153,7 +157,25 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
                                     <div id="Reviews" class="tabcontent">
 
-                                        <p><em>No reviews</em></p>
+                                        <?php
+                                            if($count_reviews['count'] == 0){
+                                                ?>
+                                                    <p><em>No reviews</em></p>
+                                                <?php
+                                            }
+                                            else{
+                                                foreach($select_reviews as $review){
+                                                    // echo $review['review'];
+                                                    ?>
+                                                        <div>
+                                                            <p><?php echo $review['user_fname']." ".$review['user_lname'];?></p>
+                                                            <p><?php echo $review['review'];?></p>
+                                                        </div>
+                                                    <?php
+                                                }
+                                            }
+                                        ?>
+                                        
                                     </div>
                                 </div>
 
@@ -318,8 +340,24 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                 </div>
 
                                 <div id="Reviews" class="tabcontent">
-
-                                    <p><em>No reviews</em></p>
+                                <?php
+                                            if($count_reviews['count'] == 0){
+                                                ?>
+                                                    <p><em>No reviews</em></p>
+                                                <?php
+                                            }
+                                            else{
+                                                foreach($select_reviews as $review){
+                                                    // echo $review['review'];
+                                                    ?>
+                                                        <div>
+                                                            <p><?php echo $review['user_fname']." ".$review['user_lname'];?></p>
+                                                            <p><?php echo $review['review'];?></p>
+                                                        </div>
+                                                    <?php
+                                                }
+                                            }
+                                        ?>
                                 </div>
                             </div>
 

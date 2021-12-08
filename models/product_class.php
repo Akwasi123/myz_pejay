@@ -244,4 +244,10 @@ class product_class extends Connection
 	{
 		return $this->fetch("select product_review.review_id, product_review.product_id, product_review.review, product_review.p_date, users.user_fname, users.user_lname, users.user_id from product_review join users ON (product_review.user_id = users.user_id) WHERE product_id='$product_id'");
 	}
+
+	function count_reviews($product_id)
+	{
+		return $this->fetchOne("select count(*) as count from product_review where product_review.product_id='$product_id'");
+	}
+	
 }
