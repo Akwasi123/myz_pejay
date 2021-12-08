@@ -171,9 +171,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                 function payWithPaystack() {
 
                     let handler = PaystackPop.setup({
-                        // key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
+                        key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
                         // key: 'pk_test_b28f7685fbbab527a165b02f5d271541fa8e95fa', // Replace with your public key
-                        key: 'pk_test_aeac52408dfe068589d984dc145de1ea34aa8a1d', // Replace with your public key
+                        // key: 'pk_test_aeac52408dfe068589d984dc145de1ea34aa8a1d', // Replace with your public key
                         //pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd
                         email: document.getElementById("email").value,
                         phone: document.getElementById("phone").value,

@@ -54,10 +54,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                             <nav>
                                 <ul class="nav-links">
                                     <li><a href="./view/shop.php" class="link">Shop</a></li>
-                                    <li><a href="" class="link">Dresses</a></li>
-                                    <li><a href="" class="link">Accessories</a></li>
-                                    <li><a href="" class="link">Jeans</a></li>
-                                    <li><a href="" class="link">Shoes</a></li>
+                                    <li><a href="./actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
+                                    <li><a href="./actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
+                                    <li><a href="./actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
+                                    <li><a href="./actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -274,78 +274,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                     </div>
                 </section>
 
-                <!-- testimonials -->
-                <section class="testimonials">
-                    <div class="content">
-                        <div class="heading">
-                            <p>PEOPLE LOVE SHOPPING WITH US!</p>
-                        </div>
-
-                        <!-- testimonials -->
-
-                        <div class="t_swiper">
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                <div class="swiper-slide">
-                                    <div class="name">
-                                        <div class="pp">
-
-                                        </div>
-                                        <p>Lorem ipsum dolor</p>
-                                    </div>
-                                    <p>Awesome work!</p>
-                                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat placerat aliquam in nunc, id fermentum arcu a. Ut et.</p>
-                                    <div class="ratings">
-                                        <img src="./assets/icons/ratings.svg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="name">
-                                        <div class="pp">
-
-                                        </div>
-                                        <p>Lorem ipsum dolor</p>
-                                    </div>
-                                    <p>Awesome work!</p>
-                                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat placerat aliquam in nunc, id fermentum arcu a. Ut et.</p>
-                                    <div class="ratings">
-                                        <img src="./assets/icons/ratings.svg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="name">
-                                        <div class="pp">
-
-                                        </div>
-                                        <p>Lorem ipsum dolor</p>
-                                    </div>
-                                    <p>Awesome work!</p>
-                                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat placerat aliquam in nunc, id fermentum arcu a. Ut et.</p>
-                                    <div class="ratings">
-                                        <img src="./assets/icons/ratings.svg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="name">
-                                        <div class="pp">
-
-                                        </div>
-                                        <p>Lorem ipsum dolor</p>
-                                    </div>
-                                    <p>Awesome work!</p>
-                                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat placerat aliquam in nunc, id fermentum arcu a. Ut et.</p>
-                                    <div class="ratings">
-                                        <img src="./assets/icons/ratings.svg" alt="">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
             </main>
 
@@ -453,10 +381,10 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                         <nav>
                             <ul class="nav-links">
                                 <li><a href="./view/shop.php" class="link">Shop</a></li>
-                                <li><a href="" class="link">Dresses</a></li>
-                                <li><a href="" class="link">Accessories</a></li>
-                                <li><a href="" class="link">Jeans</a></li>
-                                <li><a href="" class="link">Shoes</a></li>
+                                <li><a href="./actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
+                                <li><a href="./actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
+                                <li><a href="./actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
+                                <li><a href="./actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -651,7 +579,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                     </a>
                                 </div>
 
-                        
+
 
 
                             </div>
@@ -662,78 +590,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                 </div>
             </section>
 
-            <!-- testimonials -->
-            <section class="testimonials">
-                <div class="content">
-                    <div class="heading">
-                        <p>PEOPLE LOVE SHOPPING WITH US!</p>
-                    </div>
 
-                    <!-- testimonials -->
-
-                    <div class="t_swiper">
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide">
-                                <div class="name">
-                                    <div class="pp">
-
-                                    </div>
-                                    <p>Lorem ipsum dolor</p>
-                                </div>
-                                <p>Awesome work!</p>
-                                <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat placerat aliquam in nunc, id fermentum arcu a. Ut et.</p>
-                                <div class="ratings">
-                                    <img src="./assets/icons/ratings.svg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="name">
-                                    <div class="pp">
-
-                                    </div>
-                                    <p>Lorem ipsum dolor</p>
-                                </div>
-                                <p>Awesome work!</p>
-                                <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat placerat aliquam in nunc, id fermentum arcu a. Ut et.</p>
-                                <div class="ratings">
-                                    <img src="./assets/icons/ratings.svg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="name">
-                                    <div class="pp">
-
-                                    </div>
-                                    <p>Lorem ipsum dolor</p>
-                                </div>
-                                <p>Awesome work!</p>
-                                <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat placerat aliquam in nunc, id fermentum arcu a. Ut et.</p>
-                                <div class="ratings">
-                                    <img src="./assets/icons/ratings.svg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="name">
-                                    <div class="pp">
-
-                                    </div>
-                                    <p>Lorem ipsum dolor</p>
-                                </div>
-                                <p>Awesome work!</p>
-                                <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat placerat aliquam in nunc, id fermentum arcu a. Ut et.</p>
-                                <div class="ratings">
-                                    <img src="./assets/icons/ratings.svg" alt="">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
 
         </main>
 

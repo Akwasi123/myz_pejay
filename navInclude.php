@@ -31,12 +31,12 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                 </div>
 
                 <nav>
-                    <ul class="nav-links dark">
-                        <li><a href="shop.php" class="link">Shop</a></li>
-                        <li><a href="" class="link">Dresses</a></li>
-                        <li><a href="" class="link">Accessories</a></li>
-                        <li><a href="" class="link">Jeans</a></li>
-                        <li><a href="" class="link">Shoes</a></li>
+                    <ul class="nav-links">
+                        <li><a href="../view/shop.php" class="link">Shop</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
                     </ul>
                 </nav>
             </div>
