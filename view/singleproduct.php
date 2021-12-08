@@ -6,7 +6,7 @@ $selected_product = select_a_product_controller($_GET['PID']);
 $Allproducts = select_all_products_controller();
 $varied_products = select_varied_products_controller($_GET['PID']);
 
-// print_r($varied_products);
+// print_r($varied_products)s;
 // $showReviews = select_order_reviews_controller($_GET['productID']);
 
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
