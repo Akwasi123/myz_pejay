@@ -298,4 +298,23 @@ function sum_revenue_controller(){
     return $cart_instance->sum_revenue();
 }
 
-?>
+function sum_pending_orders_controller(){
+    //create instance of the cart class
+    $cart_instance = new Cart();
+    //calls method from cart class
+    return $cart_instance->sum_pending_orders();
+}
+
+function sum_approved_orders_controller(){
+    //create instance of the cart class
+    $cart_instance = new Cart();
+    //calls method from cart class
+    return $cart_instance->sum_approved_orders();
+}
+
+function approve_order_controller($order_id, $order_status){
+    //create instance of the cart class
+    $cart_instance = new Cart();
+    //calls method from cart class
+    return $cart_instance->approveOrder($order_id, $order_status);
+}

@@ -1,8 +1,7 @@
 <?php
 include_once (dirname(__FILE__)) . '/../settings/core.php';
-
-
-
+include_once (dirname(__FILE__)) . '/../controllers/cart_controller.php';
+$payments = select_payment_admin_controller();
 
 // page if admin logs in
 if (isset($_SESSION['user_role']) == '1') {
@@ -126,16 +125,26 @@ if (isset($_SESSION['user_role']) == '1') {
                                 <th>Amount</th>
                                 <th>Currency</th>
                                 <th>Date</th>
+                                <th>Actions</th>
 
                             </tr>
-                            <tr>
-                                <td>Peter</td>
-                                <td>Griffin</td>
-                                <td>$100</td>
-                                <td>$100</td>
-                                <td>$100</td>
-                                <td>$100</td>
-                            </tr>
+                            <?php
+                            foreach ($payments as $payment) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $payment['payment_id']; ?></td>
+                                    <td>#<?php echo $payment['invoice_no']; ?></td>
+                                    <td><?php echo $payment['user_fname'] . " " . $order['user_lname']; ?></td>
+                                    <td><?php echo $payment['amount'] / (10 ** 2) ?></td>
+                                    <td><?php echo $payment['currency']; ?></td>
+                                    <td><?php echo $payment['payment_date']; ?></td>
+                                    <td class="actions">
+                                        <a href="<?php echo "../actions/deleteFunction.php?deletePayID=" . $order['payment_id']; ?>"><img src="../assets/icons/fluent_delete-20-filled-black.svg" alt=""></a>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
 
                         </table>
                     </div>

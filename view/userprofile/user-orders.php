@@ -139,7 +139,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                                     <?php
                                                     if ($order['order_status'] == 'pending') {
                                                         echo "<span><em>Waiting order approval</em></span>";
-                                                    } else {
+                                                    } 
+                                                    else if($order['order_status'] == 'Cancelled'){
+                                                        echo "<span><em>Your order has been cancelled</em></span>";
+
+                                                    }
+                                                    else {
                                                     ?>
                                                         <a href="./writeReview.php?product_id=<?php echo $order['product_id']; ?>">Write review</a>
                                                     <?php

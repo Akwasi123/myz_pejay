@@ -1,12 +1,14 @@
 <?php
 include_once (dirname(__FILE__)) . '/../settings/core.php';
+include_once (dirname(__FILE__)) . '/../controllers/user_controller.php';
 
+if (isset($_SESSION['user_role']) && isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+    $adminData = select_one_user_controller($user_id);
 
-
-    
     // page if admin logs in
-    if (isset($_SESSION['user_role']) == '1') {
-        ?>
+    if ($_SESSION['user_role'] == '1') {
+?>
         <!DOCTYPE html>
         <html lang="en">
 
@@ -125,32 +127,45 @@ include_once (dirname(__FILE__)) . '/../settings/core.php';
                                         <div class="form-control">
                                             <label for="">Email</label>
                                             <div class="tandE">
-                                                <input type="text">
-                                                <button>Edit</button>
+                                                <input type="text" value="<?php echo $adminData['user_email']; ?>">
+                                                <?php
+                                                if (isset($_GET['updateEmail'])) {
+                                                ?>
+                                                    <a href="../actions/admin_update_settings.php?updateEmail=<?php echo $adminData['user_id']; ?>">Edit</a>
+
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <a href="../admin/admin-ac-settings.php?updateEmail=<?php echo $adminData['user_id']; ?>">Edit</a>
+
+                                                <?php
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                         <div class="form-control">
                                             <label for="">New Password</label>
                                             <div class="tandE">
-                                                <input type="text">
+                                                <input type="text" name="new_password">
                                             </div>
                                         </div>
                                         <div class="form-control">
                                             <label for="">Confirm new password</label>
                                             <div class="tandE">
-                                                <input type="text">
+                                                <input type="text" name="old_password">
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="form-control">
                                         <button>Update Password</button>
                                     </div>
                                 </form>
                             </div>
-                        </section>
+
                     </div>
+                    </section>
                 </div>
+            </div>
             </div>
 
 
@@ -159,9 +174,10 @@ include_once (dirname(__FILE__)) . '/../settings/core.php';
         </body>
 
         </html>
-        <?php
-    }else{
+<?php
+    } else {
         echo "<script type='text/javascript'> alert('Admin not logged in');
-            document.location.href = '../index.php';
-            </script>";
+                document.location.href = '../index.php';
+                </script>";
     }
+}

@@ -144,10 +144,25 @@ if (isset($_SESSION['user_role']) == '1') {
                                             <td><?php echo $order['invoice_no']; ?></td>
                                             <td><?php echo $order['order_date']; ?></td>
                                             <td><?php echo $order['order_status']; ?></td>
-                                            <td>
-                                                <a href="">Approve</a>
-                                                <a href="">Cancel</a>
-                                            </td>
+                                            <?php
+                                                if ($order['order_status'] == 'Approved' || $order['order_status'] == 'Cancelled') {
+                                                ?>
+                                                    <td>
+                                                        <a href="">
+                                                            <img src="../assets/icons/fluent_delete-24-filled.svg" alt="" width="20">
+
+                                                        </a>
+                                                    </td>
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <td>
+                                                        <a href="../actions/approveOrders.php?a_id=<?php echo $order['order_id']; ?>">Approve</a>
+                                                        <a href="../actions/approveOrders.php?cancel_id=<?php echo $order['order_id']; ?>">Cancel</a>
+                                                    </td>
+                                                <?php
+                                                }
+                                                ?>
                                         </tr>
                                     <?php
                                     }

@@ -211,4 +211,23 @@ class Cart extends Connection
     {
         return $this->fetchOne("select SUM(amount) as result from payment");
     }
+
+
+    //// count Pending orders
+    function sum_pending_orders()
+    {
+        return $this->fetchOne("select count(order_status) as result from orders where order_status='pending'");
+    }
+
+
+    //// count Approved orders
+    function sum_approved_orders()
+    {
+        return $this->fetchOne("select count(order_status) as result from orders where order_status='approved'");
+    }
+
+    function approveOrder($order_id, $status)
+    {
+        return $this->query("update orders set order_status = '$status' where order_id='$order_id'");
+    }
 }

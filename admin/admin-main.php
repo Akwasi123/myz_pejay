@@ -1,12 +1,13 @@
 <?php
 include_once (dirname(__FILE__)) . '/../settings/core.php';
 include_once (dirname(__FILE__)) . '/../controllers/cart_controller.php';
+include_once (dirname(__FILE__)) . '/../controllers/product_controller.php';
 include_once (dirname(__FILE__)) . '/../controllers/user_controller.php';
 
-$userCount = count_users_func();
+$pendingOrders = sum_pending_orders_controller();
 $orderCount = count_orders_controller();
 $productCount = count_products_controller();
-$sumRevenue = sum_revenue_controller();
+$approvedOrders = sum_approved_orders_controller();
 
 
 $ordersAdmin = select_order_admin_controller();
@@ -134,7 +135,7 @@ if (isset($_SESSION['user_role']) == '1') {
                                 </div>
                                 <div class="textDetails">
                                     <p>All Products</p>
-                                    <h2>20</h2>
+                                    <h2><?php echo $productCount['count'] ?></h2>
                                 </div>
                             </div>
                             <div class="stat_item">
@@ -143,16 +144,7 @@ if (isset($_SESSION['user_role']) == '1') {
                                 </div>
                                 <div class="textDetails">
                                     <p>Total Orders</p>
-                                    <h2>30</h2>
-                                </div>
-                            </div>
-                            <div class="stat_item">
-                                <div class="icon ic3">
-                                    <img src="../assets/icons/ic_round-publish.svg" alt="">
-                                </div>
-                                <div class="textDetails">
-                                    <p>Orders Approved</p>
-                                    <h2>40</h2>
+                                    <h2><?php echo $orderCount['count'] ?></h2>
                                 </div>
                             </div>
                             <div class="stat_item">
@@ -161,7 +153,16 @@ if (isset($_SESSION['user_role']) == '1') {
                                 </div>
                                 <div class="textDetails">
                                     <p>Orders Pending</p>
-                                    <h2>10</h2>
+                                    <h2><?php echo $pendingOrders['result'] ?></h2>
+                                </div>
+                            </div>
+                            <div class="stat_item">
+                                <div class="icon ic3">
+                                    <img src="../assets/icons/ic_round-publish.svg" alt="">
+                                </div>
+                                <div class="textDetails">
+                                    <p>Orders Approved</p>
+                                    <h2><?php echo $approvedOrders['result'] ?></h2>
                                 </div>
                             </div>
                         </div>
@@ -183,27 +184,43 @@ if (isset($_SESSION['user_role']) == '1') {
                                             <th>Actions</th>
                                         </tr>
                                         <?php
-                                            foreach ($ordersAdmin as $order) {
-                                            ?>
-                                                <tr>
-                                                    <td><?php echo $order['order_id'] ;?></td>
-                                                    <td><?php echo $order['user_fname']." ". $order['user_lname'] ;?></td>
-                                                    <td><?php echo $order['invoice_no'] ;?></td>
-                                                    <td><?php echo $order['order_date'] ;?></td>
-                                                    <td><?php echo $order['order_status'] ;?></td>
+                                        foreach ($ordersAdmin as $order) {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $order['order_id']; ?></td>
+                                                <td><?php echo $order['user_fname'] . " " . $order['user_lname']; ?></td>
+                                                <td><?php echo $order['invoice_no']; ?></td>
+                                                <td><?php echo $order['order_date']; ?></td>
+                                                <td><?php echo $order['order_status']; ?></td>
+                                                <?php
+                                                if ($order['order_status'] == 'Approved' || $order['order_status'] == 'Cancelled') {
+                                                ?>
                                                     <td>
-                                                        <a href="">Approve</a>
-                                                        <a href="">Cancel</a>
+                                                        <a href="">
+                                                            <img src="../assets/icons/fluent_delete-24-filled.svg" alt="" width="20">
+
+                                                        </a>
                                                     </td>
-                                                </tr>
-                                            <?php
-                                            }
-                                            ?>
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <td>
+                                                        <a href="../actions/approveOrders.php?a_id=<?php echo $order['order_id']; ?>">Approve</a>
+                                                        <a href="../actions/approveOrders.php?cancel_id=<?php echo $order['order_id']; ?>">Cancel</a>
+                                                    </td>
+                                                <?php
+                                                }
+                                                ?>
+
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
                                     </table>
                                 </div>
                             </div>
 
-                            
+
                         </div>
                     </div>
 
