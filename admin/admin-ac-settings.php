@@ -127,11 +127,11 @@ if (isset($_SESSION['user_role']) && isset($_SESSION['user_id'])) {
                                         <div class="form-control">
                                             <label for="">Email</label>
                                             <div class="tandE">
-                                                <input type="text" value="<?php echo $adminData['user_email']; ?>">
+                                                <input type="text" name="email" value="<?php echo $adminData['user_email']; ?>">
                                                 <?php
                                                 if (isset($_GET['updateEmail'])) {
                                                 ?>
-                                                    <a href="../actions/admin_update_settings.php?updateEmail=<?php echo $adminData['user_id']; ?>">Edit</a>
+                                                    <a href="../actions/admin_update_settings.php?updateEmail=<?php echo $adminData['user_id']; ?>">Update Email</a>
 
                                                 <?php
                                                 } else {

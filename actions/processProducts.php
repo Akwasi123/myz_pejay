@@ -201,7 +201,7 @@ if (isset($_POST["updateProduct"])) {
     $product_stock = $_POST['stock'];
 
 
-    $target_dir = "../Assets/Images/products/";
+    $target_dir = "../assets/images/products/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 

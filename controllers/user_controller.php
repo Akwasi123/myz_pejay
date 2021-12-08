@@ -88,3 +88,8 @@ function count_users_func()
     $user_instance = new User();
     return $user_instance->count_users();
 }
+
+function update_email_controller($user_id, $email){
+    $user_instance = new User();
+    return $user_instance->update_email($user_id, $email);
+}

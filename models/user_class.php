@@ -54,4 +54,9 @@ class User extends Connection
 	{
 		return $this->fetchOne("select count(*) as count from users");
 	}
+
+	function update_email($user_id, $email){
+		return $this->query("update users set user_email='$email' where user_id='$user_id'");
+
+	}
 }
