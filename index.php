@@ -64,7 +64,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
                         <!-- wishlist, search, account, cart -->
                         <div class="us_actions">
-                            <a href="" class="icon">
+                            <a href="./view/userprofile/user-wishlist.php" class="icon">
                                 <img src="./assets/icons/bi_heart.svg" alt="" />
                                 <div class="notif"><?php echo $saved_items['total']; ?></div>
                             </a>
@@ -261,9 +261,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                     </div>
 
                                     <!-- favorites -->
-                                    <div class="wish">
+                                    <a href="./actions/add_wishlist.php?p_id=<?php echo $product['product_id'] ?>" class="wish">
                                         <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                    </div>
+                                    </a>
 
 
                                 </div>
@@ -599,9 +599,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                 </div>
 
                                 <!-- favorites -->
-                                <div class="wish">
+                                <a href="./actions/add_wishlist.php?p_id=<?php echo $product['product_id'] ?>" class="wish">
                                     <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
+                                </a>
 
 
                             </div>

@@ -143,22 +143,7 @@ if (isset($_SESSION['user_role']) && isset($_SESSION['user_id'])) {
                                                 ?>
                                             </div>
                                         </div>
-                                        <div class="form-control">
-                                            <label for="">New Password</label>
-                                            <div class="tandE">
-                                                <input type="text" name="new_password">
-                                            </div>
-                                        </div>
-                                        <div class="form-control">
-                                            <label for="">Confirm new password</label>
-                                            <div class="tandE">
-                                                <input type="text" name="old_password">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-control">
-                                        <button>Update Password</button>
-                                    </div>
+                                    
                                 </form>
                             </div>
 

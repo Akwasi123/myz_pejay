@@ -282,6 +282,26 @@ body {
   height: 100%;
 }
 
+.us_container .side-content .content .writtenReviews {
+  width: 50%;
+}
+
+.us_container .side-content .content .writtenReviews .reviewItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .us_container .side-content .content .cartItem {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -682,14 +702,6 @@ body {
   border: none;
   border-radius: 5px 0 0 5px;
   border-color: #26262617;
-}
-
-.us_container .side-content .content .pInfo .form .flex .form-control button {
-  padding: 10px;
-  background-color: #262626;
-  width: 5em;
-  color: white;
-  border: none;
 }
 
 .us_container .side-content .content .pInfo .form .flex .form-control .tandE {

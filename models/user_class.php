@@ -19,11 +19,11 @@ class User extends Connection
 		return $this->query("delete from users where user_id = '$id'");
 	}
 
-	function update_one_user($id, $fname, $lname, $email, $contact)
+	function update_one_user($id, $email, $phone_num, $address, $img)
 	{
 		// return true or false
-		return $this->query("update users set user_fname='$fname', user_lname ='$lname',user_email='$email',
-		  user_contact='$contact' where user_id = '$id'");
+		return $this->query("update users set user_email='$email', user_contact ='$phone_num',user_address='$address',
+		  user_image='$img' where user_id = '$id'");
 	}
 
 	function select_all_users()
@@ -55,8 +55,14 @@ class User extends Connection
 		return $this->fetchOne("select count(*) as count from users");
 	}
 
-	function update_email($user_id, $email){
+	function update_email($user_id, $email)
+	{
 		return $this->query("update users set user_email='$email' where user_id='$user_id'");
+	}
 
+
+	function update_password($user_id, $password)
+	{
+		return $this->query("update users set user_pass='$password' where user_id='$user_id'");
 	}
 }

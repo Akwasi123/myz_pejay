@@ -8,10 +8,16 @@ if (isset($_GET['submitReview'])) {
     $review = $_GET['desc'];
     $post_date = $_GET['post_date'];
 
-    $addReview = add_order_reviews_controller($user_id, $product_id, $review, $post_date);
-
-    if ($addReview) {
-        echo "<script>alert('Review added successfully'); window.history.back();</script>";
+    if ($user_id !== '' && $product_id !== '' && $review !== '' && $post_date !== '') {
+        $addReview = add_order_reviews_controller($user_id, $product_id, $review, $post_date);
+        if ($addReview) {
+            echo "<script>
+            alert('Review added successfully'); 
+            document.location.href='../view/userprofile/user-reviews.php';
+            </script>";
+        } else {
+            echo "<script>alert('Review not added'); window.history.back();</script>";
+        }
     } else {
         echo "<script>alert('Review not added'); window.history.back();</script>";
     }

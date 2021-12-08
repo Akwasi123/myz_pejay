@@ -190,6 +190,14 @@ body{
             height: 100%;
             // border: 1px solid black;
 
+            .writtenReviews{
+                // border: 1px solid red;
+                width: 50%;
+
+                .reviewItem{
+                    @include flexSB();
+                }
+            }
 
             // wishlist items
             .cartItem{
@@ -444,6 +452,8 @@ body{
                         // @include flexSB(row, flex-start);
                         .form-control{
                             margin: 40px 50px 20px 0;
+                            
+
                             label{
                                 display: block;
                                 font-size: 0.8rem;
@@ -459,25 +469,34 @@ body{
                                 border-radius: 5px 0 0 5px;
                                 border-color: #26262617;
                             }
-                            button{
-                                padding: 10px;
-                                background-color: #262626;
-                                width: 5em;
-                                color: white;
-                                border: none;
-                                // border-radius: 0 5px 5px 0;
-                                // box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
-                            }
+                            // button{
+                            //     text-decoration: none;
+                            //     padding: 10px;
+                            //     background-color: #262626;
+                            //     width: 5em;
+                            //     color: white;
+                            //     border: none;
+                            //     // border-radius: 0 5px 5px 0;
+                            //     // box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+                            // }
 
+                            
                             .tandE{
                                 // border: 1px solid red;
                                 width: fit-content;
                                 background-color: #f8f9fa;
+                                
                             }
                 
 
                         }
+
+                        
+                        
+
+
                     }
+                    
                     button{
                         padding: 15px;
                         background-color: #FF4254;
@@ -524,7 +543,6 @@ body{
         }
     }
 }
-
 
 
 

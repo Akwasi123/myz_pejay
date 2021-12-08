@@ -17,23 +17,26 @@ if (isset($p_id)) {
     //check duplicate wishlist for customer logged in
     $check_lg = check_wishlist_lg_controller($p_id, $user_id);
 
-    echo $user_id ." " .$p_id;
-
     if ($check_lg) {
-        echo "<script>alert('Product already in wishlist.'); window.history.back();</script>";
+        echo "<script type='text/javascript'>alert('Product already in wishlist.'); window.history.back();</script>";
     } else {
         //add to wishlist for customer logged in
         $add_lg = add_wishlist_lg_controller($p_id, $user_id);
 
         if ($add_lg) {
-            echo "<script>alert('Product has been added to wishlist'); window.history.back();</script>";
+            echo "
+            <script type='text/javascript'>
+            alert('Product has been added to wishlist'); 
+            window.history.back();
+            </script>
+            ";
         } else {
             echo "<script>alert('Product has not been added to wishlist'); window.history.back();</script>";
         }
     }
 }
 
-if (isset($_GET['deleteID'])) {
+else if (isset($_GET['deleteID'])) {
 
     $pid = $_GET['deleteID'];
 
@@ -51,4 +54,3 @@ if (isset($_GET['deleteID'])) {
 } else {
     header("location: ../index.php");
 }
-

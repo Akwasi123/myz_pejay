@@ -19,13 +19,23 @@ function add_user_controller($fname, $lname, $email, $password, $contact)
  *edit a user function 
  *takes the id, first name, last name,email, password, and contact
  */
-function update_user_controller($id, $fname, $lname, $email,  $contact)
+function update_user_controller($id, $email, $phone_num, $address, $img)
 {
     // create an instance of the user class
     $user_instance = new User();
     // call the method from the class
-    return $user_instance->update_one_user($id, $fname, $lname, $email,  $contact);
+    return $user_instance->update_one_user($id, $email, $phone_num, $address, $img);
 }
+
+function update_user_password_controller($id, $email)
+{
+    // create an instance of the user class
+    $user_instance = new User();
+    // call the method from the class
+    return $user_instance->update_password($id, $email);
+}
+
+
 
 /**
  *delete a user function 
@@ -89,7 +99,8 @@ function count_users_func()
     return $user_instance->count_users();
 }
 
-function update_email_controller($user_id, $email){
+function update_email_controller($user_id, $email)
+{
     $user_instance = new User();
     return $user_instance->update_email($user_id, $email);
 }

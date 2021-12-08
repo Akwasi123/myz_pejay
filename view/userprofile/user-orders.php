@@ -146,7 +146,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                                     }
                                                     else {
                                                     ?>
-                                                        <a href="./writeReview.php?product_id=<?php echo $order['product_id']; ?>">Write review</a>
+                                                        <a href="../writeReview.php?product_id=<?php echo $order['product_id']; ?>">Write review</a>
                                                     <?php
                                                     }
                                                     ?>
