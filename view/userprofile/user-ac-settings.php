@@ -95,6 +95,18 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_id'])) {
                     <div class="content">
                         <div class="heading">
                             <p>Account Settings</p>
+
+                            <!-- usernav -->
+                            <div class="breadCrumb">
+                                <div class="menuItem">
+                                    <div class="icon">
+                                        <img src="../../assets/icons/bx_bxs-shopping-bag-alt.svg" alt="">
+                                    </div>
+                                    <a href="../../index.php">Back to shopping</a>
+                                </div>
+
+
+                            </div>
                         </div>
 
                         <section class="pInfo">
