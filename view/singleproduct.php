@@ -259,8 +259,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                     <a href="../view/shop.php">Products</a>
                                 </div>
                                 /
-                                <div class="menuItem">
-                                    <a class="current"><?php echo $selected_product['product_title']; ?></a>
+                                <div class="menuItem current">
+                                    <a class=""><?php echo $selected_product['product_title']; ?></a>
                                 </div>
                             </div>
 

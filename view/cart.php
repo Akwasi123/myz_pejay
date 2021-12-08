@@ -3,11 +3,11 @@ include_once (dirname(__FILE__)) . '/../settings/core.php';
 include_once (dirname(__FILE__)) . '/../controllers/cart_controller.php';
 if (isset($_SESSION['user_id'])) { //gets session of customer(logged in)
     $user_id = $_SESSION['user_id'];  //user_id is now session
-    $all_cart_items = select_all_cart_lg_controller($_SESSION['user_id']);
+    $all_cart_items = select_all_cart_lg_controller($user_id);
     $cart_amount_lg = sum_cart_lg_controller($user_id);
 } else {
     $ipAddress = check_ip();
-    $all_cart_items = select_all_cart_lg_controller($_SESSION['user_id']);
+    $all_cart_items = select_all_cart_gst_controller($ipAddress);
     $cart_amount_gst = sum_cart_gst_controller($ipAddress);
 }
 
@@ -130,7 +130,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
         </html>
     <?php
     }
-} else {
+} else if(isset($ipAddress)) {
+    // print_r($all_cart_items);
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -185,11 +186,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                             <p>GHS <?php echo $item['product_price'] ?>.00</p>
                                         </div>
                                     </div>
-                                    <div class="quantity">
-                                        <a href="../actions/manage_quantity.php?decID=<?php echo $item['product_id'] ?>"><img src="../assets/icons/akar-icons_minus.svg" alt=""></a>
-                                        <p><?php echo $item['quantity'] ?></p>
-                                        <a href="../actions/manage_quantity.php?incID=<?php echo $item['product_id'] ?>"><img src="../assets/icons/akar-icons_plus.svg" alt=""></a>
-                                    </div>
+                                    
                                     <div class="remove">
                                         <a href="../actions/manage_quantity.php?deleteID=<?php echo $item['product_id'] ?>"><img src="../assets/icons/fluent_delete-24-filled.svg" alt=""></a>
                                     </div>
@@ -229,9 +226,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                     <div class="m1">
                                         <img src="../assets/icons/mobile-payment.png" alt="">
                                     </div>
-                                </div>
-                                <div class="btn">
-                                    <a href="checkout.php">Checkout</a>
                                 </div>
                             </div>
                         </div>

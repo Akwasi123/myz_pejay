@@ -7,12 +7,12 @@ include_once (dirname(__FILE__)) . '/../controllers/cart_controller.php';
 
 
 $p_id = $_GET['p_id'];
+$user_id = $_SESSION['user_id'];
 
 //get customers IP address
 $ipAddress = check_ip();
 
-if (isset($p_id)) {
-    $user_id = $_SESSION['user_id'];
+if (isset($user_id)) {
   
     //check duplicate cart for customer logged in
     $check_lg = check_cart_lg_controller($p_id, $user_id);
@@ -29,7 +29,7 @@ if (isset($p_id)) {
             echo "<script>alert('Product has not been added to Cart'); window.history.back();</script>";
         }
     }
-} else {
+} else if(isset($ipAddress)){
 
     //check duplicate cart for guest customer
     $check_gst = check_cart_gst_controller($p_id, $ipAddress);

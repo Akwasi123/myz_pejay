@@ -644,17 +644,14 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                         <h3><?php echo $featured['product_title'] ?></h3>
                                         <p class="price">GHS<?php echo $featured['product_price'] ?>.00</p>
                                     </div>
-                                    <div class="cartIcon">
+                                    <a href="./actions/add_cart.php?p_id=<?php echo $product['product_id'] ?>" class="cartIcon">
                                         <button>
                                             <img src="./assets/icons/ps_shopping-cart.svg" alt="">
                                         </button>
-                                    </div>
+                                    </a>
                                 </div>
 
-                                <!-- favorites -->
-                                <div class="wish">
-                                    <img src="./assets/icons/bi_heart-1.svg" alt="">
-                                </div>
+                        
 
 
                             </div>
