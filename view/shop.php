@@ -6,7 +6,7 @@ include_once (dirname(__FILE__)) . '/../controllers/product_controller.php';
 if (isset($_SESSION['search_result'])) {
     $search_results = $_SESSION['search_result'];
 
-    print_r($search_results);
+    $search  = $search_results[0]['cat_name'];
 }
 
 ?>
@@ -56,7 +56,7 @@ if (isset($_SESSION['search_result'])) {
                     </div>
                     /
                     <div class="menuItem">
-                        <a href="" class="current">All</a>
+                        <a href="" class="current"><?php echo $search; ?></a>
                     </div>
                 </div>
 
@@ -118,7 +118,7 @@ if (isset($_SESSION['search_result'])) {
                         </div>
                     </div>
                     <div class="right">
-                        <p class="resCount">20 results</p>
+                        <p class="resCount">Showing results for: <?php echo $search; ?></p>
 
                         <div class="productGrid">
 
@@ -161,19 +161,6 @@ if (isset($_SESSION['search_result'])) {
                             ?>
 
 
-                        </div>
-
-
-                        <!-- pagination -->
-                        <div class="pagination">
-                            <a href="#">&laquo;</a>
-                            <a href="#">1</a>
-                            <a class="active" href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                            <a href="#">5</a>
-                            <a href="#">6</a>
-                            <a href="#">&raquo;</a>
                         </div>
 
                     </div>

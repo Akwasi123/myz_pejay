@@ -516,9 +516,9 @@ body{
                 text-decoration: none;
                 color: rgb(128, 128, 128); 
 
-                .current{
-                    color: #FF4254;
-                }
+            }
+            .current{
+                color: #FF4254;
             }
             
         }
@@ -950,6 +950,8 @@ body{
 
         .breadCrumb{
             @include bCrumb(12em);
+
+            
 
             .menuItem{
                 margin: 0 5px;

@@ -902,7 +902,7 @@ body {
   color: gray;
 }
 
-.shopDisplay .breadCrumb .menuItem a .current {
+.shopDisplay .breadCrumb .menuItem .current {
   color: #FF4254;
 }
 

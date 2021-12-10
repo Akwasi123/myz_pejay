@@ -35,7 +35,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
         <body>
             <?php
 
-            include_once (dirname(__FILE__)) . '/../navInclude.php';
+            include_once (dirname(__FILE__)) . '/../navIncludeDark.php';
             ?>
 
             <main>
@@ -219,7 +219,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
     <body>
         <?php
 
-        include_once (dirname(__FILE__)) . '/../navInclude.php';
+            include_once (dirname(__FILE__)) . '/../navIncludeDark.php';
+
         ?>
 
         <main>

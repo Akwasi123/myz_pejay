@@ -31,12 +31,12 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                 </div>
 
                 <nav>
-                    <ul class="nav-links">
-                        <li><a href="../view/shop.php" class="link">Shop</a></li>
-                        <li><a href="../actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
-                        <li><a href="../actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
-                        <li><a href="../actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
-                        <li><a href="../actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
+                    <ul class="nav-links dark">
+                        <li><a href="./view/shop.php" class="link">Shop</a></li>
+                        <li><a href="./actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
+                        <li><a href="./actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
+                        <li><a href="./actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
+                        <li><a href="./actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
                     </ul>
                 </nav>
             </div>
@@ -48,7 +48,7 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                 </a>
                 <div class="searchBar">
                     <form action="">
-                        <div class="form-control">
+                        <div class="form-control dark">
                             <input type="text" placeholder="Search for items..." />
                         </div>
                     </form>
@@ -84,12 +84,12 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                 </div>
 
                 <nav>
-                    <ul class="nav-links">
-                        <li><a href="../view/shop.php" class="link">Shop</a></li>
-                        <li><a href="../actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
-                        <li><a href="../actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
-                        <li><a href="../actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
-                        <li><a href="../actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
+                    <ul class="nav-links dark">
+                        <li><a href="./view/shop.php" class="link">Shop</a></li>
+                        <li><a href="./actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
+                        <li><a href="./actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
+                        <li><a href="./actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
+                        <li><a href="./actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
                     </ul>
                 </nav>
             </div>
@@ -97,19 +97,19 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
             <div class="us_actions">
                 <div class="searchBar">
                     <form action="">
-                        <div class="form-control">
+                        <div class="form-control dark">
                             <input type="text" placeholder="Search for items..." />
                         </div>
                     </form>
                     <a href="./view/cart.php" class="icon">
-                        <img src="../assets/icons/ic_baseline-shopping-basket.svg" alt="" />
+                        <img src="../assets/icons/ic_round-shopping-basket.svg" alt="" />
                         <div class="notif"><?php echo $cart_count['total']; ?></div>
                     </a>
                 </div>
                 <!-- dropdown -->
                 <div class="dropdown">
                     <div class="icon">
-                        <img src="../assets/icons/codicon_account.svg" class="dropbtn" alt="" />
+                        <img src="../assets/icons/codicon_account-1.svg" class="dropbtn" alt="" />
                     </div>
                     <div class="dropdown-content">
                         <a href="../login/login.php">Login</a>

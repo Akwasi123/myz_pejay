@@ -101,7 +101,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                         <div class="intro-text">
                             <p>Myz_pejay’s collections</p>
                             <h1>Top notch women’s <span>clothing</span></h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida non facilisis est amet, venenatis vulputate odio tincidunt ut. Vitae ut nullam quis non.</p>
+                            <p>My dresses are very reasonably priced, for dresses that are cut on the body. I have an obsession with details and pattern. I have an obsession with details and pattern. Fashion is made to become unfashionable. I love my beauty. It's not my fault.</p>
                             <button onclick="document.location.href='./view/shop.php'">Shop Now</button>
                         </div>
                         <!-- Additional required wrapper -->
@@ -138,21 +138,21 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                         <img src="./assets/icons/carbon_delivery-parcel.svg" alt="">
                                     </div>
                                     <strong>Free Delivery</strong>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, distinctio.</p>
+                                    <p>We deliver all products on time and in the best quality with no delivery cost.</p>
                                 </div>
                                 <div class="vf_plaq">
                                     <div class="icon">
                                         <img src="./assets/icons/bi_cloud-download-fill.svg" alt="">
                                     </div>
                                     <strong>24/7 Hour Support</strong>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, distinctio.</p>
+                                    <p>In a situation where you have an issue with our service or product, our customer service is active 24/7.</p>
                                 </div>
                                 <div class="vf_plaq">
                                     <div class="icon">
                                         <img src="./assets/icons/fluent_money-hand-20-filled.svg" alt="">
                                     </div>
                                     <strong>100% Money back</strong>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, distinctio.</p>
+                                    <p>Should you receive a wrong product or should there be any issue with a product, we issue a 100% money back guarantee.</p>
                                 </div>
                             </div>
                         </div>
@@ -425,7 +425,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                     <div class="intro-text">
                         <p>Myz_pejay’s collections</p>
                         <h1>Top notch women’s <span>clothing</span></h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida non facilisis est amet, venenatis vulputate odio tincidunt ut. Vitae ut nullam quis non.</p>
+                        <p>My dresses are very reasonably priced, for dresses that are cut on the body. I have an obsession with details and pattern. I have an obsession with details and pattern. Fashion is made to become unfashionable. I love my beauty. It's not my fault.</p>
                         <button onclick="document.location.href='./view/shop.php'">Shop Now</button>
                     </div>
                     <!-- Additional required wrapper -->
@@ -450,38 +450,39 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
         <main>
             <!-- value proposition section -->
-            <section class="vfb">
-                <div class="content">
-                    <div class="WYS">
-                        <div class="left">
-                            <h1>Why you should shop with us?</h1>
-                        </div>
-                        <div class="right">
-                            <div class="vf_plaq">
-                                <div class="icon">
-                                    <img src="./assets/icons/carbon_delivery-parcel.svg" alt="">
-                                </div>
-                                <strong>Free Delivery</strong>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, distinctio.</p>
+           <!-- value proposition section -->
+           <section class="vfb">
+                    <div class="content">
+                        <div class="WYS">
+                            <div class="left">
+                                <h1>Why you should shop with us?</h1>
                             </div>
-                            <div class="vf_plaq">
-                                <div class="icon">
-                                    <img src="./assets/icons/bi_cloud-download-fill.svg" alt="">
+                            <div class="right">
+                                <div class="vf_plaq">
+                                    <div class="icon">
+                                        <img src="./assets/icons/carbon_delivery-parcel.svg" alt="">
+                                    </div>
+                                    <strong>Free Delivery</strong>
+                                    <p>We deliver all products on time and in the best quality with no delivery cost.</p>
                                 </div>
-                                <strong>24/7 Hour Support</strong>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, distinctio.</p>
-                            </div>
-                            <div class="vf_plaq">
-                                <div class="icon">
-                                    <img src="./assets/icons/fluent_money-hand-20-filled.svg" alt="">
+                                <div class="vf_plaq">
+                                    <div class="icon">
+                                        <img src="./assets/icons/bi_cloud-download-fill.svg" alt="">
+                                    </div>
+                                    <strong>24/7 Hour Support</strong>
+                                    <p>In a situation where you have an issue with our service or product, our customer service is active 24/7.</p>
                                 </div>
-                                <strong>100% Money back</strong>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, distinctio.</p>
+                                <div class="vf_plaq">
+                                    <div class="icon">
+                                        <img src="./assets/icons/fluent_money-hand-20-filled.svg" alt="">
+                                    </div>
+                                    <strong>100% Money back</strong>
+                                    <p>Should you receive a wrong product or should there be any issue with a product, we issue a 100% money back guarantee.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
             <!-- best sellers -->
             <section class="bestSellers">
