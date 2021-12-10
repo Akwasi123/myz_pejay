@@ -92,7 +92,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
                                 <!-- price -->
                                 <div class="price">
-                                    <p>GHS <?php echo $selected_product['product_price']; ?>.00</p>
+                                    <p>GHS <?php echo $selected_product['product_price']; ?></p>
                                 </div>
 
                                 <!-- details and reviews tabs -->
@@ -277,7 +277,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
                             <!-- price -->
                             <div class="price">
-                                <p>GHS<?php echo $selected_product['product_price']; ?>.00</p>
+                                <p>GHS <?php echo $selected_product['product_price']; ?></p>
                             </div>
 
                             <!-- details and reviews tabs -->

@@ -118,7 +118,7 @@ if (isset($_SESSION['search_result'])) {
                         </div>
                     </div>
                     <div class="right">
-                        <p class="resCount">Showing results for: <?php echo $_GET['searchTerm']; ?></p>
+                        <p class="resCount">Showing results for: <?php echo $search; ?></p>
 
                         <div class="productGrid">
 
@@ -144,7 +144,7 @@ if (isset($_SESSION['search_result'])) {
                                                     <img src="../assets/icons/ratings.svg" width="100" alt="">
                                                 </div>
                                                 <h3><?php echo $result['product_title'] ?></h3>
-                                                <p class="price">GHS<?php echo $result['product_price'] ?>.00</p>
+                                                <p class="price">GHS <?php echo $result['product_price'] ?></p>
                                             </div>
                                             <a href="../actions/add_cart.php?p_id=<?php echo $result['product_id'] ?>" class="cartIcon">
                                                 <button>

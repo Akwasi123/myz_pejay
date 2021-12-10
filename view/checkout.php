@@ -115,7 +115,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                                 </div>
                                                 <div class="details">
                                                     <p><?php echo $order_item['product_title']; ?></p>
-                                                    <p>GHS <?php echo $order_item['product_price']; ?>.00</p>
+                                                    <p>GHS <?php echo $order_item['product_price']; ?></p>
                                                 </div>
                                                 <p class="quantity">x<?php echo $order_item['quantity']; ?></p>
                                             </div>
@@ -130,7 +130,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                         <div class="amount">
                                             <div class="amItem">
                                                 <p>Subtotal</p>
-                                                <p>GHS <?php echo $cart_amount_lg['result']; ?>.00</p>
+                                                <p>GHS <?php echo $cart_amount_lg['result']; ?></p>
                                             </div>
                                             <hr>
                                             <div class="amItem">
@@ -140,13 +140,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                             <hr>
                                             <div class="amItem">
                                                 <h1>Total</h1>
-                                                <p class="total">GHS <?php echo $cart_amount_lg['result']; ?>.00</p>
+                                                <p class="total">GHS <?php echo $cart_amount_lg['result']; ?></p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="btn">
-                                            <button type="button" id="pay" class="pay" onclick="payWithPaystack()" value="<?php echo $cart_amount_lg['result']; ?>">Pay GHS <?php echo $cart_amount_lg['result']; ?>.00</button>
+                                            <button type="button" id="pay" class="pay" onclick="payWithPaystack()" value="<?php echo $cart_amount_lg['result']; ?>">Pay GHS <?php echo $cart_amount_lg['result']; ?></button>
                                     </div>
                                 </div>
 

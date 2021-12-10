@@ -65,7 +65,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                             </div>
                                             <div class="details">
                                                 <h3><?php echo $item['product_title'] ?></h3>
-                                                <p>GHS <?php echo $item['product_price'] ?>.00</p>
+                                                <p>GHS <?php echo $item['product_price'] ?></p>
                                             </div>
                                         </div>
                                         <div class="quantity">
@@ -87,7 +87,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                 <div class="amount">
                                     <div class="amItem">
                                         <p>Subtotal</p>
-                                        <p>GHS <?php echo $cart_amount_lg['result'] ?>.00</p>
+                                        <p>GHS <?php echo $cart_amount_lg['result'] ?></p>
                                     </div>
                                     <hr>
                                     <div class="amItem">
@@ -97,7 +97,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                     <hr>
                                     <div class="amItem">
                                         <h1>Total</h1>
-                                        <p class="total">GHS <?php echo $cart_amount_lg['result'] ?>.00</p>
+                                        <p class="total">GHS <?php echo $cart_amount_lg['result'] ?></p>
                                     </div>
                                 </div>
                                 <div class="check">
@@ -183,7 +183,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                         </div>
                                         <div class="details">
                                             <h3><?php echo $item['product_title'] ?></h3>
-                                            <p>GHS <?php echo $item['product_price'] ?>.00</p>
+                                            <p>GHS <?php echo $item['product_price'] ?></p>
                                         </div>
                                     </div>
                                     
@@ -201,7 +201,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                             <div class="amount">
                                 <div class="amItem">
                                     <p>Subtotal</p>
-                                    <p>GHS<?php echo $cart_amount_gst['result'] ?>.00</p>
+                                    <p>GHS <?php echo $cart_amount_gst['result'] ?></p>
                                 </div>
                                 <hr>
                                 <div class="amItem">
@@ -211,7 +211,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                 <hr>
                                 <div class="amItem">
                                     <h1>Total</h1>
-                                    <p class="total">GHS<?php echo $cart_amount_gst['result'] ?>.00</p>
+                                    <p class="total">GHS <?php echo $cart_amount_gst['result'] ?></p>
                                 </div>
                             </div>
                             <div class="check">

@@ -99,15 +99,7 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                     <form name="searchForm" action="../actions/searchFunction.php" method="GET">
                         <div class="form-control dark">
                             <input type="text" name="searchTerm" placeholder="Search for items..." />
-                            <script>
-                                document.onkeydown = function(evt) {
-                                    var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
-                                    if (keyCode == 13) {
-                                        //your function call here
-                                        document.searchForm.submit();
-                                    }
-                                }
-                            </script>
+                            
                         </div>
                     </form>
                     <a href="./view/cart.php" class="icon">

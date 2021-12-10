@@ -43,7 +43,7 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
 
             <div class="us_actions">
                 <a href="./userprofile/user-wishlist.php" class="icon">
-                    <img src="../assets/icons/bi_heart-1.svg" alt="" />
+                    <img src="../assets/icons/bi_heart.svg" alt="" />
                     <div class="notif"><?php echo $wishlist_count['total']; ?></div>
                 </a>
                 <div class="searchBar">
@@ -63,7 +63,7 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                         </div>
                     </form>
                     <a href="./cart.php" class="icon">
-                        <img src="../assets/icons/ic_round-shopping-basket.svg" alt="" />
+                        <img src="../assets/icons/ic_baseline-shopping-basket.svg" alt="" />
                         <div class="notif"><?php echo $cart_count['total']; ?></div>
                     </a>
                 </div>

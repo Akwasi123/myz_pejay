@@ -193,7 +193,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                                 <img src="./assets/icons/ratings.svg" width="100" alt="">
                                             </div>
                                             <h3><?php echo $product['product_title'] ?></h3>
-                                            <p class="price">GHS<?php echo $product['product_price'] ?>.00</p>
+                                            <p class="price">GHS <?php echo $product['product_price'] ?></p>
                                         </div>
                                         <a href="./actions/add_cart.php?p_id=<?php echo $product['product_id'] ?>" class="cartIcon">
                                             <button>
@@ -251,7 +251,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                                 <img src="./assets/icons/ratings.svg" width="100" alt="">
                                             </div>
                                             <h3><?php echo $featured['product_title'] ?></h3>
-                                            <p class="price">GHS<?php echo $featured['product_price'] ?>.00</p>
+                                            <p class="price">GHS <?php echo $featured['product_price'] ?></p>
                                         </div>
                                         <div class="cartIcon">
                                             <button>
@@ -518,7 +518,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                             <img src="./assets/icons/ratings.svg" width="100" alt="">
                                         </div>
                                         <h3><?php echo $product['product_title'] ?></h3>
-                                        <p class="price">GHS<?php echo $product['product_price'] ?>.00</p>
+                                        <p class="price">GHS <?php echo $product['product_price'] ?></p>
                                     </div>
                                     <a href="./actions/add_cart.php?p_id=<?php echo $product['product_id'] ?>" class="cartIcon">
                                         <button>
@@ -571,7 +571,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                             <img src="./assets/icons/ratings.svg" width="100" alt="">
                                         </div>
                                         <h3><?php echo $featured['product_title'] ?></h3>
-                                        <p class="price">GHS<?php echo $featured['product_price'] ?>.00</p>
+                                        <p class="price">GHS <?php echo $featured['product_price'] ?></p>
                                     </div>
                                     <a href="./actions/add_cart.php?p_id=<?php echo $product['product_id'] ?>" class="cartIcon">
                                         <button>
