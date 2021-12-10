@@ -47,9 +47,9 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                     <div class="notif"><?php echo $wishlist_count['total']; ?></div>
                 </a>
                 <div class="searchBar">
-                    <form action="">
+                    <form action="../actions/searchFunction.php" method="GET">
                         <div class="form-control dark">
-                            <input type="text" placeholder="Search for items..." />
+                            <input type="text" name="searchTerm" placeholder="Search for items..." />
                         </div>
                     </form>
                     <a href="./cart.php" class="icon">
@@ -96,9 +96,18 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
 
             <div class="us_actions">
                 <div class="searchBar">
-                    <form action="">
+                    <form name="searchForm" action="../actions/searchFunction.php" method="GET">
                         <div class="form-control dark">
-                            <input type="text" placeholder="Search for items..." />
+                            <input type="text" name="searchTerm" placeholder="Search for items..." />
+                            <script>
+                                document.onkeydown = function(evt) {
+                                    var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+                                    if (keyCode == 13) {
+                                        //your function call here
+                                        document.searchForm.submit();
+                                    }
+                                }
+                            </script>
                         </div>
                     </form>
                     <a href="./view/cart.php" class="icon">

@@ -118,7 +118,7 @@ if (isset($_SESSION['search_result'])) {
                         </div>
                     </div>
                     <div class="right">
-                        <p class="resCount">Showing results for: <?php echo $search; ?></p>
+                        <p class="resCount">Showing results for: <?php echo $_GET['searchTerm']; ?></p>
 
                         <div class="productGrid">
 

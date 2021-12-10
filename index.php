@@ -69,9 +69,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                                 <div class="notif"><?php echo $saved_items['total']; ?></div>
                             </a>
                             <div class="searchBar">
-                                <form action="">
+                                <form action="./actions/searchFunction.php" method="GET">
                                     <div class="form-control">
-                                        <input type="text" placeholder="Search for items..." />
+                                        <input type="text" name="searchTerm" placeholder="Search for items..." />
                                     </div>
                                 </form>
                                 <a href="./view/cart.php" class="icon">
@@ -393,9 +393,9 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                     <div class="us_actions">
 
                         <div class="searchBar">
-                            <form action="">
+                            <form action="./actions/searchFunction.php" method="GET">
                                 <div class="form-control">
-                                    <input type="text" placeholder="Search for items..." />
+                                    <input type="text" name="searchTerm" placeholder="Search for items..." />
                                 </div>
                             </form>
                             <a href="./view/cart.php" class="icon">
@@ -450,39 +450,39 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
 
         <main>
             <!-- value proposition section -->
-           <!-- value proposition section -->
-           <section class="vfb">
-                    <div class="content">
-                        <div class="WYS">
-                            <div class="left">
-                                <h1>Why you should shop with us?</h1>
+            <!-- value proposition section -->
+            <section class="vfb">
+                <div class="content">
+                    <div class="WYS">
+                        <div class="left">
+                            <h1>Why you should shop with us?</h1>
+                        </div>
+                        <div class="right">
+                            <div class="vf_plaq">
+                                <div class="icon">
+                                    <img src="./assets/icons/carbon_delivery-parcel.svg" alt="">
+                                </div>
+                                <strong>Free Delivery</strong>
+                                <p>We deliver all products on time and in the best quality with no delivery cost.</p>
                             </div>
-                            <div class="right">
-                                <div class="vf_plaq">
-                                    <div class="icon">
-                                        <img src="./assets/icons/carbon_delivery-parcel.svg" alt="">
-                                    </div>
-                                    <strong>Free Delivery</strong>
-                                    <p>We deliver all products on time and in the best quality with no delivery cost.</p>
+                            <div class="vf_plaq">
+                                <div class="icon">
+                                    <img src="./assets/icons/bi_cloud-download-fill.svg" alt="">
                                 </div>
-                                <div class="vf_plaq">
-                                    <div class="icon">
-                                        <img src="./assets/icons/bi_cloud-download-fill.svg" alt="">
-                                    </div>
-                                    <strong>24/7 Hour Support</strong>
-                                    <p>In a situation where you have an issue with our service or product, our customer service is active 24/7.</p>
+                                <strong>24/7 Hour Support</strong>
+                                <p>In a situation where you have an issue with our service or product, our customer service is active 24/7.</p>
+                            </div>
+                            <div class="vf_plaq">
+                                <div class="icon">
+                                    <img src="./assets/icons/fluent_money-hand-20-filled.svg" alt="">
                                 </div>
-                                <div class="vf_plaq">
-                                    <div class="icon">
-                                        <img src="./assets/icons/fluent_money-hand-20-filled.svg" alt="">
-                                    </div>
-                                    <strong>100% Money back</strong>
-                                    <p>Should you receive a wrong product or should there be any issue with a product, we issue a 100% money back guarantee.</p>
-                                </div>
+                                <strong>100% Money back</strong>
+                                <p>Should you receive a wrong product or should there be any issue with a product, we issue a 100% money back guarantee.</p>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
             <!-- best sellers -->
             <section class="bestSellers">

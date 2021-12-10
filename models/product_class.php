@@ -220,7 +220,7 @@ class product_class extends Connection
 		return $this->fetch("select brands.brand_name, brands.brand_id, categories.cat_name, categories.cat_id, 
 		products.product_id, products.product_cat, products.product_brand, products.product_title, products.product_price, 
 		products.product_desc, products.product_image, products.product_keywords, products.stock from products join brands on 
-		(products.product_brand = brands.brand_id) join categories on (products.product_cat = categories.cat_id) where brands.brand_name = 'Samsung'");
+		(products.product_brand = brands.brand_id) join categories on (products.product_cat = categories.cat_id) where brands.brand_name = 'Zara'");
 	}
 
 	//Select hottest products

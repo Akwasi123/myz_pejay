@@ -22,7 +22,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 
-if (isset($_GET['submit'])) {
+if (isset($_GET['searchTerm'])) {
     $search = $_GET['searchTerm'];
     $product_search = search_for_product($search);
 
