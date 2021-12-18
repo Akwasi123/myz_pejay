@@ -32,17 +32,17 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
 
                 <nav>
                     <ul class="nav-links dark">
-                        <li><a href="./view/shop.php" class="link">Shop</a></li>
-                        <li><a href="./actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
-                        <li><a href="./actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
-                        <li><a href="./actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
-                        <li><a href="./actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
+                        <li><a href="../view/shop.php" class="link">Shop</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="us_actions">
-                <a href="./userprofile/user-wishlist.php" class="icon">
+                <a href="../userprofile/user-wishlist.php" class="icon">
                     <img src="../assets/icons/bi_heart-1.svg" alt="" />
                     <div class="notif"><?php echo $wishlist_count['total']; ?></div>
                 </a>
@@ -52,7 +52,7 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                             <input type="text" name="searchTerm" placeholder="Search for items..." />
                         </div>
                     </form>
-                    <a href="./cart.php" class="icon">
+                    <a href="../view/cart.php" class="icon">
                         <img src="../assets/icons/ic_round-shopping-basket.svg" alt="" />
                         <div class="notif"><?php echo $cart_count['total']; ?></div>
                     </a>
@@ -63,7 +63,7 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                         <img src="../assets/icons/codicon_account-1.svg" class="dropbtn" alt="" />
                     </div>
                     <div class="dropdown-content">
-                        <a href="./userprofile/user-orders.php">Profile</a>
+                        <a href="../userprofile/user-orders.php">Profile</a>
                         <a href="../login/logout.php">Logout</a>
                     </div>
                 </div>
@@ -85,11 +85,11 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
 
                 <nav>
                     <ul class="nav-links dark">
-                        <li><a href="./view/shop.php" class="link">Shop</a></li>
-                        <li><a href="./actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
-                        <li><a href="./actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
-                        <li><a href="./actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
-                        <li><a href="./actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
+                        <li><a href="../view/shop.php" class="link">Shop</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Dresses" class="link">Dresses</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Accessories" class="link">Accessories</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Jeans" class="link">Jeans</a></li>
+                        <li><a href="../actions/searchFunction.php?searchTerm=Shoes" class="link">Shoes</a></li>
                     </ul>
                 </nav>
             </div>
@@ -99,7 +99,7 @@ if (isset($_SESSION["user_id"]) && ($_SESSION["user_role"])) {
                     <form name="searchForm" action="../actions/searchFunction.php" method="GET">
                         <div class="form-control dark">
                             <input type="text" name="searchTerm" placeholder="Search for items..." />
-                            
+
                         </div>
                     </form>
                     <a href="./view/cart.php" class="icon">

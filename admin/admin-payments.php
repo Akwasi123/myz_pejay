@@ -139,7 +139,7 @@ if (isset($_SESSION['user_role']) == '1') {
                                     <td><?php echo $payment['currency']; ?></td>
                                     <td><?php echo $payment['payment_date']; ?></td>
                                     <td class="actions">
-                                        <a href="<?php echo "../actions/deleteFunction.php?deletePayID=" . $order['payment_id']; ?>"><img src="../assets/icons/fluent_delete-20-filled-black.svg" alt=""></a>
+                                        <a href="<?php echo "../actions/deleteFunction.php?deletePayID=" . $payment['payment_id']; ?>"><img src="../assets/icons/fluent_delete-20-filled-black.svg" alt=""></a>
                                     </td>
                                 </tr>
                             <?php

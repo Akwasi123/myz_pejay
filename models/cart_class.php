@@ -146,6 +146,7 @@ class Cart extends Connection
         return $this->query("insert into payment (amount,user_id,order_id,currency,payment_date) values ('$amount','$user_id','$order_id','$currency','$payment_date')");
     }
 
+
     //Clear cart
     function clear_cart($user_id)
     {
@@ -180,7 +181,7 @@ class Cart extends Connection
     //delete orders
     function delete_order($order_id)
     {
-        return $this->query("delete from orderDetails where order_id = '$order_id' ");
+        return $this->query("delete from orderdetails where order_id = '$order_id' ");
     }
 
     //delete payment

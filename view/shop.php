@@ -62,61 +62,7 @@ if (isset($_SESSION['search_result'])) {
 
                 <!-- products display -->
                 <div class="productDisplay">
-                    <div class="left">
-
-
-                        <!-- categories accordion -->
-                        <div class="categories">
-                            <p class="light">CATEGORIES</p>
-
-                            <div class="acc">
-                                <button class="accordion">Dresses</button>
-                                <div class="panel">
-                                    <p>Lorem ipsum...</p>
-                                </div>
-
-                                <button class="accordion">Shoes</button>
-                                <div class="panel">
-                                    <p>Lorem ipsum...</p>
-                                </div>
-
-                                <button class="accordion">Accessories</button>
-                                <div class="panel">
-                                    <p>Lorem ipsum...</p>
-                                </div>
-
-                                <button class="accordion">Jeans</button>
-                                <div class="panel">
-                                    <p>Lorem ipsum...</p>
-                                </div>
-
-                                <button class="accordion">Shirts</button>
-                                <div class="panel">
-                                    <p>Lorem ipsum...</p>
-                                </div>
-
-
-                            </div>
-
-                            <!-- price range -->
-                            <p class="light">Price range</p>
-
-                            <!-- price entry -->
-                            <div class="priceEntry">
-                                <div class="field">
-                                    <label for="">From:</label>
-                                    <input type="text">
-                                </div>
-
-                                <div class="field">
-                                    <label for="">To:</label>
-                                    <input type="text">
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
+                    
                     <div class="right">
                         <p class="resCount">Showing results for: <?php echo $search; ?></p>
 

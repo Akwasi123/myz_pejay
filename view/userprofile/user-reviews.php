@@ -1,10 +1,13 @@
 <?php
 include_once (dirname(__FILE__)) . '/../../settings/core.php';
 include_once (dirname(__FILE__)) . '/../../controllers/product_controller.php';
+include_once (dirname(__FILE__)) . '/../../controllers/user_controller.php';
 
 if (isset($_SESSION['user_role']) && ($_SESSION['user_id'])) {
     if ($_SESSION['user_role'] == '2') {
         $user_id = $_SESSION['user_id'];
+        $current_customer = select_one_user_controller($user_id);
+        $profileimg = "../../assets/images/profile/";
 
         $all_reviews = select_order_reviews_controller($user_id);
 ?>
@@ -31,11 +34,11 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_id'])) {
                     <div class="content">
                         <div class="p_plaque">
                             <div class="pp">
-                                <img src="../../assets/backgrounds/katsiaryna-endruszkiewicz-BteCp6aq4GI-unsplash.jpg" alt="">
+                                <img src="<?php echo $profileimg . basename($current_customer['user_image']) ?>" alt="">
                             </div>
                             <div class="details">
-                                <h4>Lorem ipsum dolor sit.</h4>
-                                <p class="email">lorem@ipsum.com</p>
+                                <h4><?php echo $current_customer['user_fname']. " ". $current_customer['user_lname'] ?></h4>
+                                <p class="email"><?php echo $current_customer['user_email'] ?></p>
                                 <div class="status">
                                     <span></span>
                                     <p>Active</p>
@@ -144,5 +147,13 @@ if (isset($_SESSION['user_role']) && ($_SESSION['user_id'])) {
 
         </html>
 <?php
+    }else {
+        echo "<script type='text/javascript'> alert('User not logged in');
+            document.location.href = '../../index.php';
+            </script>";
     }
+}else {
+    echo "<script type='text/javascript'> alert('User not logged in');
+        document.location.href = '../../index.php';
+        </script>";
 }

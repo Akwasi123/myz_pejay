@@ -8,8 +8,6 @@ if (isset($_POST['updateUser'])) {
     $pnum = $_POST['pnum'];
     $address = $_POST['address'];
 
-    echo $user_id . " " . $email . " " . $pnum . " " . $address;
-
     $target_dir = "../assets/images/profile/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

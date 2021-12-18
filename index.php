@@ -102,7 +102,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                             <p>Myz_pejay’s collections</p>
                             <h1>Top notch women’s <span>clothing</span></h1>
                             <p>My dresses are very reasonably priced, for dresses that are cut on the body. I have an obsession with details and pattern. I have an obsession with details and pattern. Fashion is made to become unfashionable. I love my beauty. It's not my fault.</p>
-                            <button onclick="document.location.href='./view/shop.php'">Shop Now</button>
+                            <button onclick="document.location.href='./view/shop.php?'">Shop Now</button>
                         </div>
                         <!-- Additional required wrapper -->
                         <!-- hellow -->
@@ -426,7 +426,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_role'])) {
                         <p>Myz_pejay’s collections</p>
                         <h1>Top notch women’s <span>clothing</span></h1>
                         <p>My dresses are very reasonably priced, for dresses that are cut on the body. I have an obsession with details and pattern. I have an obsession with details and pattern. Fashion is made to become unfashionable. I love my beauty. It's not my fault.</p>
-                        <button onclick="document.location.href='./view/shop.php'">Shop Now</button>
+                        <button onclick="document.location.href='./actions/searchFunction.php?searchTerm=Bags'">Shop Now</button>
                     </div>
                     <!-- Additional required wrapper -->
                     <!-- hellow -->

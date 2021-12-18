@@ -196,7 +196,7 @@ if (isset($_SESSION['user_role']) == '1') {
                                                 if ($order['order_status'] == 'Approved' || $order['order_status'] == 'Cancelled') {
                                                 ?>
                                                     <td>
-                                                        <a href="">
+                                                        <a href="../actions/deleteFunction.php?delOrder=<?php echo $order['order_id']; ?>">
                                                             <img src="../assets/icons/fluent_delete-24-filled.svg" alt="" width="20">
 
                                                         </a>

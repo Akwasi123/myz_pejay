@@ -165,16 +165,17 @@ if (isset($_POST['addProduct'])) {
 }
 
 // deleteproduct
-if (isset($_GET['deleteProductID'])) {
+if (isset($_GET['deletePID'])) {
 
-    $id = $_GET['deleteProductID'];
+    $id = $_GET['deletePID'];
 
     // call the function
     $result = delete_product_controller($id);
+    echo $id;
 
-    if ($result === true) {
+    if ($result) {
         echo "<script type='text/javascript'> alert('Successfully deleted Product');
-            window.location.href = '../Admin/productView.php';
+            window.location.href = '../admin/admin-productView.php';
             </script>";
     } else {
         echo "<script type='text/javascript'> alert('Delete Failed');              
